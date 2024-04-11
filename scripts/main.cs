@@ -21,7 +21,7 @@ public partial class main : Node
     [Export] private Label MemoryDisplay;
     [Export] private Label PortDisplay;
 
-    private int instructionsPerTick = 1;
+    private int instructionsPerTick = 10;
     private int programMemorySize = 2048;
     private int ramSize = 256;
     private int portCount = 256;
@@ -81,11 +81,11 @@ public partial class main : Node
         byte opcode = (byte)(instruction >> (16 - opcodeLength));
         ushort address = (ushort)(instruction & 1023);
         byte immediate = (byte)(instruction & 255);
-        bool flag = (instruction & 1024 >> 10) == 1;
-        byte dest = (byte)(instruction & 3584 >> 9);
+        bool flag = ((instruction & 1024) >> 10) == 1;
+        byte dest = (byte)((instruction & 3584) >> 9);
 
-        byte regA = (byte)(instruction & 448 >> 6);
-        byte operation = (byte)(instruction & 56 >> 3);
+        byte regA = (byte)((instruction & 448) >> 6);
+        byte operation = (byte)((instruction & 56) >> 3);
         byte regB = (byte)(instruction & 7);
 
         switch (opcode)
@@ -93,7 +93,7 @@ public partial class main : Node
             //NOP
             case 0: programCounter++; break;
             //HLT
-            case 1: 
+            case 1:
                 if (!paused) StartStop(); 
                 break;
             //JMP
@@ -196,7 +196,7 @@ public partial class main : Node
         ram = new byte[ramSize];
         registers = new byte[registerCount];
         ports = new byte[portCount];
-        addressStack = new Array<byte>();
+        addressStack = new Stack<int>();
         StatusLabel.Text = "";
         UpdateVisualisers();
     }
