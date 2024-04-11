@@ -1,0 +1,6181 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0pmv6pxy3ax2"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_chywo"]
+[ext_resource type="Texture2D" uid="uid://c4jtepf6uhdrh" path="res://textures/redstone_lamp.png" id="1_wgb5h"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_chywo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(256, 256)
+
+[node name="Display" type="GridContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 32
+
+[node name="Lamp" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp2" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp3" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp4" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp5" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp6" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp7" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp8" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp9" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp10" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp11" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp12" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp13" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp14" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp15" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp16" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp17" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp18" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp19" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp20" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp21" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp22" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp23" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp24" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp25" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp26" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp27" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp28" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp29" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp30" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp31" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp32" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp33" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp34" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp35" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp36" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp37" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp38" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp39" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp40" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp41" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp42" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp43" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp44" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp45" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp46" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp47" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp48" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp49" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp50" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp51" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp52" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp53" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp54" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp55" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp56" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp57" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp58" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp59" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp60" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp61" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp62" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp63" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp64" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp65" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp66" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp67" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp68" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp69" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp70" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp71" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp72" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp73" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp74" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp75" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp76" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp77" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp78" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp79" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp80" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp81" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp82" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp83" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp84" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp85" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp86" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp87" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp88" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp89" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp90" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp91" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp92" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp93" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp94" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp95" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp96" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp97" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp98" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp99" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp100" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp101" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp102" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp103" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp104" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp105" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp106" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp107" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp108" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp109" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp110" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp111" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp112" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp113" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp114" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp115" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp116" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp117" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp118" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp119" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp120" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp121" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp122" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp123" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp124" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp125" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp126" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp127" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp128" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp129" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp130" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp131" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp132" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp133" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp134" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp135" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp136" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp137" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp138" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp139" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp140" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp141" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp142" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp143" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp144" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp145" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp146" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp147" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp148" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp149" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp150" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp151" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp152" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp153" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp154" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp155" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp156" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp157" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp158" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp159" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp160" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp161" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp162" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp163" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp164" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp165" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp166" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp167" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp168" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp169" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp170" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp171" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp172" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp173" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp174" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp175" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp176" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp177" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp178" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp179" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp180" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp181" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp182" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp183" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp184" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp185" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp186" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp187" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp188" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp189" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp190" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp191" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp192" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp193" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp194" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp195" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp196" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp197" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp198" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp199" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp200" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp201" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp202" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp203" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp204" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp205" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp206" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp207" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp208" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp209" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp210" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp211" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp212" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp213" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp214" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp215" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp216" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp217" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp218" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp219" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp220" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp221" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp222" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp223" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp224" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp225" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp226" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp227" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp228" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp229" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp230" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp231" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp232" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp233" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp234" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp235" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp236" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp237" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp238" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp239" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp240" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp241" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp242" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp243" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp244" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp245" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp246" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp247" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp248" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp249" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp250" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp251" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp252" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp253" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp254" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp255" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp256" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp257" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp258" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp259" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp260" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp261" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp262" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp263" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp264" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp265" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp266" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp267" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp268" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp269" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp270" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp271" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp272" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp273" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp274" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp275" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp276" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp277" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp278" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp279" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp280" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp281" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp282" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp283" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp284" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp285" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp286" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp287" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp288" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp289" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp290" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp291" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp292" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp293" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp294" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp295" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp296" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp297" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp298" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp299" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp300" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp301" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp302" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp303" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp304" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp305" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp306" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp307" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp308" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp309" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp310" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp311" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp312" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp313" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp314" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp315" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp316" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp317" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp318" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp319" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp320" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp321" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp322" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp323" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp324" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp325" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp326" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp327" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp328" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp329" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp330" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp331" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp332" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp333" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp334" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp335" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp336" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp337" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp338" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp339" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp340" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp341" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp342" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp343" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp344" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp345" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp346" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp347" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp348" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp349" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp350" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp351" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp352" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp353" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp354" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp355" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp356" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp357" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp358" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp359" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp360" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp361" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp362" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp363" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp364" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp365" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp366" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp367" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp368" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp369" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp370" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp371" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp372" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp373" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp374" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp375" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp376" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp377" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp378" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp379" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp380" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp381" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp382" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp383" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp384" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp385" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp386" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp387" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp388" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp389" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp390" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp391" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp392" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp393" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp394" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp395" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp396" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp397" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp398" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp399" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp400" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp401" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp402" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp403" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp404" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp405" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp406" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp407" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp408" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp409" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp410" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp411" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp412" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp413" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp414" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp415" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp416" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp417" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp418" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp419" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp420" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp421" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp422" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp423" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp424" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp425" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp426" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp427" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp428" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp429" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp430" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp431" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp432" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp433" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp434" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp435" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp436" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp437" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp438" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp439" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp440" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp441" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp442" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp443" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp444" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp445" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp446" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp447" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp448" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp449" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp450" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp451" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp452" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp453" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp454" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp455" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp456" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp457" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp458" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp459" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp460" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp461" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp462" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp463" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp464" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp465" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp466" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp467" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp468" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp469" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp470" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp471" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp472" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp473" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp474" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp475" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp476" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp477" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp478" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp479" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp480" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp481" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp482" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp483" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp484" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp485" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp486" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp487" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp488" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp489" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp490" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp491" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp492" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp493" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp494" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp495" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp496" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp497" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp498" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp499" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp500" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp501" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp502" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp503" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp504" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp505" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp506" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp507" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp508" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp509" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp510" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp511" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp512" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp513" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp514" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp515" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp516" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp517" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp518" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp519" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp520" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp521" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp522" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp523" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp524" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp525" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp526" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp527" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp528" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp529" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp530" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp531" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp532" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp533" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp534" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp535" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp536" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp537" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp538" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp539" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp540" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp541" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp542" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp543" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp544" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp545" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp546" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp547" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp548" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp549" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp550" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp551" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp552" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp553" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp554" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp555" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp556" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp557" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp558" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp559" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp560" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp561" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp562" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp563" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp564" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp565" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp566" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp567" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp568" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp569" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp570" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp571" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp572" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp573" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp574" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp575" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp576" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp577" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp578" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp579" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp580" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp581" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp582" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp583" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp584" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp585" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp586" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp587" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp588" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp589" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp590" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp591" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp592" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp593" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp594" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp595" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp596" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp597" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp598" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp599" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp600" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp601" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp602" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp603" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp604" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp605" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp606" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp607" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp608" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp609" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp610" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp611" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp612" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp613" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp614" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp615" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp616" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp617" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp618" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp619" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp620" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp621" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp622" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp623" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp624" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp625" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp626" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp627" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp628" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp629" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp630" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp631" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp632" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp633" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp634" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp635" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp636" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp637" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp638" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp639" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp640" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp641" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp642" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp643" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp644" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp645" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp646" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp647" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp648" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp649" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp650" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp651" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp652" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp653" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp654" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp655" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp656" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp657" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp658" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp659" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp660" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp661" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp662" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp663" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp664" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp665" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp666" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp667" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp668" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp669" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp670" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp671" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp672" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp673" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp674" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp675" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp676" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp677" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp678" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp679" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp680" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp681" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp682" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp683" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp684" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp685" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp686" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp687" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp688" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp689" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp690" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp691" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp692" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp693" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp694" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp695" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp696" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp697" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp698" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp699" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp700" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp701" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp702" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp703" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp704" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp705" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp706" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp707" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp708" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp709" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp710" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp711" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp712" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp713" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp714" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp715" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp716" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp717" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp718" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp719" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp720" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp721" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp722" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp723" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp724" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp725" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp726" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp727" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp728" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp729" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp730" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp731" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp732" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp733" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp734" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp735" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp736" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp737" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp738" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp739" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp740" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp741" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp742" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp743" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp744" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp745" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp746" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp747" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp748" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp749" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp750" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp751" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp752" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp753" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp754" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp755" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp756" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp757" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp758" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp759" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp760" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp761" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp762" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp763" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp764" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp765" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp766" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp767" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp768" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp769" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp770" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp771" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp772" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp773" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp774" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp775" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp776" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp777" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp778" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp779" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp780" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp781" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp782" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp783" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp784" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp785" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp786" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp787" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp788" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp789" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp790" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp791" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp792" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp793" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp794" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp795" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp796" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp797" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp798" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp799" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp800" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp801" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp802" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp803" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp804" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp805" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp806" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp807" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp808" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp809" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp810" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp811" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp812" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp813" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp814" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp815" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp816" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp817" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp818" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp819" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp820" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp821" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp822" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp823" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp824" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp825" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp826" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp827" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp828" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp829" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp830" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp831" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp832" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp833" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp834" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp835" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp836" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp837" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp838" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp839" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp840" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp841" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp842" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp843" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp844" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp845" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp846" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp847" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp848" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp849" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp850" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp851" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp852" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp853" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp854" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp855" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp856" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp857" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp858" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp859" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp860" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp861" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp862" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp863" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp864" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp865" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp866" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp867" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp868" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp869" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp870" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp871" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp872" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp873" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp874" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp875" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp876" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp877" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp878" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp879" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp880" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp881" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp882" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp883" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp884" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp885" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp886" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp887" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp888" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp889" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp890" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp891" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp892" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp893" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp894" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp895" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp896" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp897" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp898" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp899" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp900" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp901" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp902" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp903" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp904" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp905" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp906" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp907" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp908" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp909" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp910" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp911" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp912" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp913" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp914" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp915" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp916" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp917" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp918" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp919" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp920" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp921" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp922" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp923" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp924" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp925" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp926" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp927" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp928" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp929" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp930" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp931" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp932" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp933" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp934" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp935" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp936" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp937" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp938" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp939" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp940" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp941" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp942" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp943" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp944" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp945" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp946" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp947" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp948" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp949" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp950" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp951" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp952" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp953" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp954" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp955" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp956" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp957" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp958" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp959" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp960" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp961" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp962" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp963" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp964" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp965" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp966" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp967" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp968" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp969" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp970" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp971" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp972" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp973" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp974" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp975" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp976" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp977" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp978" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp979" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp980" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp981" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp982" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp983" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp984" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp985" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp986" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp987" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp988" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp989" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp990" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp991" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp992" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp993" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp994" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp995" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp996" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp997" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp998" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp999" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1000" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1001" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1002" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1003" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1004" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1005" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1006" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1007" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1008" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1009" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1010" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1011" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1012" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1013" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1014" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1015" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1016" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1017" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1018" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1019" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1020" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1021" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1022" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1023" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="Lamp1024" type="TextureRect" parent="Display"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("1_wgb5h")
+
+[node name="PathText" type="TextEdit" parent="."]
+unique_name_in_owner = true
+offset_left = 32.0
+offset_top = 208.0
+offset_right = 480.0
+offset_bottom = 256.0
+placeholder_text = "Enter Script Name"
+
+[node name="LoadScript" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 32.0
+offset_top = 272.0
+offset_right = 480.0
+offset_bottom = 304.0
+text = "Load Script"
+
+[connection signal="pressed" from="LoadScript" to="." method="_on_load_script_pressed"]

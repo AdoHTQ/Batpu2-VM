@@ -1,0 +1,163 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0pmv6pxy3ax2"]
+
+[ext_resource type="Script" path="res://scripts/main.cs" id="1_uokyd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bu3mg"]
+bg_color = Color(0.145098, 0.168627, 0.203922, 1)
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("StartStopButton", "StepButton", "ResetButton", "StatusLabel", "RegisterDisplay", "MemoryDisplay", "PortDisplay")]
+script = ExtResource("1_uokyd")
+StartStopButton = NodePath("Control/ControlPanelMargins/ControlPanelList/StartStopButton")
+StepButton = NodePath("Control/ControlPanelMargins/ControlPanelList/StepButton")
+ResetButton = NodePath("Control/ControlPanelMargins/ControlPanelList/ResetButton")
+StatusLabel = NodePath("Control/ControlPanelMargins/ControlPanelList/StatusLabel")
+RegisterDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/RegisterPanel/RegisterMargin/RegisterList/RegisterText")
+MemoryDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/MemoryPanel/MemoryMargin/MemoryList/MemoryScroll/MemoryText")
+PortDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/PortsPanel/PortsMargin/PortsList/PortsScroll/PortsText")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(384, 256)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ControPanelBG" type="ColorRect" parent="Control"]
+layout_mode = 2
+offset_left = 512.0
+offset_right = 768.0
+offset_bottom = 512.0
+size_flags_vertical = 3
+color = Color(0.211765, 0.239216, 0.290196, 1)
+
+[node name="ControlPanelMargins" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 512.0
+offset_right = 768.0
+offset_bottom = 512.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ControlPanelList" type="VBoxContainer" parent="Control/ControlPanelMargins"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="StatusLabel" type="Label" parent="Control/ControlPanelMargins/ControlPanelList"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bu3mg")
+horizontal_alignment = 1
+
+[node name="StartStopButton" type="Button" parent="Control/ControlPanelMargins/ControlPanelList"]
+layout_mode = 2
+text = "-Start-"
+
+[node name="StepButton" type="Button" parent="Control/ControlPanelMargins/ControlPanelList"]
+layout_mode = 2
+text = "<Step>"
+
+[node name="ResetButton" type="Button" parent="Control/ControlPanelMargins/ControlPanelList"]
+layout_mode = 2
+text = "|Reset|"
+
+[node name="RegisterPanel" type="PanelContainer" parent="Control/ControlPanelMargins/ControlPanelList"]
+layout_mode = 2
+
+[node name="RegisterMargin" type="MarginContainer" parent="Control/ControlPanelMargins/ControlPanelList/RegisterPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="RegisterList" type="VBoxContainer" parent="Control/ControlPanelMargins/ControlPanelList/RegisterPanel/RegisterMargin"]
+layout_mode = 2
+
+[node name="RegisterLabel" type="Label" parent="Control/ControlPanelMargins/ControlPanelList/RegisterPanel/RegisterMargin/RegisterList"]
+layout_mode = 2
+text = "Registers"
+horizontal_alignment = 1
+
+[node name="RegisterText" type="Label" parent="Control/ControlPanelMargins/ControlPanelList/RegisterPanel/RegisterMargin/RegisterList"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MemoryPanel" type="PanelContainer" parent="Control/ControlPanelMargins/ControlPanelList"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MemoryMargin" type="MarginContainer" parent="Control/ControlPanelMargins/ControlPanelList/MemoryPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="MemoryList" type="VBoxContainer" parent="Control/ControlPanelMargins/ControlPanelList/MemoryPanel/MemoryMargin"]
+layout_mode = 2
+
+[node name="MemoryLabel" type="Label" parent="Control/ControlPanelMargins/ControlPanelList/MemoryPanel/MemoryMargin/MemoryList"]
+layout_mode = 2
+text = "Memory"
+horizontal_alignment = 1
+
+[node name="MemoryScroll" type="ScrollContainer" parent="Control/ControlPanelMargins/ControlPanelList/MemoryPanel/MemoryMargin/MemoryList"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MemoryText" type="Label" parent="Control/ControlPanelMargins/ControlPanelList/MemoryPanel/MemoryMargin/MemoryList/MemoryScroll"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PortsPanel" type="PanelContainer" parent="Control/ControlPanelMargins/ControlPanelList"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PortsMargin" type="MarginContainer" parent="Control/ControlPanelMargins/ControlPanelList/PortsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="PortsList" type="VBoxContainer" parent="Control/ControlPanelMargins/ControlPanelList/PortsPanel/PortsMargin"]
+layout_mode = 2
+
+[node name="PortsLabel" type="Label" parent="Control/ControlPanelMargins/ControlPanelList/PortsPanel/PortsMargin/PortsList"]
+layout_mode = 2
+text = "Ports"
+horizontal_alignment = 1
+
+[node name="PortsScroll" type="ScrollContainer" parent="Control/ControlPanelMargins/ControlPanelList/PortsPanel/PortsMargin/PortsList"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PortsText" type="Label" parent="Control/ControlPanelMargins/ControlPanelList/PortsPanel/PortsMargin/PortsList/PortsScroll"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ScreenPlaceholder" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 512.0
+color = Color(0.145098, 0.168627, 0.203922, 1)
+
+[node name="ScreenContainer" type="GridContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 32
