@@ -164,11 +164,11 @@ public partial class main : Node
                     case 0: registers[dest] = (byte)(registers[regA] | registers[regB]); break;
                     case 1: registers[dest] = (byte)(registers[regA] & registers[regB]); break;
                     case 2: registers[dest] = (byte)(registers[regA] ^ registers[regB]); break;
-                    case 3: GD.Print("Implies not impleminted yet"); break;
+                    case 3: registers[dest] = (byte)~(registers[regA] & ~registers[regB]); break;
                     case 4: registers[dest] = (byte)~(registers[regA] | registers[regB]); break;
                     case 5: registers[dest] = (byte)~(registers[regA] & registers[regB]); break;
                     case 6: registers[dest] = (byte)~(registers[regA] ^ registers[regB]); break;
-                    case 7: GD.Print("Nimplies not impleminted yet"); break;
+                    case 7: registers[dest] = (byte)(registers[regA] & ~registers[regB]); break;
                 }
                 zeroFlag = registers[dest] == 0;
                 programCounter++;

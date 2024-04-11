@@ -11,14 +11,10 @@
       "GodotSharp/4.2.1": {
         "type": "package",
         "compile": {
-          "lib/net6.0/GodotSharp.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/GodotSharp.dll": {}
         },
         "runtime": {
-          "lib/net6.0/GodotSharp.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/GodotSharp.dll": {}
         }
       },
       "GodotSharpEditor/4.2.1": {
@@ -27,14 +23,10 @@
           "GodotSharp": "4.2.1"
         },
         "compile": {
-          "lib/net6.0/GodotSharpEditor.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/GodotSharpEditor.dll": {}
         },
         "runtime": {
-          "lib/net6.0/GodotSharpEditor.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/GodotSharpEditor.dll": {}
         }
       }
     }
@@ -145,31 +137,16 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.12, 6.0.12]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.12, 6.0.12]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.12, 6.0.12]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
