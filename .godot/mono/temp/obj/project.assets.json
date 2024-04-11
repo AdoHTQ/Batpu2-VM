@@ -93,11 +93,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\Python\\Batpu2 VM\\Batpu2 VM.csproj",
+      "projectUniqueName": "D:\\Programming\\Python\\Batpu2-VM\\Batpu2 VM.csproj",
       "projectName": "Batpu2 VM",
-      "projectPath": "D:\\Programming\\Python\\Batpu2 VM\\Batpu2 VM.csproj",
+      "projectPath": "D:\\Programming\\Python\\Batpu2-VM\\Batpu2 VM.csproj",
       "packagesPath": "C:\\Users\\adama\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\Python\\Batpu2 VM\\.godot\\mono\\temp\\obj\\",
+      "outputPath": "D:\\Programming\\Python\\Batpu2-VM\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\adama\\AppData\\Roaming\\NuGet\\NuGet.Config",

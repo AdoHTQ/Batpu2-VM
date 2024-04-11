@@ -16,7 +16,7 @@ MemoryDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/MemoryPan
 PortDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/PortsPanel/PortsMargin/PortsList/PortsScroll/PortsText")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(384, 256)
+offset = Vector2(400, 256)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -27,7 +27,7 @@ offset_bottom = 40.0
 [node name="ControPanelBG" type="ColorRect" parent="Control"]
 layout_mode = 2
 offset_left = 512.0
-offset_right = 768.0
+offset_right = 800.0
 offset_bottom = 512.0
 size_flags_vertical = 3
 color = Color(0.211765, 0.239216, 0.290196, 1)
@@ -35,7 +35,7 @@ color = Color(0.211765, 0.239216, 0.290196, 1)
 [node name="ControlPanelMargins" type="MarginContainer" parent="Control"]
 layout_mode = 0
 offset_left = 512.0
-offset_right = 768.0
+offset_right = 800.0
 offset_bottom = 512.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
@@ -68,9 +68,9 @@ layout_mode = 2
 
 [node name="RegisterMargin" type="MarginContainer" parent="Control/ControlPanelMargins/ControlPanelList/RegisterPanel"]
 layout_mode = 2
-theme_override_constants/margin_left = 20
+theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 20
+theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="RegisterList" type="VBoxContainer" parent="Control/ControlPanelMargins/ControlPanelList/RegisterPanel/RegisterMargin"]
@@ -94,9 +94,9 @@ size_flags_vertical = 3
 
 [node name="MemoryMargin" type="MarginContainer" parent="Control/ControlPanelMargins/ControlPanelList/MemoryPanel"]
 layout_mode = 2
-theme_override_constants/margin_left = 20
+theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 20
+theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 10
 
 [node name="MemoryList" type="VBoxContainer" parent="Control/ControlPanelMargins/ControlPanelList/MemoryPanel/MemoryMargin"]
@@ -124,9 +124,9 @@ size_flags_vertical = 3
 
 [node name="PortsMargin" type="MarginContainer" parent="Control/ControlPanelMargins/ControlPanelList/PortsPanel"]
 layout_mode = 2
-theme_override_constants/margin_left = 20
+theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 20
+theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 10
 
 [node name="PortsList" type="VBoxContainer" parent="Control/ControlPanelMargins/ControlPanelList/PortsPanel/PortsMargin"]

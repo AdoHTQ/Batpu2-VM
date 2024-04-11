@@ -1,8 +1,15 @@
 using Godot;
 using Godot.Collections;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+
+//MISSING FEATURES
+//Negative flag
+//Ports
+//Bitwise implies
+//Ingame limitations such as stack size
 
 public partial class main : Node
 {
@@ -14,7 +21,7 @@ public partial class main : Node
     [Export] private Label MemoryDisplay;
     [Export] private Label PortDisplay;
 
-    //[Export] private int instructionsPerTick;
+    private int instructionsPerTick = 1;
     private int programMemorySize = 2048;
     private int ramSize = 256;
     private int portCount = 256;
@@ -28,15 +35,14 @@ public partial class main : Node
     private byte[] ram;
     private byte[] registers;
     private byte[] ports;
+    private Stack<int> addressStack;
 
     private bool zeroFlag = false;
     private bool negativeFlag = false;
 
     public override void _Ready()
     {
-        ram = new byte[ramSize];
-        registers = new byte[registerCount];
-        ports = new byte[portCount];
+        Reset();
 
         GetWindow().FilesDropped += LoadProgram;
 
@@ -55,27 +61,33 @@ public partial class main : Node
     public override void _PhysicsProcess(double delta)
     {
         if (bytecode == null || paused) return;
-        //GD.Print(programCounter);
-        RunNextInstruction();
-        UpdateVisualisers();
+        
+        for (int i = 0; i < instructionsPerTick; i++) RunNextInstruction();
     }
 
     private void RunNextInstruction()
     {
+        StatusLabel.Text = "Program Counter: " + programCounter;
         int index = programCounter * 2;
-        short instruction = (short)(bytecode[index] << 8 | bytecode[index + 1]);
+        ushort instruction = (ushort)(bytecode[index] << 8 | bytecode[index + 1]);
         ProcessOpcode(instruction);
         programCounter %= programMemorySize / 2;
+        UpdateVisualisers();
     }
 
-    private void ProcessOpcode(short instruction)
+    private void ProcessOpcode(ushort instruction)
     {
-        int opcode = instruction >> (16 - opcodeLength);
-        int address = instruction & 1023;
-        int immediate = instruction & 255;
-        bool flag = ((instruction & 1024) >> 10) == 1;
-        int dest = instruction & 3584 >> 9;
         
+        byte opcode = (byte)(instruction >> (16 - opcodeLength));
+        ushort address = (ushort)(instruction & 1023);
+        byte immediate = (byte)(instruction & 255);
+        bool flag = (instruction & 1024 >> 10) == 1;
+        byte dest = (byte)(instruction & 3584 >> 9);
+
+        byte regA = (byte)(instruction & 448 >> 6);
+        byte operation = (byte)(instruction & 56 >> 3);
+        byte regB = (byte)(instruction & 7);
+
         switch (opcode)
         {
             //NOP
@@ -93,15 +105,76 @@ public partial class main : Node
                 if ((!flag && zeroFlag) || (flag && negativeFlag)) programCounter = address;
                 else programCounter++;
                 break;
+            //CAL
+            case 4:
+                addressStack.Push(programCounter + 1);
+                programCounter = address;
+                break;
+            //RET
+            case 5:
+                programCounter = addressStack.Pop();
+                break;
+            //MLD
+            case 8:
+                registers[dest] = ram[registers[7] + immediate];
+                programCounter++;
+                break;
+            //MST
+            case 9:
+                ram[registers[7] + immediate] = registers[dest];
+                programCounter++;
+                break;
+            //LDI
+            case 10:
+                registers[dest] = immediate;
+                zeroFlag = immediate == 0;
+                programCounter++;
+                break;
             //ADI
-            case -5:
-                registers[dest] += (byte)immediate;
-                if (registers[dest] == 0) zeroFlag = true;
-                else zeroFlag = false;
+            case 11:
+                registers[dest] += immediate;
+                zeroFlag = registers[dest] == 0;
+                programCounter++;
+                break;
+            //CMI
+            case 12:
+                negativeFlag = immediate > registers[dest];
+                registers[0] = (byte)(registers[dest] - immediate);
+                zeroFlag = registers[0] == 0;
+                programCounter++;
+                break;
+            //ADD
+            case 13:
+                registers[dest] = (byte)(registers[regA] + registers[regB]);
+                zeroFlag = registers[dest] == 0;
+                programCounter++;
+                break;
+            //SUB
+            case 14:
+                registers[dest] = (byte)(registers[regA] - registers[regB]);
+                zeroFlag = registers[dest] == 0;
+                programCounter++;
+                break;
+            //BIT
+            case 15:
+                switch (operation)
+                {
+                    case 0: registers[dest] = (byte)(registers[regA] | registers[regB]); break;
+                    case 1: registers[dest] = (byte)(registers[regA] & registers[regB]); break;
+                    case 2: registers[dest] = (byte)(registers[regA] ^ registers[regB]); break;
+                    case 3: GD.Print("Implies not impleminted yet"); break;
+                    case 4: registers[dest] = (byte)~(registers[regA] | registers[regB]); break;
+                    case 5: registers[dest] = (byte)~(registers[regA] & registers[regB]); break;
+                    case 6: registers[dest] = (byte)~(registers[regA] ^ registers[regB]); break;
+                    case 7: GD.Print("Nimplies not impleminted yet"); break;
+                }
+                zeroFlag = registers[dest] == 0;
                 programCounter++;
                 break;
             default: GD.Print("Invalid opcode in file."); break;
         }
+
+        registers[0] = 0;
     }
 
     private void StartStop()
@@ -113,8 +186,8 @@ public partial class main : Node
 
     private void Step()
     {
-        if (paused) RunNextInstruction();
-        StatusLabel.Text = "";
+        if (!paused) StartStop();
+        if (paused && bytecode != null) RunNextInstruction();
     }
 
     private void Reset()
@@ -123,27 +196,25 @@ public partial class main : Node
         ram = new byte[ramSize];
         registers = new byte[registerCount];
         ports = new byte[portCount];
+        addressStack = new Array<byte>();
         StatusLabel.Text = "";
+        UpdateVisualisers();
     }
 
     private void LoadProgram(string[] files)
     {
-        var code = FileAccess.GetFileAsString(files[0]);
-        code = Regex.Replace(code, @"\t|\n|\r", "");
-        bytecode = ConvertBinaryStringToByteArray(code);
+        Reset();
+        try
+        {
+            var code = FileAccess.GetFileAsString(files[0]);
+            code = Regex.Replace(code, @"\t|\n|\r", "");
+            bytecode = ConvertBinaryStringToByteArray(code);
 
-        StatusLabel.Text = "Program Loaded";
-    }
-
-    private void SetRegister(int register, byte value)
-    {
-        if (register == 0) return;
-        registers[register] = value;
-    }
-
-    private byte GetRegister(int register)
-    {
-        return registers[register];
+            StatusLabel.Text = "Program Loaded";
+        } catch
+        {
+            StatusLabel.Text = "Failed to Load Program";
+        }
     }
 
     private void UpdateVisualisers()

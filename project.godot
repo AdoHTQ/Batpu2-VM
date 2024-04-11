@@ -17,13 +17,18 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=768
+window/size/viewport_width=800
 window/size/viewport_height=512
+window/size/resizable=false
 window/stretch/mode="viewport"
 
 [dotnet]
 
 project/assembly_name="Batpu2 VM"
+
+[gui]
+
+theme/custom_font="res://fonts/RobotoMono-VariableFont_wght.ttf"
 
 [physics]
 

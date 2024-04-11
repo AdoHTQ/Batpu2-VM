@@ -15,3 +15,20 @@ D:\Programming\Python\Batpu2 VM\.godot\mono\temp\obj\Debug\refint\Batpu2 VM.dll
 D:\Programming\Python\Batpu2 VM\.godot\mono\temp\obj\Debug\Batpu2 VM.pdb
 D:\Programming\Python\Batpu2 VM\.godot\mono\temp\obj\Debug\Batpu2 VM.genruntimeconfig.cache
 D:\Programming\Python\Batpu2 VM\.godot\mono\temp\obj\Debug\ref\Batpu2 VM.dll
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\bin\Debug\Batpu2 VM.deps.json
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\bin\Debug\Batpu2 VM.runtimeconfig.json
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\bin\Debug\Batpu2 VM.dll
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\bin\Debug\Batpu2 VM.pdb
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\bin\Debug\GodotSharp.dll
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\obj\Debug\Batpu2 VM.csproj.AssemblyReference.cache
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\obj\Debug\Batpu2 VM.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\obj\Debug\Batpu2 VM.AssemblyInfoInputs.cache
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\obj\Debug\Batpu2 VM.AssemblyInfo.cs
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\obj\Debug\Batpu2 VM.csproj.CoreCompileInputs.cache
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\obj\Debug\Batpu2 VM.csproj.CopyComplete
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\obj\Debug\Batpu2 VM.dll
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\obj\Debug\refint\Batpu2 VM.dll
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\obj\Debug\Batpu2 VM.pdb
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\obj\Debug\Batpu2 VM.genruntimeconfig.cache
+D:\Programming\Python\Batpu2-VM\.godot\mono\temp\obj\Debug\ref\Batpu2 VM.dll

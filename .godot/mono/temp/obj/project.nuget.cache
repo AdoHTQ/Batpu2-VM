@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lIvoJYLDxSx9FaUeYCzt2zEPHEDwDL7pKG+p/XX5sbCgM0ZvpE2h7ZqFhJjZUGwtKf79GkHIu9pfuyG/Q7eMww==",
+  "dgSpecHash": "gjQyHlZXqPAN5BtO+m015ytYPThUUFBMOpT8HPiUfCmXpGVRx65wCN55i4uUATGSGkaGNSIE/RNJoSFnUeu1Qg==",
   "success": true,
-  "projectFilePath": "D:\\Programming\\Python\\Batpu2 VM\\Batpu2 VM.csproj",
+  "projectFilePath": "D:\\Programming\\Python\\Batpu2-VM\\Batpu2 VM.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adama\\.nuget\\packages\\godot.sourcegenerators\\4.2.1\\godot.sourcegenerators.4.2.1.nupkg.sha512",
     "C:\\Users\\adama\\.nuget\\packages\\godotsharp\\4.2.1\\godotsharp.4.2.1.nupkg.sha512",
