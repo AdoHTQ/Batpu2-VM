@@ -13,6 +13,15 @@ using System.Text.RegularExpressions;
 
 public partial class main : Node
 {
+    [ExportCategory("Parameters")]
+    [Export] private int instructionsPerTick = 10;
+    [Export] private int programMemorySize = 2048;
+    [Export] private int ramSize = 256;
+    [Export] private int portCount = 256;
+    [Export] private int registerCount = 8;
+    [Export] private int opcodeLength = 4;
+
+    [ExportCategory("References")]
     [Export] private Button StartStopButton;
     [Export] private Button StepButton;
     [Export] private Button ResetButton;
@@ -20,13 +29,6 @@ public partial class main : Node
     [Export] private Label RegisterDisplay;
     [Export] private Label MemoryDisplay;
     [Export] private Label PortDisplay;
-
-    private int instructionsPerTick = 10;
-    private int programMemorySize = 2048;
-    private int ramSize = 256;
-    private int portCount = 256;
-    private int registerCount = 8;
-    private int opcodeLength = 4;
 
     bool paused = true;
     int programCounter = 0;

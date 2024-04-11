@@ -7,6 +7,7 @@ bg_color = Color(0.145098, 0.168627, 0.203922, 1)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("StartStopButton", "StepButton", "ResetButton", "StatusLabel", "RegisterDisplay", "MemoryDisplay", "PortDisplay")]
 script = ExtResource("1_uokyd")
+instructionsPerTick = 100
 StartStopButton = NodePath("Control/ControlPanelMargins/ControlPanelList/StartStopButton")
 StepButton = NodePath("Control/ControlPanelMargins/ControlPanelList/StepButton")
 ResetButton = NodePath("Control/ControlPanelMargins/ControlPanelList/ResetButton")
