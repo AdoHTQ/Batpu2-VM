@@ -8,7 +8,6 @@ using System.Text.RegularExpressions;
 //MISSING FEATURES
 //Negative flag
 //Ports
-//Bitwise implies
 //Ingame limitations such as stack size
 
 public partial class main : Node
