@@ -39,7 +39,7 @@ public partial class main : Node
     private Stack<int> addressStack;
 
     private bool zeroFlag = false;
-    private bool negativeFlag = false;
+    private bool carryFlag = false;
 
     public override void _Ready()
     {
@@ -84,7 +84,7 @@ public partial class main : Node
         byte opcode = (byte)(instruction >> (16 - opcodeLength));
         ushort address = (ushort)(instruction & 1023);
         byte immediate = (byte)(instruction & 255);
-        bool flag = ((instruction & 1024) >> 10) == 1;
+        byte cond = (byte)((instruction & 0b110000000000) >> 10);
         byte dest = (byte)((instruction & 3584) >> 9);
 
         byte regA = (byte)((instruction & 448) >> 6);
@@ -103,9 +103,9 @@ public partial class main : Node
             case 2:
                 programCounter = address;
                 break;
-            //BIF
+            //BCH
             case 3:
-                if ((!flag && zeroFlag) || (flag && negativeFlag)) programCounter = address;
+                if ((cond == 0 && zeroFlag) || (cond == 1 && !zeroFlag) || (cond == 2 && !zeroFlag && carryFlag) || (cond == 3 && !carryFlag)) programCounter = address;
                 else programCounter++;
                 break;
             //CAL
@@ -135,9 +135,11 @@ public partial class main : Node
                 break;
             //ADI
             case 11:
+                carryFlag = registers[dest] + immediate > 255;
+                GD.Print(carryFlag);
                 registers[dest] += immediate;
                 zeroFlag = registers[dest] == 0;
-                negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
+                //negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
                 programCounter++;
                 break;
 /*            //CMI
@@ -149,16 +151,18 @@ public partial class main : Node
                 break;*/
             //ADD
             case 12:
+                carryFlag = registers[regA] + immediate > 255;
                 registers[dest] = (byte)(registers[regA] + registers[regB]);
                 zeroFlag = registers[dest] == 0;
-                negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
+                //negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
                 programCounter++;
                 break;
             //SUB
             case 13:
+                carryFlag = registers[regA] - registers[regB] < 0;
                 registers[dest] = (byte)(registers[regA] - registers[regB]);
                 zeroFlag = registers[dest] == 0;
-                negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
+                //negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
                 programCounter++;
                 break;
             //BIT
@@ -175,7 +179,8 @@ public partial class main : Node
                     case 7: registers[dest] = (byte)(registers[regA] & ~registers[regB]); break;
                 }
                 zeroFlag = registers[dest] == 0;
-                negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
+                carryFlag = false;
+                //negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
                 programCounter++;
                 break;
             //RSH
