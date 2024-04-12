@@ -6,14 +6,11 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 //MISSING FEATURES
-//Negative flag
 //Ports
-//Ingame limitations such as stack size
 
 public partial class main : Node
 {
     [ExportCategory("Parameters")]
-    [Export] private int instructionsPerTick = 10;
     [Export] private int programMemorySize = 2048;
     [Export] private int ramSize = 256;
     [Export] private int portCount = 256;
@@ -28,9 +25,12 @@ public partial class main : Node
     [Export] private Label RegisterDisplay;
     [Export] private Label MemoryDisplay;
     [Export] private Label PortDisplay;
+    [Export] private Slider SpeedSlider;
 
     bool paused = true;
     int programCounter = 0;
+
+    private int instructionsPerTick;
 
     private byte[] bytecode;
     private byte[] ram;
@@ -62,6 +62,8 @@ public partial class main : Node
     public override void _PhysicsProcess(double delta)
     {
         if (bytecode == null || paused) return;
+
+        instructionsPerTick = (int)SpeedSlider.Value;
         
         for (int i = 0; i < instructionsPerTick; i++) RunNextInstruction();
     }
@@ -135,29 +137,32 @@ public partial class main : Node
             case 11:
                 registers[dest] += immediate;
                 zeroFlag = registers[dest] == 0;
+                negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
                 programCounter++;
                 break;
-            //CMI
+/*            //CMI
             case 12:
                 negativeFlag = immediate > registers[dest];
                 registers[0] = (byte)(registers[dest] - immediate);
                 zeroFlag = registers[0] == 0;
                 programCounter++;
-                break;
+                break;*/
             //ADD
-            case 13:
+            case 12:
                 registers[dest] = (byte)(registers[regA] + registers[regB]);
                 zeroFlag = registers[dest] == 0;
+                negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
                 programCounter++;
                 break;
             //SUB
-            case 14:
+            case 13:
                 registers[dest] = (byte)(registers[regA] - registers[regB]);
                 zeroFlag = registers[dest] == 0;
+                negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
                 programCounter++;
                 break;
             //BIT
-            case 15:
+            case 14:
                 switch (operation)
                 {
                     case 0: registers[dest] = (byte)(registers[regA] | registers[regB]); break;
@@ -170,7 +175,12 @@ public partial class main : Node
                     case 7: registers[dest] = (byte)(registers[regA] & ~registers[regB]); break;
                 }
                 zeroFlag = registers[dest] == 0;
+                negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
                 programCounter++;
+                break;
+            //RSH
+            case 15:
+                registers[dest] = (byte)(registers[regA] >> 1);
                 break;
             default: GD.Print("Invalid opcode in file."); break;
         }

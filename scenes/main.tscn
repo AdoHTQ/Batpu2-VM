@@ -5,9 +5,8 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bu3mg"]
 bg_color = Color(0.145098, 0.168627, 0.203922, 1)
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("StartStopButton", "StepButton", "ResetButton", "StatusLabel", "RegisterDisplay", "MemoryDisplay", "PortDisplay")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("StartStopButton", "StepButton", "ResetButton", "StatusLabel", "RegisterDisplay", "MemoryDisplay", "PortDisplay", "SpeedSlider")]
 script = ExtResource("1_uokyd")
-instructionsPerTick = 100
 StartStopButton = NodePath("Control/ControlPanelMargins/ControlPanelList/StartStopButton")
 StepButton = NodePath("Control/ControlPanelMargins/ControlPanelList/StepButton")
 ResetButton = NodePath("Control/ControlPanelMargins/ControlPanelList/ResetButton")
@@ -15,6 +14,7 @@ StatusLabel = NodePath("Control/ControlPanelMargins/ControlPanelList/StatusLabel
 RegisterDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/RegisterPanel/RegisterMargin/RegisterList/RegisterText")
 MemoryDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/MemoryPanel/MemoryMargin/MemoryList/MemoryScroll/MemoryText")
 PortDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/PortsPanel/PortsMargin/PortsList/PortsScroll/PortsText")
+SpeedSlider = NodePath("Control/ControlPanelMargins/ControlPanelList/InstructionsPerTickSlider")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(400, 256)
@@ -51,6 +51,11 @@ theme_override_constants/separation = 15
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_bu3mg")
 horizontal_alignment = 1
+
+[node name="InstructionsPerTickSlider" type="HSlider" parent="Control/ControlPanelMargins/ControlPanelList"]
+layout_mode = 2
+min_value = 1.0
+value = 1.0
 
 [node name="StartStopButton" type="Button" parent="Control/ControlPanelMargins/ControlPanelList"]
 layout_mode = 2
@@ -96,9 +101,9 @@ size_flags_vertical = 3
 [node name="MemoryMargin" type="MarginContainer" parent="Control/ControlPanelMargins/ControlPanelList/MemoryPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 10
+theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_bottom = 0
 
 [node name="MemoryList" type="VBoxContainer" parent="Control/ControlPanelMargins/ControlPanelList/MemoryPanel/MemoryMargin"]
 layout_mode = 2
@@ -126,9 +131,9 @@ size_flags_vertical = 3
 [node name="PortsMargin" type="MarginContainer" parent="Control/ControlPanelMargins/ControlPanelList/PortsPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 10
+theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_bottom = 0
 
 [node name="PortsList" type="VBoxContainer" parent="Control/ControlPanelMargins/ControlPanelList/PortsPanel/PortsMargin"]
 layout_mode = 2
