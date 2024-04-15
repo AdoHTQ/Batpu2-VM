@@ -86,6 +86,9 @@ public partial class main : Node
         byte immediate = (byte)(instruction & 255);
         byte cond = (byte)((instruction & 0b110000000000) >> 10);
         byte dest = (byte)((instruction & 3584) >> 9);
+        int offset = (byte)(instruction & 0b11111);
+        bool sign = (instruction & 0b100000) >> 5 == 1;
+        offset += sign ? -32 : 0;
 
         byte regA = (byte)((instruction & 448) >> 6);
         byte operation = (byte)((instruction & 56) >> 3);
@@ -119,18 +122,17 @@ public partial class main : Node
                 break;
             //MLD
             case 8:
-                registers[dest] = ram[registers[7] + immediate];
+                registers[dest] = ram[regA + offset];
                 programCounter++;
                 break;
             //MST
             case 9:
-                ram[registers[7] + immediate] = registers[dest];
+                ram[regA + offset] = registers[dest];
                 programCounter++;
                 break;
             //LDI
             case 10:
                 registers[dest] = immediate;
-                zeroFlag = immediate == 0;
                 programCounter++;
                 break;
             //ADI
