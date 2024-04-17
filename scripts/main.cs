@@ -22,6 +22,7 @@ public partial class main : Node
     [Export] private Button StepButton;
     [Export] private Button ResetButton;
     [Export] private Label StatusLabel;
+    [Export] private Label FlagsDisplay;
     [Export] private Label RegisterDisplay;
     [Export] private Label MemoryDisplay;
     [Export] private Label PortDisplay;
@@ -90,6 +91,8 @@ public partial class main : Node
         bool sign = (instruction & 0b100000) >> 5 == 1;
         offset += sign ? -32 : 0;
 
+        byte port = (byte)(instruction & 255);
+
         byte regA = (byte)((instruction & 448) >> 6);
         byte operation = (byte)((instruction & 56) >> 3);
         byte regB = (byte)(instruction & 7);
@@ -120,6 +123,16 @@ public partial class main : Node
             case 5:
                 programCounter = addressStack.Pop();
                 break;
+            //PST
+            case 6:
+                registers[dest]=ports[port];
+                programCounter++;
+                break;
+            //PLD
+            case 7:
+                ports[port] = registers[dest];
+                programCounter++;
+                break;
             //MLD
             case 8:
                 registers[dest] = ram[regA + offset];
@@ -137,8 +150,8 @@ public partial class main : Node
                 break;
             //ADI
             case 11:
-                carryFlag = registers[dest] + immediate > 255;
-                GD.Print(carryFlag);
+                carryFlag = (int)registers[dest] + (int)immediate > 255;
+                //GD.Print(carryFlag);
                 registers[dest] += immediate;
                 zeroFlag = registers[dest] == 0;
                 //negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
@@ -153,7 +166,7 @@ public partial class main : Node
                 break;*/
             //ADD
             case 12:
-                carryFlag = registers[regA] + immediate > 255;
+                carryFlag = (int)registers[regA] + (int)registers[regB] > 255;
                 registers[dest] = (byte)(registers[regA] + registers[regB]);
                 zeroFlag = registers[dest] == 0;
                 //negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
@@ -188,6 +201,7 @@ public partial class main : Node
             //RSH
             case 15:
                 registers[dest] = (byte)(registers[regA] >> 1);
+                programCounter++;
                 break;
             default: GD.Print("Invalid opcode in file."); break;
         }
@@ -237,6 +251,7 @@ public partial class main : Node
 
     private void UpdateVisualisers()
     {
+        FlagsDisplay.Text = "Flags | C:" + (carryFlag ? 1 : 0) + " Z:" + (zeroFlag ? 1 : 0);
         string text = BitConverter.ToString(registers).Replace("-", " ");
         RegisterDisplay.Text = text;
         text = BitConverter.ToString(ram).Replace("-", " ");

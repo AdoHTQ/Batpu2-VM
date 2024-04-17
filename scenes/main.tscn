@@ -5,12 +5,13 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bu3mg"]
 bg_color = Color(0.145098, 0.168627, 0.203922, 1)
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("StartStopButton", "StepButton", "ResetButton", "StatusLabel", "RegisterDisplay", "MemoryDisplay", "PortDisplay", "SpeedSlider")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("StartStopButton", "StepButton", "ResetButton", "StatusLabel", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "PortDisplay", "SpeedSlider")]
 script = ExtResource("1_uokyd")
 StartStopButton = NodePath("Control/ControlPanelMargins/ControlPanelList/StartStopButton")
-StepButton = NodePath("Control/ControlPanelMargins/ControlPanelList/StepButton")
-ResetButton = NodePath("Control/ControlPanelMargins/ControlPanelList/ResetButton")
+StepButton = NodePath("Control/ControlPanelMargins/ControlPanelList/HButtonContainer/StepButton")
+ResetButton = NodePath("Control/ControlPanelMargins/ControlPanelList/HButtonContainer/ResetButton")
 StatusLabel = NodePath("Control/ControlPanelMargins/ControlPanelList/StatusLabel")
+FlagsDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/FlagsPanel/FlagsMargin/FlagsLabel")
 RegisterDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/RegisterPanel/RegisterMargin/RegisterList/RegisterText")
 MemoryDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/MemoryPanel/MemoryMargin/MemoryList/MemoryScroll/MemoryText")
 PortDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/PortsPanel/PortsMargin/PortsList/PortsScroll/PortsText")
@@ -45,29 +46,50 @@ theme_override_constants/margin_bottom = 10
 
 [node name="ControlPanelList" type="VBoxContainer" parent="Control/ControlPanelMargins"]
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 10
 
 [node name="StatusLabel" type="Label" parent="Control/ControlPanelMargins/ControlPanelList"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_bu3mg")
 horizontal_alignment = 1
 
+[node name="StartStopButton" type="Button" parent="Control/ControlPanelMargins/ControlPanelList"]
+layout_mode = 2
+text = "-Start-"
+
+[node name="HButtonContainer" type="HBoxContainer" parent="Control/ControlPanelMargins/ControlPanelList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="StepButton" type="Button" parent="Control/ControlPanelMargins/ControlPanelList/HButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<Step>"
+
+[node name="ResetButton" type="Button" parent="Control/ControlPanelMargins/ControlPanelList/HButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "|Reset|"
+
 [node name="InstructionsPerTickSlider" type="HSlider" parent="Control/ControlPanelMargins/ControlPanelList"]
 layout_mode = 2
 min_value = 1.0
 value = 1.0
 
-[node name="StartStopButton" type="Button" parent="Control/ControlPanelMargins/ControlPanelList"]
+[node name="FlagsPanel" type="PanelContainer" parent="Control/ControlPanelMargins/ControlPanelList"]
 layout_mode = 2
-text = "-Start-"
 
-[node name="StepButton" type="Button" parent="Control/ControlPanelMargins/ControlPanelList"]
+[node name="FlagsMargin" type="MarginContainer" parent="Control/ControlPanelMargins/ControlPanelList/FlagsPanel"]
 layout_mode = 2
-text = "<Step>"
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
-[node name="ResetButton" type="Button" parent="Control/ControlPanelMargins/ControlPanelList"]
+[node name="FlagsLabel" type="Label" parent="Control/ControlPanelMargins/ControlPanelList/FlagsPanel/FlagsMargin"]
 layout_mode = 2
-text = "|Reset|"
+text = "Flags | C:0 Z:0"
+horizontal_alignment = 1
 
 [node name="RegisterPanel" type="PanelContainer" parent="Control/ControlPanelMargins/ControlPanelList"]
 layout_mode = 2
