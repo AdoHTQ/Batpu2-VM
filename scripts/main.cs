@@ -135,12 +135,12 @@ public partial class main : Node
                 break;
             //MLD
             case 8:
-                registers[dest] = ram[regA + offset];
+                registers[dest] = ram[registers[regA] + offset];
                 programCounter++;
                 break;
             //MST
             case 9:
-                ram[regA + offset] = registers[dest];
+                ram[registers[regA] + offset] = registers[dest];
                 programCounter++;
                 break;
             //LDI
