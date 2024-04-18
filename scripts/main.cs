@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-//MISSING FEATURES
-//Ports
-
 public partial class main : Node
 {
     [ExportCategory("Parameters")]
@@ -28,11 +25,13 @@ public partial class main : Node
     [Export] private Label MemoryDisplay;
     [Export] private Label PortDisplay;
     [Export] private Slider SpeedSlider;
+    [Export] private SpinBox SpeedInput;
 
     bool paused = true;
     int programCounter = 0;
 
-    private int instructionsPerTick;
+    private int instructionsPerSecond;
+    private int waitCounter;
 
     private byte[] bytecode;
     private byte[] ram;
@@ -63,11 +62,25 @@ public partial class main : Node
 
     public override void _PhysicsProcess(double delta)
     {
+        instructionsPerSecond = (int)SpeedSlider.Value;
+        SpeedInput.Value = instructionsPerSecond;
+        int instructionsPerTick = (int)Math.Ceiling((double)instructionsPerSecond / 100);
+
         if (bytecode == null || paused) return;
 
-        instructionsPerTick = (int)SpeedSlider.Value;
+        waitCounter--;
+        if (waitCounter <= 0)
+        {
+            for (int i = 0; i < instructionsPerTick; i++) RunNextInstruction();
+            waitCounter = (int)Math.Ceiling(100 / (double)instructionsPerSecond);
+        }
         
-        for (int i = 0; i < instructionsPerTick; i++) RunNextInstruction();
+    }
+
+    public void SetSpeed(float value)
+    {
+        int integerValue = (int)value;
+        SpeedSlider.Value = integerValue;
     }
 
     private void RunNextInstruction()
@@ -205,7 +218,7 @@ public partial class main : Node
                 registers[dest] = (byte)(registers[regA] >> 1);
                 programCounter++;
                 break;
-            default: GD.Print("Invalid opcode in file."); break;
+            default: GD.Print("Invalid opcode in file. This should be impossible."); break;
         }
 
         registers[0] = 0;

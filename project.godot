@@ -13,6 +13,8 @@ config_version=5
 config/name="Batpu2 VM"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+boot_splash/bg_color=Color(0.211765, 0.239216, 0.290196, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [display]

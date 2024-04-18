@@ -1,9 +1,11 @@
+SpinBox
+TextEdit
+HBoxContainer
 Label
 Sprite2D
 TextureRect
 VSeparator
 OptionButton
-HBoxContainer
 RichTextLabel
 MarginContainer
 PanelContainer
@@ -11,4 +13,3 @@ Panel
 HSlider
 VBoxContainer
 ScrollContainer
-TextEdit

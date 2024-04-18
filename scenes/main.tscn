@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0pmv6pxy3ax2"]
+[gd_scene load_steps=14 format=3 uid="uid://d0pmv6pxy3ax2"]
 
 [ext_resource type="Script" path="res://scripts/main.cs" id="1_uokyd"]
 [ext_resource type="Texture2D" uid="uid://c74uen28j3yh7" path="res://textures/redstone_lamp_2x2_on.png" id="2_i7kbd"]
@@ -6,15 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://c4jtepf6uhdrh" path="res://textures/redstone_lamp.png" id="3_urrwc"]
 [ext_resource type="Texture2D" uid="uid://1menyu3olet7" path="res://textures/redstone_lamp_2x2.png" id="4_22r8u"]
 [ext_resource type="Texture2D" uid="uid://dthjjd0v2q0d8" path="res://textures/flat.png" id="5_f5bin"]
+[ext_resource type="Texture2D" uid="uid://cp5tvg3sgxoay" path="res://textures/icon_gone.svg" id="6_3fdyd"]
 [ext_resource type="Texture2D" uid="uid://bbqtqs1hke4lk" path="res://textures/redstone_lamp_on.png" id="6_3lbhq"]
 [ext_resource type="Texture2D" uid="uid://bvgov7lqauaae" path="res://textures/flat_on.png" id="8_uqvby"]
+[ext_resource type="Texture2D" uid="uid://mjjin7nu44fx" path="res://icon.svg" id="10_567k6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bu3mg"]
 bg_color = Color(0.145098, 0.168627, 0.203922, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pl61a"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("display", "StartStopButton", "StepButton", "ResetButton", "StatusLabel", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "PortDisplay", "SpeedSlider")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xcc07"]
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("display", "StartStopButton", "StepButton", "ResetButton", "StatusLabel", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "PortDisplay", "SpeedSlider", "SpeedInput")]
 script = ExtResource("1_uokyd")
 display = NodePath("Control/Display")
 StartStopButton = NodePath("Control/ControlPanelMargins/ControlPanelList/StartStopButton")
@@ -25,7 +29,8 @@ FlagsDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/FlagsPanel
 RegisterDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/RegisterPanel/RegisterMargin/RegisterList/RegisterText")
 MemoryDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/MemoryPanel/MemoryMargin/MemoryList/MemoryScroll/MemoryText")
 PortDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/PortsPanel/PortsMargin/PortsList/PortsScroll/PortsText")
-SpeedSlider = NodePath("Control/ControlPanelMargins/ControlPanelList/InstructionsPerTickSlider")
+SpeedSlider = NodePath("Control/ControlPanelMargins/ControlPanelList/HBoxContainer/InstructionsPerTickSlider")
+SpeedInput = NodePath("Control/ControlPanelMargins/ControlPanelList/HBoxContainer/SpinBox")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(400, 285)
@@ -80,10 +85,26 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "|Reset|"
 
-[node name="InstructionsPerTickSlider" type="HSlider" parent="Control/ControlPanelMargins/ControlPanelList"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ControlPanelMargins/ControlPanelList"]
+custom_minimum_size = Vector2(0, 26.045)
 layout_mode = 2
+
+[node name="InstructionsPerTickSlider" type="HSlider" parent="Control/ControlPanelMargins/ControlPanelList/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 min_value = 1.0
-value = 1.0
+max_value = 10000.0
+value = 100.0
+
+[node name="SpinBox" type="SpinBox" parent="Control/ControlPanelMargins/ControlPanelList/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+max_value = 10000.0
+value = 100.0
+rounded = true
+custom_arrow_step = 1.0
 
 [node name="FlagsPanel" type="PanelContainer" parent="Control/ControlPanelMargins/ControlPanelList"]
 layout_mode = 2
@@ -205,7 +226,7 @@ text = "Display Texture: "
 
 [node name="DisplayTextureDropdown" type="OptionButton" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
 layout_mode = 2
-item_count = 3
+item_count = 4
 selected = 0
 popup/item_0/text = "1x1 Lamp"
 popup/item_0/id = 0
@@ -214,6 +235,8 @@ popup/item_1/id = 1
 popup/item_1/disabled = true
 popup/item_2/text = "Flat"
 popup/item_2/id = 2
+popup/item_3/text = "Godot"
+popup/item_3/id = 3
 
 [node name="VSeparator" type="VSeparator" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
 layout_mode = 2
@@ -237,7 +260,7 @@ popup/item_1/disabled = true
 [node name="VSeparator2" type="VSeparator" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_pl61a")
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xcc07")
 
 [node name="IndexCounter" type="Label" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
 layout_mode = 2
@@ -257,7 +280,7 @@ offset_right = 478.0
 offset_bottom = 512.0
 theme_override_font_sizes/normal_font_size = 46
 bbcode_enabled = true
-text = "[center]Drag and drop assembled program to load"
+text = "[center][wave]Drag and drop assembled program to load"
 
 [node name="Display" type="GridContainer" parent="Control" node_paths=PackedStringArray("DisplayTexture", "DisplayMode", "IndexLabel")]
 layout_mode = 0
@@ -268,10 +291,11 @@ theme_override_constants/v_separation = 0
 columns = 32
 script = ExtResource("2_n1fhu")
 resolution = Vector2i(32, 32)
-offSprites = Array[Texture2D]([ExtResource("3_urrwc"), ExtResource("4_22r8u"), ExtResource("5_f5bin")])
-onSprites = Array[Texture2D]([ExtResource("6_3lbhq"), ExtResource("2_i7kbd"), ExtResource("8_uqvby")])
+offSprites = Array[Texture2D]([ExtResource("3_urrwc"), ExtResource("4_22r8u"), ExtResource("5_f5bin"), ExtResource("6_3fdyd")])
+onSprites = Array[Texture2D]([ExtResource("6_3lbhq"), ExtResource("2_i7kbd"), ExtResource("8_uqvby"), ExtResource("10_567k6")])
 DisplayTexture = NodePath("../DisplayPanelMargins/DisplayPanelContainer/DisplayTextureDropdown")
 DisplayMode = NodePath("../DisplayPanelMargins/DisplayPanelContainer/DisplayModeDropdown")
 IndexLabel = NodePath("../DisplayPanelMargins/DisplayPanelContainer/IndexCounter")
 
+[connection signal="value_changed" from="Control/ControlPanelMargins/ControlPanelList/HBoxContainer/SpinBox" to="." method="SetSpeed"]
 [connection signal="item_selected" from="Control/DisplayPanelMargins/DisplayPanelContainer/DisplayTextureDropdown" to="Control/Display" method="UpdateSprites"]
