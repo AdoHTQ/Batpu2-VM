@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbqtqs1hke4lk"
-path="res://.godot/imported/redstone_lamp_on.png-b6f53ac46540f217b0f53d0ff6707172.ctex"
+uid="uid://1menyu3olet7"
+path="res://.godot/imported/redstone_lamp_2x2.png-79aa3525d7bc26431fb5c16316c0545e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/redstone_lamp_on.png"
-dest_files=["res://.godot/imported/redstone_lamp_on.png-b6f53ac46540f217b0f53d0ff6707172.ctex"]
+source_file="res://textures/redstone_lamp_2x2.png"
+dest_files=["res://.godot/imported/redstone_lamp_2x2.png-79aa3525d7bc26431fb5c16316c0545e.ctex"]
 
 [params]
 

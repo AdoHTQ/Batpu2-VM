@@ -18,6 +18,7 @@ public partial class main : Node
     [Export] private int opcodeLength = 4;
 
     [ExportCategory("References")]
+    [Export] private Display display;
     [Export] private Button StartStopButton;
     [Export] private Button StepButton;
     [Export] private Button ResetButton;
@@ -77,6 +78,7 @@ public partial class main : Node
         ProcessOpcode(instruction);
         programCounter %= programMemorySize / 2;
         UpdateVisualisers();
+        display.UpdateDisplay(ports, ram);
     }
 
     private void ProcessOpcode(ushort instruction)
@@ -243,6 +245,8 @@ public partial class main : Node
             bytecode = ConvertBinaryStringToByteArray(code);
 
             StatusLabel.Text = "Program Loaded";
+
+            display.DisplayInit();
         } catch
         {
             StatusLabel.Text = "Failed to Load Program";

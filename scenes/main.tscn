@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0pmv6pxy3ax2"]
+[gd_scene load_steps=11 format=3 uid="uid://d0pmv6pxy3ax2"]
 
 [ext_resource type="Script" path="res://scripts/main.cs" id="1_uokyd"]
+[ext_resource type="Texture2D" uid="uid://c74uen28j3yh7" path="res://textures/redstone_lamp_2x2_on.png" id="2_i7kbd"]
+[ext_resource type="Script" path="res://scripts/Display.cs" id="2_n1fhu"]
+[ext_resource type="Texture2D" uid="uid://c4jtepf6uhdrh" path="res://textures/redstone_lamp.png" id="3_urrwc"]
+[ext_resource type="Texture2D" uid="uid://1menyu3olet7" path="res://textures/redstone_lamp_2x2.png" id="4_22r8u"]
+[ext_resource type="Texture2D" uid="uid://dthjjd0v2q0d8" path="res://textures/flat.png" id="5_f5bin"]
+[ext_resource type="Texture2D" uid="uid://bbqtqs1hke4lk" path="res://textures/redstone_lamp_on.png" id="6_3lbhq"]
+[ext_resource type="Texture2D" uid="uid://bvgov7lqauaae" path="res://textures/flat_on.png" id="8_uqvby"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bu3mg"]
 bg_color = Color(0.145098, 0.168627, 0.203922, 1)
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("StartStopButton", "StepButton", "ResetButton", "StatusLabel", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "PortDisplay", "SpeedSlider")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pl61a"]
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("display", "StartStopButton", "StepButton", "ResetButton", "StatusLabel", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "PortDisplay", "SpeedSlider")]
 script = ExtResource("1_uokyd")
+display = NodePath("Control/Display")
 StartStopButton = NodePath("Control/ControlPanelMargins/ControlPanelList/StartStopButton")
 StepButton = NodePath("Control/ControlPanelMargins/ControlPanelList/HButtonContainer/StepButton")
 ResetButton = NodePath("Control/ControlPanelMargins/ControlPanelList/HButtonContainer/ResetButton")
@@ -18,7 +28,7 @@ PortDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/PortsPanel/
 SpeedSlider = NodePath("Control/ControlPanelMargins/ControlPanelList/InstructionsPerTickSlider")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(400, 256)
+offset = Vector2(400, 285)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -28,9 +38,8 @@ offset_bottom = 40.0
 
 [node name="ControPanelBG" type="ColorRect" parent="Control"]
 layout_mode = 2
-offset_left = 512.0
 offset_right = 800.0
-offset_bottom = 512.0
+offset_bottom = 570.0
 size_flags_vertical = 3
 color = Color(0.211765, 0.239216, 0.290196, 1)
 
@@ -42,7 +51,7 @@ offset_bottom = 512.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_bottom = 0
 
 [node name="ControlPanelList" type="VBoxContainer" parent="Control/ControlPanelMargins"]
 layout_mode = 2
@@ -176,16 +185,93 @@ size_flags_horizontal = 3
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="DisplayPanelMargins" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_top = 512.0
+offset_right = 800.0
+offset_bottom = 570.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DisplayPanelContainer" type="HBoxContainer" parent="Control/DisplayPanelMargins"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="DisplayTextureLabel" type="Label" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
+layout_mode = 2
+text = "Display Texture: "
+
+[node name="DisplayTextureDropdown" type="OptionButton" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
+layout_mode = 2
+item_count = 3
+selected = 0
+popup/item_0/text = "1x1 Lamp"
+popup/item_0/id = 0
+popup/item_1/text = "2x2 Lamp"
+popup/item_1/id = 1
+popup/item_1/disabled = true
+popup/item_2/text = "Flat"
+popup/item_2/id = 2
+
+[node name="VSeparator" type="VSeparator" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_pl61a")
+
+[node name="DisplayModeLabel" type="Label" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
+layout_mode = 2
+text = "Display Mode: "
+
+[node name="DisplayModeDropdown" type="OptionButton" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
+layout_mode = 2
+item_count = 2
+selected = 0
+popup/item_0/text = "Ports 3&4"
+popup/item_0/id = 0
+popup/item_1/text = "Memory Mapped"
+popup/item_1/id = 1
+popup/item_1/disabled = true
+
+[node name="VSeparator2" type="VSeparator" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_pl61a")
+
+[node name="IndexCounter" type="Label" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
+layout_mode = 2
+text = "Buffer Index: "
+
 [node name="ScreenPlaceholder" type="ColorRect" parent="Control"]
 layout_mode = 0
 offset_right = 512.0
 offset_bottom = 512.0
 color = Color(0.145098, 0.168627, 0.203922, 1)
 
-[node name="ScreenContainer" type="GridContainer" parent="Control"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/ScreenPlaceholder"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 146.0
+offset_right = 478.0
+offset_bottom = 512.0
+theme_override_font_sizes/normal_font_size = 46
+bbcode_enabled = true
+text = "[center]Drag and drop assembled program to load"
+
+[node name="Display" type="GridContainer" parent="Control" node_paths=PackedStringArray("DisplayTexture", "DisplayMode", "IndexLabel")]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 32
+script = ExtResource("2_n1fhu")
+resolution = Vector2i(32, 32)
+offSprites = Array[Texture2D]([ExtResource("3_urrwc"), ExtResource("4_22r8u"), ExtResource("5_f5bin")])
+onSprites = Array[Texture2D]([ExtResource("6_3lbhq"), ExtResource("2_i7kbd"), ExtResource("8_uqvby")])
+DisplayTexture = NodePath("../DisplayPanelMargins/DisplayPanelContainer/DisplayTextureDropdown")
+DisplayMode = NodePath("../DisplayPanelMargins/DisplayPanelContainer/DisplayModeDropdown")
+IndexLabel = NodePath("../DisplayPanelMargins/DisplayPanelContainer/IndexCounter")
+
+[connection signal="item_selected" from="Control/DisplayPanelMargins/DisplayPanelContainer/DisplayTextureDropdown" to="Control/Display" method="UpdateSprites"]

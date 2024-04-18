@@ -1,2 +1,3 @@
 res://scenes/main.tscn
 res://scripts/main.cs
+res://scripts/Display.cs
