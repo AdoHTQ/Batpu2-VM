@@ -155,7 +155,7 @@ layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 0
+theme_override_constants/margin_bottom = 5
 
 [node name="MemoryList" type="VBoxContainer" parent="Control/ControlPanelMargins/ControlPanelList/MemoryPanel/MemoryMargin"]
 layout_mode = 2
@@ -177,6 +177,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="PortsPanel" type="PanelContainer" parent="Control/ControlPanelMargins/ControlPanelList"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -253,7 +254,7 @@ item_count = 2
 selected = 0
 popup/item_0/text = "Ports 3&4"
 popup/item_0/id = 0
-popup/item_1/text = "Memory Mapped"
+popup/item_1/text = "Matt Method"
 popup/item_1/id = 1
 popup/item_1/disabled = true
 

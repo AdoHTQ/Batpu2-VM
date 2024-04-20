@@ -10,8 +10,8 @@ public partial class main : Node
     [ExportCategory("Parameters")]
     [Export] private int programMemorySize = 2048;
     [Export] private int ramSize = 256;
-    [Export] private int portCount = 256;
-    [Export] private int registerCount = 8;
+    [Export] private int portCount = 16;
+    [Export] private int registerCount = 16;
     [Export] private int opcodeLength = 4;
 
     [ExportCategory("References")]
@@ -36,7 +36,7 @@ public partial class main : Node
     private byte[] bytecode;
     private byte[] ram;
     private byte[] registers;
-    private byte[] ports;
+    //private byte[] ports;
     private Stack<int> addressStack;
 
     private bool zeroFlag = false;
@@ -91,26 +91,23 @@ public partial class main : Node
         ProcessOpcode(instruction);
         programCounter %= programMemorySize / 2;
         UpdateVisualisers();
-        display.UpdateDisplay(ports, ram);
+        display.UpdateDisplay(new ArraySegment<byte>(ram, ramSize - portCount, portCount).ToArray(), ram);
     }
 
     private void ProcessOpcode(ushort instruction)
     {
-        
         byte opcode = (byte)(instruction >> (16 - opcodeLength));
-        ushort address = (ushort)(instruction & 1023);
-        byte immediate = (byte)(instruction & 255);
+        byte dest = (byte)((instruction & 0b111100000000) >> 8);
+        byte regA = (byte)((instruction & 0b11110000) >> 4);
+        byte regB = (byte)(instruction & 0b1111);
+
+        byte immediate = (byte)(instruction & 0b11111111);
+
+        ushort address = (ushort)(instruction & 0b1111111111);
+
         byte cond = (byte)((instruction & 0b110000000000) >> 10);
-        byte dest = (byte)((instruction & 3584) >> 9);
-        int offset = (byte)(instruction & 0b11111);
-        bool sign = (instruction & 0b100000) >> 5 == 1;
-        offset += sign ? -32 : 0;
 
-        byte port = (byte)(instruction & 255);
-
-        byte regA = (byte)((instruction & 448) >> 6);
-        byte operation = (byte)((instruction & 56) >> 3);
-        byte regB = (byte)(instruction & 7);
+        var offset = 0;
 
         switch (opcode)
         {
@@ -120,67 +117,8 @@ public partial class main : Node
             case 1:
                 if (!paused) StartStop(); 
                 break;
-            //JMP
-            case 2:
-                programCounter = address;
-                break;
-            //BCH
-            case 3:
-                if ((cond == 0 && zeroFlag) || (cond == 1 && !zeroFlag) || (cond == 2 && !zeroFlag && carryFlag) || (cond == 3 && !carryFlag)) programCounter = address;
-                else programCounter++;
-                break;
-            //CAL
-            case 4:
-                addressStack.Push(programCounter + 1);
-                programCounter = address;
-                break;
-            //RET
-            case 5:
-                programCounter = addressStack.Pop();
-                break;
-            //PST
-            case 6:
-                registers[dest]=ports[port];
-                programCounter++;
-                break;
-            //PLD
-            case 7:
-                ports[port] = registers[dest];
-                programCounter++;
-                break;
-            //MLD
-            case 8:
-                registers[dest] = ram[registers[regA] + offset];
-                programCounter++;
-                break;
-            //MST
-            case 9:
-                ram[registers[regA] + offset] = registers[dest];
-                programCounter++;
-                break;
-            //LDI
-            case 10:
-                registers[dest] = immediate;
-                programCounter++;
-                break;
-            //ADI
-            case 11:
-                carryFlag = (int)registers[dest] + (int)immediate > 255;
-                //GD.Print(carryFlag);
-                registers[dest] += immediate;
-                zeroFlag = registers[dest] == 0;
-                //negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
-                programCounter++;
-                break;
-/*            //CMI
-            case 12:
-                negativeFlag = immediate > registers[dest];
-                registers[0] = (byte)(registers[dest] - immediate);
-                zeroFlag = registers[0] == 0;
-                programCounter++;
-                break;*/
             //ADD
-            case 12:
+            case 2:
                 carryFlag = (int)registers[regA] + (int)registers[regB] > 255;
                 registers[dest] = (byte)(registers[regA] + registers[regB]);
                 zeroFlag = registers[dest] == 0;
@@ -188,40 +126,95 @@ public partial class main : Node
                 programCounter++;
                 break;
             //SUB
-            case 13:
-                carryFlag = registers[regA] - registers[regB] < 0;
+            case 3:
+                carryFlag = (int)registers[regA] - (int)registers[regB] < 0;
                 registers[dest] = (byte)(registers[regA] - registers[regB]);
                 zeroFlag = registers[dest] == 0;
                 //negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
                 programCounter++;
                 break;
-            //BIT
-            case 14:
-                switch (operation)
-                {
-                    case 0: registers[dest] = (byte)(registers[regA] | registers[regB]); break;
-                    case 1: registers[dest] = (byte)(registers[regA] & registers[regB]); break;
-                    case 2: registers[dest] = (byte)(registers[regA] ^ registers[regB]); break;
-                    case 3: registers[dest] = (byte)~(registers[regA] & ~registers[regB]); break;
-                    case 4: registers[dest] = (byte)~(registers[regA] | registers[regB]); break;
-                    case 5: registers[dest] = (byte)~(registers[regA] & registers[regB]); break;
-                    case 6: registers[dest] = (byte)~(registers[regA] ^ registers[regB]); break;
-                    case 7: registers[dest] = (byte)(registers[regA] & ~registers[regB]); break;
-                }
+            //NOR
+            case 4:
+                Bitwise(4, dest, regA, regB);
+                break;
+            //AND
+            case 5:
+                Bitwise(1, dest, regA, regB);
+                break;
+            //XOR
+            case 6:
+                Bitwise(2, dest, regA, regB);
+                break;
+            //RSH
+            case 7:
+                registers[dest] = (byte)(registers[regA] >> 1);
+                programCounter++;
+                break;
+            //LDI
+            case 8:
+                registers[dest] = immediate;
+                programCounter++;
+                break;
+            //ADI
+            case 9:
+                carryFlag = (int)registers[dest] + (int)immediate > 255;
+                registers[dest] += immediate;
                 zeroFlag = registers[dest] == 0;
-                carryFlag = false;
                 //negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
                 programCounter++;
                 break;
-            //RSH
+            //JMP
+            case 10:
+                programCounter = address;
+                break;
+            //BRH
+            case 11:
+                if ((cond == 0 && zeroFlag) || (cond == 1 && !zeroFlag) || (cond == 2 && !zeroFlag && carryFlag) || (cond == 3 && !carryFlag)) programCounter = address;
+                else programCounter++;
+                break;
+            //CAL
+            case 12:
+                addressStack.Push(programCounter + 1);
+                programCounter = address;
+                break;
+            //RET
+            case 13:
+                programCounter = addressStack.Pop();
+                break;
+            //LOD
+            case 14:
+                offset = regB & 0b111 + (((regB & 0b1000) >> 3) == 1 ? -8 : 0);
+                registers[dest] = ram[registers[regA] + offset];
+                programCounter++;
+                break;
             case 15:
-                registers[dest] = (byte)(registers[regA] >> 1);
+                offset = regB & 0b111 + (((regB & 0b1000) >> 3) == 1 ? -8 : 0);
+                ram[registers[regA] + offset] = registers[dest];
                 programCounter++;
                 break;
             default: GD.Print("Invalid opcode in file. This should be impossible."); break;
         }
 
         registers[0] = 0;
+    }
+
+    private void Bitwise(byte operation, byte dest, byte regA, byte regB)
+    {
+        switch (operation)
+        {
+            case 0: registers[dest] = (byte)(registers[regA] | registers[regB]); break;
+            case 1: registers[dest] = (byte)(registers[regA] & registers[regB]); break;
+            case 2: registers[dest] = (byte)(registers[regA] ^ registers[regB]); break;
+            case 3: registers[dest] = (byte)~(registers[regA] & ~registers[regB]); break;
+            case 4: registers[dest] = (byte)~(registers[regA] | registers[regB]); break;
+            case 5: registers[dest] = (byte)~(registers[regA] & registers[regB]); break;
+            case 6: registers[dest] = (byte)~(registers[regA] ^ registers[regB]); break;
+            case 7: registers[dest] = (byte)(registers[regA] & ~registers[regB]); break;
+        }
+        zeroFlag = registers[dest] == 0;
+        carryFlag = false;
+        //negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
+        programCounter++;
     }
 
     private void StartStop()
@@ -242,7 +235,7 @@ public partial class main : Node
         programCounter = 0;
         ram = new byte[ramSize];
         registers = new byte[registerCount];
-        ports = new byte[portCount];
+        //ports = new byte[portCount];
         addressStack = new Stack<int>();
         StatusLabel.Text = "";
         UpdateVisualisers();
@@ -273,8 +266,8 @@ public partial class main : Node
         RegisterDisplay.Text = text;
         text = BitConverter.ToString(ram).Replace("-", " ");
         MemoryDisplay.Text = text;
-        text = BitConverter.ToString(ports).Replace("-", " ");
-        PortDisplay.Text = text;
+        //text = BitConverter.ToString(ports).Replace("-", " ");
+        //PortDisplay.Text = text;
     }
 
     private byte[] ConvertBinaryStringToByteArray(string binaryString)
