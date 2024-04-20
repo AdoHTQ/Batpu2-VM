@@ -91,7 +91,7 @@ public partial class main : Node
         ProcessOpcode(instruction);
         programCounter %= programMemorySize / 2;
         UpdateVisualisers();
-        //display.UpdateDisplay(ram., ram);
+        display.UpdateDisplay(new ArraySegment<byte>(ram, ramSize - portCount, portCount).ToArray(), ram);
     }
 
     private void ProcessOpcode(ushort instruction)
@@ -184,13 +184,11 @@ public partial class main : Node
             //LOD
             case 14:
                 offset = regB & 0b111 + (((regB & 0b1000) >> 3) == 1 ? -8 : 0);
-                GD.Print(offset);
                 registers[dest] = ram[registers[regA] + offset];
                 programCounter++;
                 break;
             case 15:
                 offset = regB & 0b111 + (((regB & 0b1000) >> 3) == 1 ? -8 : 0);
-                GD.Print(offset);
                 ram[registers[regA] + offset] = registers[dest];
                 programCounter++;
                 break;

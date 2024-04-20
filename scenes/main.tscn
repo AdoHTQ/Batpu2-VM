@@ -254,7 +254,7 @@ item_count = 2
 selected = 0
 popup/item_0/text = "Ports 3&4"
 popup/item_0/id = 0
-popup/item_1/text = "Memory Mapped"
+popup/item_1/text = "Matt Method"
 popup/item_1/id = 1
 popup/item_1/disabled = true
 
