@@ -91,7 +91,7 @@ public partial class main : Node
         ProcessOpcode(instruction);
         programCounter %= programMemorySize / 2;
         UpdateVisualisers();
-        display.UpdateDisplay(new ArraySegment<byte>(ram, ramSize - portCount, portCount).ToArray(), ram);
+        display.UpdateDisplay(new ArraySegment<byte>(ram, ramSize - portCount, portCount).ToArray());
     }
 
     private void ProcessOpcode(ushort instruction)
