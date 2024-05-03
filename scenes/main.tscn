@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0pmv6pxy3ax2"]
+[gd_scene load_steps=12 format=3 uid="uid://d0pmv6pxy3ax2"]
 
 [ext_resource type="Script" path="res://scripts/main.cs" id="1_uokyd"]
 [ext_resource type="Texture2D" uid="uid://c74uen28j3yh7" path="res://textures/redstone_lamp_2x2_on.png" id="2_i7kbd"]
@@ -13,10 +13,6 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bu3mg"]
 bg_color = Color(0.145098, 0.168627, 0.203922, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pl61a"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xcc07"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("display", "StartStopButton", "StepButton", "ResetButton", "StatusLabel", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "PortDisplay", "SpeedSlider", "SpeedInput")]
 script = ExtResource("1_uokyd")
@@ -33,7 +29,7 @@ SpeedSlider = NodePath("Control/ControlPanelMargins/ControlPanelList/HBoxContain
 SpeedInput = NodePath("Control/ControlPanelMargins/ControlPanelList/HBoxContainer/SpinBox")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(400, 285)
+offset = Vector2(400, 300)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -44,7 +40,7 @@ offset_bottom = 40.0
 [node name="ControPanelBG" type="ColorRect" parent="Control"]
 layout_mode = 2
 offset_right = 800.0
-offset_bottom = 570.0
+offset_bottom = 600.0
 size_flags_vertical = 3
 color = Color(0.211765, 0.239216, 0.290196, 1)
 
@@ -211,21 +207,26 @@ autowrap_mode = 2
 layout_mode = 0
 offset_top = 512.0
 offset_right = 800.0
-offset_bottom = 570.0
+offset_bottom = 600.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="DisplayPanelContainer" type="HBoxContainer" parent="Control/DisplayPanelMargins"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/DisplayPanelMargins"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 10
 
-[node name="DisplayTextureLabel" type="Label" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
+[node name="DisplayPanelContainer" type="VBoxContainer" parent="Control/DisplayPanelMargins/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="DisplayTextureLabel" type="Label" parent="Control/DisplayPanelMargins/HBoxContainer/DisplayPanelContainer"]
 layout_mode = 2
 text = "Display Texture: "
 
-[node name="DisplayTextureDropdown" type="OptionButton" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
+[node name="DisplayTextureDropdown" type="OptionButton" parent="Control/DisplayPanelMargins/HBoxContainer/DisplayPanelContainer"]
 layout_mode = 2
 item_count = 4
 selected = 0
@@ -239,33 +240,39 @@ popup/item_2/id = 2
 popup/item_3/text = "Godot"
 popup/item_3/id = 3
 
-[node name="VSeparator" type="VSeparator" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
+[node name="OutputPanel" type="PanelContainer" parent="Control/DisplayPanelMargins/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_pl61a")
+size_flags_horizontal = 3
 
-[node name="DisplayModeLabel" type="Label" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
+[node name="OutputMargin" type="MarginContainer" parent="Control/DisplayPanelMargins/HBoxContainer/OutputPanel"]
 layout_mode = 2
-text = "Display Mode: "
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
-[node name="DisplayModeDropdown" type="OptionButton" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
+[node name="OutputContainer" type="HBoxContainer" parent="Control/DisplayPanelMargins/HBoxContainer/OutputPanel/OutputMargin"]
 layout_mode = 2
-item_count = 2
-selected = 0
-popup/item_0/text = "Ports 3&4"
-popup/item_0/id = 0
-popup/item_1/text = "Matt Method"
-popup/item_1/id = 1
-popup/item_1/disabled = true
 
-[node name="VSeparator2" type="VSeparator" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
+[node name="NumOutput" type="Label" parent="Control/DisplayPanelMargins/HBoxContainer/OutputPanel/OutputMargin/OutputContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_xcc07")
+size_flags_horizontal = 3
+horizontal_alignment = 1
 
-[node name="IndexCounter" type="Label" parent="Control/DisplayPanelMargins/DisplayPanelContainer"]
+[node name="OutputSeperator" type="VSeparator" parent="Control/DisplayPanelMargins/HBoxContainer/OutputPanel/OutputMargin/OutputContainer"]
 layout_mode = 2
-text = "Buffer Index: "
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/DisplayPanelMargins/HBoxContainer/OutputPanel/OutputMargin/OutputContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 7.0
+
+[node name="TextOutput" type="Label" parent="Control/DisplayPanelMargins/HBoxContainer/OutputPanel/OutputMargin/OutputContainer/ScrollContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+autowrap_mode = 3
 
 [node name="ScreenPlaceholder" type="ColorRect" parent="Control"]
 layout_mode = 0
@@ -283,7 +290,7 @@ theme_override_font_sizes/normal_font_size = 46
 bbcode_enabled = true
 text = "[center][wave]Drag and drop assembled program to load"
 
-[node name="Display" type="GridContainer" parent="Control" node_paths=PackedStringArray("DisplayTexture", "DisplayMode", "IndexLabel")]
+[node name="Display" type="GridContainer" parent="Control" node_paths=PackedStringArray("DisplayTexture")]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -294,9 +301,7 @@ script = ExtResource("2_n1fhu")
 resolution = Vector2i(32, 32)
 offSprites = Array[Texture2D]([ExtResource("3_urrwc"), ExtResource("4_22r8u"), ExtResource("5_f5bin"), ExtResource("6_3fdyd")])
 onSprites = Array[Texture2D]([ExtResource("6_3lbhq"), ExtResource("2_i7kbd"), ExtResource("8_uqvby"), ExtResource("10_567k6")])
-DisplayTexture = NodePath("../DisplayPanelMargins/DisplayPanelContainer/DisplayTextureDropdown")
-DisplayMode = NodePath("../DisplayPanelMargins/DisplayPanelContainer/DisplayModeDropdown")
-IndexLabel = NodePath("../DisplayPanelMargins/DisplayPanelContainer/IndexCounter")
+DisplayTexture = NodePath("../DisplayPanelMargins/HBoxContainer/DisplayPanelContainer/DisplayTextureDropdown")
 
 [connection signal="value_changed" from="Control/ControlPanelMargins/ControlPanelList/HBoxContainer/SpinBox" to="." method="SetSpeed"]
-[connection signal="item_selected" from="Control/DisplayPanelMargins/DisplayPanelContainer/DisplayTextureDropdown" to="Control/Display" method="UpdateSprites"]
+[connection signal="item_selected" from="Control/DisplayPanelMargins/HBoxContainer/DisplayPanelContainer/DisplayTextureDropdown" to="Control/Display" method="UpdateSprites"]

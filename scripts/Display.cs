@@ -11,15 +11,12 @@ public partial class Display : Node
     [Export] Texture2D[] offSprites;
     [Export] Texture2D[] onSprites;
     [Export] OptionButton DisplayTexture;
-    [Export] OptionButton DisplayMode;
-    [Export] Label IndexLabel;
+    [Export] Label NumDisplay;
+    [Export] Label TextDisplay;
 
     private bool displayInitialized;
 
-    private bool previousClock;
-
     private bool[] buffer;
-    private int bufferIndex;
 
     public void DisplayInit()
     {
@@ -56,43 +53,12 @@ public partial class Display : Node
             TextureRect child = children[i] as TextureRect;
             child.Texture = buffer[i] ? onSprites[DisplayTexture.Selected] : offSprites[DisplayTexture.Selected];
         }
-        bufferIndex = 0;
         System.Array.Fill(buffer, false);
     }
 
     //Data parameter will be either memory or ports depending on the mode
-    public void UpdateDisplay(byte[] ports, byte[] ram)
+    public void UpdateDisplay(byte[] ports)
     {
-        byte clock_port = ports[3];
-        byte data_port = ports[2];
-
-        bool clock = (clock_port >> 7) == 1;
-        if (clock == previousClock) return;
-
-        bool clearDisplay = ((clock_port >> 6) & 1) == 1;
-        bool swapBuffers = ((clock_port >> 5) & 1) == 1;
-
-        if (DisplayMode.Selected == 0)
-        {
-            if (clearDisplay)
-            {
-                System.Array.Fill(buffer, false);
-                SwapBuffers();
-                
-            } else if (swapBuffers)
-            {
-                SwapBuffers();
-            } else
-            {
-                for (int i = 0; i < 8; i++)
-                {
-                    buffer[bufferIndex] = ((data_port >> i) & 1) == 1;
-                    bufferIndex++;
-                }
-            }
-        }
-        IndexLabel.Text = "Buffer Index: " + bufferIndex;
-
-        previousClock = clock;
+        
     }
 }
