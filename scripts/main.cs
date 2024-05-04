@@ -91,7 +91,6 @@ public partial class main : Node
         ProcessOpcode(instruction);
         programCounter %= programMemorySize / 2;
         UpdateVisualisers();
-        display.UpdateDisplay(new ArraySegment<byte>(ram, ramSize - portCount, portCount).ToArray());
     }
 
     private void ProcessOpcode(ushort instruction)
@@ -108,6 +107,7 @@ public partial class main : Node
         byte cond = (byte)((instruction & 0b110000000000) >> 10);
 
         var offset = 0;
+        byte memAddress = 0;
 
         switch (opcode)
         {
@@ -184,12 +184,17 @@ public partial class main : Node
             //LOD
             case 14:
                 offset = regB & 0b111 + (((regB & 0b1000) >> 3) == 1 ? -8 : 0);
-                registers[dest] = ram[registers[regA] + offset];
+                memAddress = (byte)(registers[regA] + offset);
+                if (memAddress < ramSize - portCount) registers[dest] = ram[memAddress];
+                else registers[dest] = display.LoadPort(memAddress);
                 programCounter++;
                 break;
+            //STR
             case 15:
                 offset = regB & 0b111 + (((regB & 0b1000) >> 3) == 1 ? -8 : 0);
-                ram[registers[regA] + offset] = registers[dest];
+                memAddress = (byte)(registers[regA] + offset);
+                if (memAddress < ramSize - portCount) ram[memAddress] = registers[dest];
+                else display.StorePort(memAddress, registers[dest]);
                 programCounter++;
                 break;
             default: GD.Print("Invalid opcode in file. This should be impossible."); break;
@@ -239,6 +244,9 @@ public partial class main : Node
         addressStack = new Stack<int>();
         StatusLabel.Text = "";
         UpdateVisualisers();
+        if (!display.displayInitialized) return;
+        display.ClearBuffer();
+        display.PushBuffer();
     }
 
     private void LoadProgram(string[] files)

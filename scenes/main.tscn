@@ -290,7 +290,7 @@ theme_override_font_sizes/normal_font_size = 46
 bbcode_enabled = true
 text = "[center][wave]Drag and drop assembled program to load"
 
-[node name="Display" type="GridContainer" parent="Control" node_paths=PackedStringArray("DisplayTexture")]
+[node name="Display" type="GridContainer" parent="Control" node_paths=PackedStringArray("DisplayTexture", "NumDisplay", "TextDisplay")]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -302,6 +302,8 @@ resolution = Vector2i(32, 32)
 offSprites = Array[Texture2D]([ExtResource("3_urrwc"), ExtResource("4_22r8u"), ExtResource("5_f5bin"), ExtResource("6_3fdyd")])
 onSprites = Array[Texture2D]([ExtResource("6_3lbhq"), ExtResource("2_i7kbd"), ExtResource("8_uqvby"), ExtResource("10_567k6")])
 DisplayTexture = NodePath("../DisplayPanelMargins/HBoxContainer/DisplayPanelContainer/DisplayTextureDropdown")
+NumDisplay = NodePath("../DisplayPanelMargins/HBoxContainer/OutputPanel/OutputMargin/OutputContainer/NumOutput")
+TextDisplay = NodePath("../DisplayPanelMargins/HBoxContainer/OutputPanel/OutputMargin/OutputContainer/ScrollContainer/TextOutput")
 
 [connection signal="value_changed" from="Control/ControlPanelMargins/ControlPanelList/HBoxContainer/SpinBox" to="." method="SetSpeed"]
 [connection signal="item_selected" from="Control/DisplayPanelMargins/HBoxContainer/DisplayPanelContainer/DisplayTextureDropdown" to="Control/Display" method="UpdateSprites"]
