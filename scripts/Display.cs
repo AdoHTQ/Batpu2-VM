@@ -93,10 +93,12 @@ public partial class Display : Node
                 break;
             //Draw Pixel
             case 242:
+                if (pixelPos.X >= resolution.X || pixelPos.Y >= resolution.Y) break;
                 displayBuffer[pixelPos.X, pixelPos.Y] = true;
                 break;
             //Clear Pixel
             case 243:
+                if (pixelPos.X >= resolution.X || pixelPos.Y >= resolution.Y) break;
                 displayBuffer[pixelPos.X, pixelPos.Y] = false;
                 break;
             //Buffer screen
@@ -167,7 +169,6 @@ public partial class Display : Node
         bool a = Input.IsActionPressed("a");
         bool b = Input.IsActionPressed("b");
         bool[] inputs = new bool[] {start, select, a, b, up, right, down, left};
-        GD.Print(ToByte(inputs));
         return ToByte(inputs);
     }
 
