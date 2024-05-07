@@ -1,14 +1,14 @@
+ScrollContainer
+HBoxContainer
+Button
 Label
 MarginContainer
 PanelContainer
 Panel
 VSeparator
-HBoxContainer
 VBoxContainer
-Button
 OptionButton
 MenuButton
 CenterContainer
 TextureRect
-ScrollContainer
 ColorRect

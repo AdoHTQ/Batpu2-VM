@@ -5643,6 +5643,149 @@ theme_override_font_sizes/font_size = 36
 text = "Program Counter: "
 horizontal_alignment = 1
 
+[node name="StartButton" type="Button" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+toggle_mode = true
+text = "-Start-"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
+layout_mode = 2
+
+[node name="StepButton" type="Button" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+text = "<Step>"
+
+[node name="ResetButton" type="Button" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+text = "|Reset|"
+
+[node name="PanelContainer7" type="PanelContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("11_f2qcf")
+
+[node name="MarginContainer" type="MarginContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PCLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Execution Rate (hz):"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
+custom_minimum_size = Vector2(0, 26.045)
+layout_mode = 2
+
+[node name="InstructionsPerTickSlider" type="HSlider" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 10000.0
+value = 100.0
+
+[node name="SpinBox" type="SpinBox" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+max_value = 10000.0
+value = 100.0
+rounded = true
+custom_arrow_step = 1.0
+
+[node name="PanelContainer3" type="PanelContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("11_f2qcf")
+
+[node name="MarginContainer" type="MarginContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer3"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PCLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer3/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Flags
+C: False | Z: False"
+horizontal_alignment = 1
+
+[node name="PanelContainer4" type="PanelContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("11_f2qcf")
+
+[node name="MarginContainer" type="MarginContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer4"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PCLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer4/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Registers
+r0:00 | r1:00 | r2:00 | r3:00
+r4:00 | r5:00 | r6:00 | r7:00
+r8:00 | r9:00 | r10:00 | r11:00
+r12:00 | r13:00 | r14:00 | r15:00"
+horizontal_alignment = 1
+
+[node name="PanelContainer5" type="PanelContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("11_f2qcf")
+
+[node name="MarginContainer" type="MarginContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/MarginContainer"]
+layout_mode = 2
+
+[node name="PCLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 25
+text = "Ram
+0:00 1:00 2:00 3:00 4:00
+0:00 1:00 2:00 3:00 4:00
+0:00 1:00 2:00 3:00 4:00
+0:00 1:00 2:00 3:00 4:00"
+horizontal_alignment = 1
+
+[node name="PanelContainer6" type="PanelContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("11_f2qcf")
+
+[node name="MarginContainer" type="MarginContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer6"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PCLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer6/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Settings"
+horizontal_alignment = 1
+
 [node name="AssemblyColumn" type="MarginContainer" parent="NewUI/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -5657,3 +5800,4 @@ theme_override_styles/panel = ExtResource("11_f2qcf")
 
 [connection signal="value_changed" from="Control/ControlPanelMargins/ControlPanelList/HBoxContainer/SpinBox" to="." method="SetSpeed"]
 [connection signal="item_selected" from="Control/DisplayPanelMargins/HBoxContainer/DisplayPanelContainer/DisplayTextureDropdown" to="Control/Display" method="UpdateSprites"]
+[connection signal="value_changed" from="NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer2/SpinBox" to="." method="SetSpeed"]
