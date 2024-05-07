@@ -94,12 +94,12 @@ public partial class Display : Node
             //Draw Pixel
             case 242:
                 if (pixelPos.X >= resolution.X || pixelPos.Y >= resolution.Y) break;
-                displayBuffer[pixelPos.X, pixelPos.Y] = true;
+                displayBuffer[pixelPos.X, resolution.Y - 1 - pixelPos.Y] = true;
                 break;
             //Clear Pixel
             case 243:
                 if (pixelPos.X >= resolution.X || pixelPos.Y >= resolution.Y) break;
-                displayBuffer[pixelPos.X, pixelPos.Y] = false;
+                displayBuffer[pixelPos.X, resolution.Y - 1 - pixelPos.Y] = false;
                 break;
             //Buffer screen
             case 245:
@@ -148,7 +148,7 @@ public partial class Display : Node
         switch (port)
         {
             case 244:
-                return (byte)(displayBuffer[pixelPos.X,pixelPos.Y] ? 1 : 0);
+                return (byte)(displayBuffer[pixelPos.X, resolution.Y - 1 - pixelPos.Y] ? 1 : 0);
             case 254:
                 Random rand = new Random();
                 return (byte)rand.Next();

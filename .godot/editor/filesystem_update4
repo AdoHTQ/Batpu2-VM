@@ -1,3 +1,2 @@
 res://scenes/main.tscn
-res://scripts/Display.cs
-res://scripts/main.cs
+res://ui/Dock.tres
