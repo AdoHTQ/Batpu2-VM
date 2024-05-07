@@ -1,11 +1,11 @@
 Label
-VSeparator
+MarginContainer
+PanelContainer
 Panel
+VSeparator
 HBoxContainer
 VBoxContainer
 Button
-PanelContainer
-MarginContainer
 OptionButton
 MenuButton
 CenterContainer
