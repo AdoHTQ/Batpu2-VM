@@ -1,12 +1,13 @@
-ScrollContainer
+CheckBox
 HBoxContainer
-Button
+VBoxContainer
 Label
+ScrollContainer
+Button
 MarginContainer
 PanelContainer
 Panel
 VSeparator
-VBoxContainer
 OptionButton
 MenuButton
 CenterContainer
