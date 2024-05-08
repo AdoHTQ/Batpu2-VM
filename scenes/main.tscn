@@ -5761,30 +5761,30 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("11_f2qcf")
 
-[node name="MarginContainer" type="MarginContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5"]
+[node name="ScrollContainer" type="ScrollContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5"]
 layout_mode = 2
-theme_override_constants/margin_left = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
+theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
-[node name="ScrollContainer" type="ScrollContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/MarginContainer"]
-layout_mode = 2
-
-[node name="PCLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/MarginContainer/ScrollContainer"]
+[node name="PCLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 25
 text = "Ram (Address:Value)
-000:000|001:000|002:000|003:000
-004:000|005:000|006:000|007:000
-008:000|009:000|010:000|011:000
-012:000|013:000|014:000|015:000
-016:000|017:000|018:000|019:000
-020:000|021:000|022:000|023:000
-024:000|025:000|026:000|027:000
-028:000|029:000|030:000|031:000"
+000:000 | 001:000 | 002:000 | 003:000
+004:000 | 005:000 | 006:000 | 007:000
+008:000 | 009:000 | 010:000 | 011:000
+012:000 | 013:000 | 014:000 | 015:000
+016:000 | 017:000 | 018:000 | 019:000
+020:000 | 021:000 | 022:000 | 023:000
+024:000 | 025:000 | 026:000 | 027:000
+028:000 | 029:000 | 030:000 | 031:000"
 horizontal_alignment = 1
 
 [node name="PanelContainer6" type="PanelContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
