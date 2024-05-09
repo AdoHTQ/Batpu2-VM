@@ -269,8 +269,15 @@ public partial class main : Node
 
     private void UpdateVisualisers()
     {
-        FlagsDisplay.Text = "Flags | C:" + (carryFlag ? 1 : 0) + " Z:" + (zeroFlag ? 1 : 0);
-        string text = BitConverter.ToString(registers).Replace("-", " ");
+        FlagsDisplay.Text = "Flags\n Carry: " + carryFlag + " | Zero: " + zeroFlag;
+        //string text = BitConverter.ToString(registers).Replace("-", " ");
+        string text = "Registers\n";
+        for (int i = 0; i < registerCount; i++)
+        {
+            text += "" + (i < 10 ? " " : "") + "r" + i + ":" + registers[i];
+            if ((i - 3) % 4 != 0) text += " | ";
+            else text += "\n";
+        }
         RegisterDisplay.Text = text;
         text = BitConverter.ToString(ram).Replace("-", " ");
         MemoryDisplay.Text = text;

@@ -34,17 +34,17 @@ member_variable_color = Color(1, 1, 1, 1)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("display", "StartStopButton", "StepButton", "ResetButton", "StatusLabel", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "PortDisplay", "SpeedSlider", "SpeedInput")]
 script = ExtResource("1_uokyd")
-display = NodePath("Control/Display")
-StartStopButton = NodePath("Control/ControlPanelMargins/ControlPanelList/StartStopButton")
-StepButton = NodePath("Control/ControlPanelMargins/ControlPanelList/HButtonContainer/StepButton")
-ResetButton = NodePath("Control/ControlPanelMargins/ControlPanelList/HButtonContainer/ResetButton")
-StatusLabel = NodePath("Control/ControlPanelMargins/ControlPanelList/StatusLabel")
-FlagsDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/FlagsPanel/FlagsMargin/FlagsLabel")
-RegisterDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/RegisterPanel/RegisterMargin/RegisterList/RegisterText")
-MemoryDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/MemoryPanel/MemoryMargin/MemoryList/MemoryScroll/MemoryText")
+display = NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/Display")
+StartStopButton = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/StartButton")
+StepButton = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer/StepButton")
+ResetButton = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer/ResetButton")
+StatusLabel = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer2/MarginContainer/StatusLabel")
+FlagsDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer3/MarginContainer/FlagsLabel")
+RegisterDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer4/MarginContainer/RegistersLabel")
+MemoryDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer/RamLabel")
 PortDisplay = NodePath("Control/ControlPanelMargins/ControlPanelList/PortsPanel/PortsMargin/PortsList/PortsScroll/PortsText")
-SpeedSlider = NodePath("Control/ControlPanelMargins/ControlPanelList/HBoxContainer/InstructionsPerTickSlider")
-SpeedInput = NodePath("Control/ControlPanelMargins/ControlPanelList/HBoxContainer/SpinBox")
+SpeedSlider = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer2/InstructionsPerTickSlider")
+SpeedInput = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer2/SpinBox")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(960, 540)
@@ -5694,7 +5694,7 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="PCLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer"]
+[node name="ExecutionSpeedLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Execution Rate:
@@ -5735,7 +5735,7 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="PCLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer3/MarginContainer"]
+[node name="FlagsLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer3/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Flags
@@ -5753,7 +5753,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="PCLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer4/MarginContainer"]
+[node name="RegistersLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer4/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Registers
@@ -5778,7 +5778,7 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
-[node name="PCLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer"]
+[node name="RamLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -5808,7 +5808,7 @@ theme_override_constants/margin_bottom = 5
 [node name="VBoxContainer" type="VBoxContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer6/MarginContainer"]
 layout_mode = 2
 
-[node name="PCLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer6/MarginContainer/VBoxContainer"]
+[node name="SettingsTitle" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer6/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Settings"
@@ -5923,6 +5923,5 @@ comments = Color(0.478431, 0.478431, 0.478431, 1)
 labels = Color(1, 0.439216, 0.478431, 1)
 registers = Color(0.670588, 0.784314, 1, 1)
 
-[connection signal="value_changed" from="Control/ControlPanelMargins/ControlPanelList/HBoxContainer/SpinBox" to="." method="SetSpeed"]
 [connection signal="item_selected" from="Control/DisplayPanelMargins/HBoxContainer/DisplayPanelContainer/DisplayTextureDropdown" to="Control/Display" method="UpdateSprites"]
 [connection signal="value_changed" from="NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer2/SpinBox" to="." method="SetSpeed"]

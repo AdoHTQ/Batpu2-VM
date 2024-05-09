@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming\\Python\\Batpu2-VM\\Batpu2 VM.csproj": {}
+    "/home/adam/Documents/GitHub/Batpu2-VM/Batpu2 VM.csproj": {}
   },
   "projects": {
-    "D:\\Programming\\Python\\Batpu2-VM\\Batpu2 VM.csproj": {
+    "/home/adam/Documents/GitHub/Batpu2-VM/Batpu2 VM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\Python\\Batpu2-VM\\Batpu2 VM.csproj",
+        "projectUniqueName": "/home/adam/Documents/GitHub/Batpu2-VM/Batpu2 VM.csproj",
         "projectName": "Batpu2 VM",
-        "projectPath": "D:\\Programming\\Python\\Batpu2-VM\\Batpu2 VM.csproj",
-        "packagesPath": "C:\\Users\\adama\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\Python\\Batpu2-VM\\.godot\\mono\\temp\\obj\\",
+        "projectPath": "/home/adam/Documents/GitHub/Batpu2-VM/Batpu2 VM.csproj",
+        "packagesPath": "/home/adam/.nuget/packages/",
+        "outputPath": "/home/adam/Documents/GitHub/Batpu2-VM/.godot/mono/temp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\adama\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/adam/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,15 +40,15 @@
           "dependencies": {
             "Godot.SourceGenerators": {
               "target": "Package",
-              "version": "[4.2.1, )"
+              "version": "[4.2.2, )"
             },
             "GodotSharp": {
               "target": "Package",
-              "version": "[4.2.1, )"
+              "version": "[4.2.2, )"
             },
             "GodotSharpEditor": {
               "target": "Package",
-              "version": "[4.2.1, )"
+              "version": "[4.2.2, )"
             }
           },
           "imports": [
@@ -67,15 +65,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
+              "version": "[6.0.29, 6.0.29]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
+              "version": "[6.0.29, 6.0.29]"
             }
           ],
           "frameworkReferences": {
@@ -83,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.104/RuntimeIdentifierGraph.json"
         }
       }
     }

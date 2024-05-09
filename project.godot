@@ -36,10 +36,6 @@ theme/custom_font="res://fonts/RobotoMono-VariableFont_wght.ttf"
 
 [input]
 
-ui_accept={
-"deadzone": 0.5,
-"events": []
-}
 ui_select={
 "deadzone": 0.5,
 "events": []
@@ -140,10 +136,6 @@ ui_text_dedent={
 "deadzone": 0.5,
 "events": []
 }
-ui_text_backspace={
-"deadzone": 0.5,
-"events": []
-}
 ui_text_backspace_word={
 "deadzone": 0.5,
 "events": []
@@ -153,10 +145,6 @@ ui_text_backspace_word.macos={
 "events": []
 }
 ui_text_backspace_all_to_left.macos={
-"deadzone": 0.5,
-"events": []
-}
-ui_text_delete={
 "deadzone": 0.5,
 "events": []
 }
@@ -301,10 +289,6 @@ ui_text_toggle_insert_mode={
 "events": []
 }
 ui_menu={
-"deadzone": 0.5,
-"events": []
-}
-ui_text_submit={
 "deadzone": 0.5,
 "events": []
 }

@@ -26,15 +26,15 @@ public partial class Display : Node
     public void DisplayInit()
     {
         if (displayInitialized) return;
-        for (int x = 0; x < resolution.X; x++)
-        {
-            for (int y = 0; y < resolution.Y; y++)
-            {
-                TextureRect sprite = new TextureRect();
-                sprite.Texture = offSprites[DisplayTexture.Selected];
-                AddChild(sprite);
-            }
-        }
+        // for (int x = 0; x < resolution.X; x++)
+        // {
+        //     for (int y = 0; y < resolution.Y; y++)
+        //     {
+        //         TextureRect sprite = new TextureRect();
+        //         sprite.Texture = offSprites[DisplayTexture.Selected];
+        //         AddChild(sprite);
+        //     }
+        // }
         displayBuffer = new bool[resolution.X, resolution.Y];
         TextDisplay.Text = "Output";
         NumDisplay.Text = "" + displayedNum;
