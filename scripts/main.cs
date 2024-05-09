@@ -62,6 +62,12 @@ public partial class main : Node
 
     public override void _PhysicsProcess(double delta)
     {
+        if (Input.IsActionJustPressed("fullscreen")) 
+        {
+            Vector2I resolution = DisplayServer.ScreenGetSize();
+            DisplayServer.WindowSetSize(resolution);
+        }
+
         instructionsPerSecond = (int)SpeedSlider.Value;
         SpeedInput.Value = instructionsPerSecond;
         int instructionsPerTick = (int)Math.Ceiling((double)instructionsPerSecond / 100);
@@ -274,15 +280,34 @@ public partial class main : Node
         string text = "Registers\n";
         for (int i = 0; i < registerCount; i++)
         {
-            text += "" + (i < 10 ? " " : "") + "r" + i + ":" + registers[i];
+            text += "" + (i < 10 ? " " : "") + "r" + i + ":" + padString("" + registers[i], 3, "0");
             if ((i - 3) % 4 != 0) text += " | ";
             else text += "\n";
         }
         RegisterDisplay.Text = text;
-        text = BitConverter.ToString(ram).Replace("-", " ");
+
+        //text = BitConverter.ToString(ram).Replace("-", " ");
+        text = "RAM (Address:Value)\n";
+        for (int i = 0; i < ramSize; i++)
+        {
+            text += "" + padString("" + i, 3, "0") + ":" + padString("" + ram[i], 3, "0");
+            if ((i - 3) % 4 != 0) text += " | ";
+            else text += "\n";
+        }
         MemoryDisplay.Text = text;
         //text = BitConverter.ToString(ports).Replace("-", " ");
         //PortDisplay.Text = text;
+    }
+
+    private string padString(string input, int length, string fill)
+    {
+        string output = "";
+        for (int i = 0; i < length - input.Length; i++)
+        {
+            output += fill;
+        }
+        output += input;
+        return output;
     }
 
     private byte[] ConvertBinaryStringToByteArray(string binaryString)

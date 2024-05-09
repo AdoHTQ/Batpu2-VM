@@ -5754,13 +5754,9 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="RegistersLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer4/MarginContainer"]
+custom_minimum_size = Vector2(0, 170)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "Registers
- r0:000 |  r1:000 |  r2:000 |  r3:000
- r4:000 |  r5:000 |  r6:000 |  r7:000
- r8:000 |  r9:000 | r10:000 | r11:000
-r12:000 | r13:000 | r14:000 | r15:000"
 horizontal_alignment = 1
 
 [node name="PanelContainer5" type="PanelContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
@@ -5783,15 +5779,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 25
-text = "Ram (Address:Value)
-000:000 | 001:000 | 002:000 | 003:000
-004:000 | 005:000 | 006:000 | 007:000
-008:000 | 009:000 | 010:000 | 011:000
-012:000 | 013:000 | 014:000 | 015:000
-016:000 | 017:000 | 018:000 | 019:000
-020:000 | 021:000 | 022:000 | 023:000
-024:000 | 025:000 | 026:000 | 027:000
-028:000 | 029:000 | 030:000 | 031:000"
 horizontal_alignment = 1
 
 [node name="PanelContainer6" type="PanelContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
