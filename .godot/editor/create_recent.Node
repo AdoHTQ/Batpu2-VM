@@ -1,15 +1,14 @@
+MarginContainer
+CodeEdit
 CheckBox
 HBoxContainer
 VBoxContainer
 Label
 ScrollContainer
 Button
-MarginContainer
 PanelContainer
 Panel
 VSeparator
 OptionButton
 MenuButton
 CenterContainer
-TextureRect
-ColorRect

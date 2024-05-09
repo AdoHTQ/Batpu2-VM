@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0pmv6pxy3ax2"]
+[gd_scene load_steps=17 format=3 uid="uid://d0pmv6pxy3ax2"]
 
 [ext_resource type="Script" path="res://scripts/main.cs" id="1_uokyd"]
 [ext_resource type="Texture2D" uid="uid://c74uen28j3yh7" path="res://textures/redstone_lamp_2x2_on.png" id="2_i7kbd"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bvgov7lqauaae" path="res://textures/flat_on.png" id="8_uqvby"]
 [ext_resource type="Texture2D" uid="uid://mjjin7nu44fx" path="res://icon.svg" id="10_567k6"]
 [ext_resource type="StyleBox" uid="uid://bqg5poxt6rr84" path="res://ui/Dock.tres" id="11_f2qcf"]
+[ext_resource type="Script" path="res://scripts/AssemblyView.cs" id="12_exw6m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bu3mg"]
 bg_color = Color(0.145098, 0.168627, 0.203922, 1)
@@ -24,6 +25,12 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="Theme" id="Theme_vfx06"]
 LineEdit/font_sizes/font_size = 31
+
+[sub_resource type="CodeHighlighter" id="CodeHighlighter_2mnaf"]
+number_color = Color(0.505882, 1, 0.878431, 1)
+symbol_color = Color(1, 1, 1, 1)
+function_color = Color(1, 1, 1, 1)
+member_variable_color = Color(1, 1, 1, 1)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("display", "StartStopButton", "StepButton", "ResetButton", "StatusLabel", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "PortDisplay", "SpeedSlider", "SpeedInput")]
 script = ExtResource("1_uokyd")
@@ -5834,6 +5841,7 @@ layout_mode = 2
 theme_override_styles/panel = ExtResource("11_f2qcf")
 
 [node name="Label" type="Label" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 46
@@ -5841,6 +5849,79 @@ text = "Drag and drop assembly
 program (.as)"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="CodeEdit" type="CodeEdit" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
+theme_override_colors/executing_line_color = Color(1, 1, 1, 1)
+theme_override_colors/line_number_color = Color(0.529412, 0.529412, 0.529412, 1)
+theme_override_font_sizes/font_size = 21
+text = "// Move pixel around using arrow keys
+// Select to quit
+
+        LDI r1 15    // x
+        LDI r2 15    // y
+
+.loop   LDI r15 255     // Controller Input
+        LOD r3 r15
+      
+        LDI r4 1        // Left
+        AND r5 r4 r3
+        CMP r5 r0
+        BRH zero .nleft
+        DEC r1 r1
+
+.nleft  LDI r4 2        // Down
+        AND r5 r4 r3
+        CMP r5 r0
+        BRH zero .ndown
+        DEC r2 r2
+
+.ndown  LDI r4 4        // Right
+        AND r5 r4 r3
+        CMP r5 r0
+        BRH zero .nright
+        INC r1 r1
+
+.nright LDI r4 8        // Up
+        AND r5 r4 r3
+        CMP r5 r0
+        BRH zero .nup
+        INC r2 r2
+
+.nup    LDI r4 16       // Select
+        AND r5 r4 r3
+        CMP r5 r0
+        BRH zero .nsel
+        HLT
+
+.nsel   LDI r15 243     // clear old pixel
+        STR r0 r15
+        LDI r15 240     // new pixel x
+        STR r1 r15
+        LDI r15 241     // new pixel y
+        STR r2 r15
+        LDI r15 242     // draw pixel
+        STR r0 r15
+        LDI r15 245     // buffer screen
+        STR r0 r15    
+        JMP .loop"
+editable = false
+syntax_highlighter = SubResource("CodeHighlighter_2mnaf")
+highlight_all_occurrences = true
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+script = ExtResource("12_exw6m")
+comments = Color(0.478431, 0.478431, 0.478431, 1)
+labels = Color(1, 0.439216, 0.478431, 1)
+registers = Color(0.670588, 0.784314, 1, 1)
 
 [connection signal="value_changed" from="Control/ControlPanelMargins/ControlPanelList/HBoxContainer/SpinBox" to="." method="SetSpeed"]
 [connection signal="item_selected" from="Control/DisplayPanelMargins/HBoxContainer/DisplayPanelContainer/DisplayTextureDropdown" to="Control/Display" method="UpdateSprites"]
