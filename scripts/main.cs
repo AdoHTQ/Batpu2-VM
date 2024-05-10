@@ -10,12 +10,13 @@ public partial class main : Node
     [ExportCategory("Parameters")]
     [Export] private int programMemorySize = 2048;
     [Export] private int ramSize = 256;
-    [Export] private int portCount = 16;
+    [Export] private int portCount = 16; //Subtracted from ram size to get size of port space
     [Export] private int registerCount = 16;
     [Export] private int opcodeLength = 4;
 
     [ExportCategory("References")]
     [Export] private Display display;
+    [Export] private AssemblyView assemblyView;
     [Export] private Button StartStopButton;
     [Export] private Button StepButton;
     [Export] private Button ResetButton;

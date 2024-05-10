@@ -710,8 +710,18 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="CodeEdit" type="CodeEdit" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.05
+
+[node name="CodeEdit" type="CodeEdit" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
 theme_override_colors/executing_line_color = Color(1, 1, 1, 1)
 theme_override_colors/line_number_color = Color(0.529412, 0.529412, 0.529412, 1)
@@ -769,7 +779,6 @@ text = "// Move pixel around using arrow keys
 editable = false
 syntax_highlighter = SubResource("CodeHighlighter_2mnaf")
 highlight_all_occurrences = true
-gutters_draw_executing_lines = true
 script = ExtResource("12_exw6m")
 comments = Color(0.478431, 0.478431, 0.478431, 1)
 labels = Color(1, 0.439216, 0.478431, 1)

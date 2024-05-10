@@ -8,6 +8,15 @@ public partial class AssemblyView : CodeEdit
     [Export] private Color labels;
     [Export] private Color registers;
 
+    public int programCounter
+    {
+        get {return programCounter;}
+        private set {
+            programCounter = value;
+            MoveCursor(programCounter);
+        }
+    }
+
     public override void _Ready()
     {
         CodeHighlighter highlighter = SyntaxHighlighter as CodeHighlighter;
@@ -19,5 +28,10 @@ public partial class AssemblyView : CodeEdit
         }
 
         SetLineAsExecuting(6, true);
+    }
+
+    public void MoveCursor(int line)
+    {
+
     }
 }

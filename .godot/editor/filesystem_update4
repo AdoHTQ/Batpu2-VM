@@ -1,5 +1,2 @@
 res://scenes/main.tscn
 res://ui/Dock.tres
-res://scripts/AssemblyView.cs
-res://scripts/Display.cs
-res://scripts/main.cs

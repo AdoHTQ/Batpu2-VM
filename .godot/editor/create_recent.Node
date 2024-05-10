@@ -1,9 +1,10 @@
+Label
+LineEdit
+HBoxContainer
 MarginContainer
 CodeEdit
 CheckBox
-HBoxContainer
 VBoxContainer
-Label
 ScrollContainer
 Button
 PanelContainer
@@ -11,4 +12,3 @@ Panel
 VSeparator
 OptionButton
 MenuButton
-CenterContainer
