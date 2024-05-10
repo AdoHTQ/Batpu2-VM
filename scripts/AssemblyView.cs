@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class AssemblyView : CodeEdit
 {
@@ -7,6 +8,8 @@ public partial class AssemblyView : CodeEdit
     [Export] private Color comments;
     [Export] private Color labels;
     [Export] private Color registers;
+
+    private List<int> codeLines;
 
     public int programCounter
     {
@@ -28,6 +31,11 @@ public partial class AssemblyView : CodeEdit
         }
 
         SetLineAsExecuting(6, true);
+    }
+
+    public void LoadAssembly(string assembly)
+    {
+        Text = assembly;
     }
 
     public void MoveCursor(int line)

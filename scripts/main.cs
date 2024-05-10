@@ -260,19 +260,34 @@ public partial class main : Node
 
     private void LoadProgram(string[] files)
     {
-        Reset();
-        try
+        if (files[0].LastIndexOf(".mc") != -1)
         {
-            var code = FileAccess.GetFileAsString(files[0]);
-            code = Regex.Replace(code, @"\t|\n|\r", "");
-            bytecode = ConvertBinaryStringToByteArray(code);
+            GD.Print("machine code");
+            Reset();
+            try
+            {
+                var code = FileAccess.GetFileAsString(files[0]);
+                code = Regex.Replace(code, @"\t|\n|\r", "");
+                bytecode = ConvertBinaryStringToByteArray(code);
 
-            //StatusLabel.Text = "Program Loaded";
+                //StatusLabel.Text = "Program Loaded";
 
-            
-        } catch
+                
+            } catch
+            {
+                //StatusLabel.Text = "Failed to Load Program";
+            }
+        }
+        else if (files[0].LastIndexOf(".as") != -1)
         {
-            //StatusLabel.Text = "Failed to Load Program";
+            GD.Print("assembly");
+            try
+            {
+                assemblyView.LoadAssembly(FileAccess.GetFileAsString(files[0]));
+            } catch
+            {
+                //fail
+            }
         }
     }
 
