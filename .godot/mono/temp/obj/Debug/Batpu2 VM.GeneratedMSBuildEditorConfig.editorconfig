@@ -1,6 +1,6 @@
 is_global = true
 build_property.GodotDisabledSourceGenerators = 
-build_property.GodotProjectDir = D:\Programming\Python\Batpu2-VM\
+build_property.GodotProjectDir = /home/adam/Documents/GitHub/Batpu2-VM/
 build_property.GodotProjectDirBase64 = 
 build_property.GodotSourceGenerators = 
 build_property.IsGodotToolsProject = 
@@ -13,4 +13,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Batpu2VM
-build_property.ProjectDir = D:\Programming\Python\Batpu2-VM\
+build_property.ProjectDir = /home/adam/Documents/GitHub/Batpu2-VM/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

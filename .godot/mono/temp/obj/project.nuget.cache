@@ -1,15 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "/eq+Yo4NJx3Jynn5s9adP8hRTmQXUJHnNLuwILYBNY5kq9oxH9pRmaubypDPbKjlT2R1kMfrenVo3SPNUiRsFw==",
+  "dgSpecHash": "1nQyDBGQFfzXtQMDUXBYbRQzI7I8dpRyjn2zJttPcHi9vGl+EeWsRvwEhauCODHcMYRKXmaUX2kqZjKHElk0vw==",
   "success": true,
-  "projectFilePath": "D:\\Programming\\Python\\Batpu2-VM\\Batpu2 VM.csproj",
+  "projectFilePath": "/home/adam/Documents/GitHub/Batpu2-VM/Batpu2 VM.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\adama\\.nuget\\packages\\godot.sourcegenerators\\4.2.2\\godot.sourcegenerators.4.2.2.nupkg.sha512",
-    "C:\\Users\\adama\\.nuget\\packages\\godotsharp\\4.2.2\\godotsharp.4.2.2.nupkg.sha512",
-    "C:\\Users\\adama\\.nuget\\packages\\godotsharpeditor\\4.2.2\\godotsharpeditor.4.2.2.nupkg.sha512",
-    "C:\\Users\\adama\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.12\\microsoft.netcore.app.ref.6.0.12.nupkg.sha512",
-    "C:\\Users\\adama\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.12\\microsoft.windowsdesktop.app.ref.6.0.12.nupkg.sha512",
-    "C:\\Users\\adama\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.12\\microsoft.aspnetcore.app.ref.6.0.12.nupkg.sha512"
+    "/home/adam/.nuget/packages/godot.sourcegenerators/4.2.2/godot.sourcegenerators.4.2.2.nupkg.sha512",
+    "/home/adam/.nuget/packages/godotsharp/4.2.2/godotsharp.4.2.2.nupkg.sha512",
+    "/home/adam/.nuget/packages/godotsharpeditor/4.2.2/godotsharpeditor.4.2.2.nupkg.sha512",
+    "/home/adam/.nuget/packages/microsoft.netcore.app.ref/6.0.29/microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "/home/adam/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.29/microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512"
   ],
   "logs": []
 }

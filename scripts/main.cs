@@ -66,6 +66,8 @@ public partial class main : Node
         {
             Vector2I resolution = DisplayServer.ScreenGetSize();
             DisplayServer.WindowSetSize(resolution);
+            DisplayServer.WindowSetPosition(new Vector2I(0, 0));
+            DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
         }
 
         instructionsPerSecond = (int)SpeedSlider.Value;
