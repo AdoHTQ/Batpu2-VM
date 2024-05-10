@@ -10,7 +10,7 @@ public partial class Display : Node
     [ExportCategory("References")]
     [Export] Texture2D[] offSprites;
     [Export] Texture2D[] onSprites;
-    [Export] OptionButton DisplayTexture;
+    //[Export] OptionButton DisplayTexture;
     [Export] Label NumDisplay;
     [Export] Label TextDisplay;
 
@@ -21,20 +21,22 @@ public partial class Display : Node
     private int displayedNum = 0;
     private bool unsigned = true;
 
+    private int texture;
+
     private Vector2I pixelPos;
 
     public void DisplayInit()
     {
         if (displayInitialized) return;
-        // for (int x = 0; x < resolution.X; x++)
-        // {
-        //     for (int y = 0; y < resolution.Y; y++)
-        //     {
-        //         TextureRect sprite = new TextureRect();
-        //         sprite.Texture = offSprites[DisplayTexture.Selected];
-        //         AddChild(sprite);
-        //     }
-        // }
+        for (int x = 0; x < resolution.X; x++)
+        {
+            for (int y = 0; y < resolution.Y; y++)
+            {
+                TextureRect sprite = new TextureRect();
+                sprite.Texture = offSprites[texture];
+                AddChild(sprite);
+            }
+        }
         displayBuffer = new bool[resolution.X, resolution.Y];
         TextDisplay.Text = "Output";
         NumDisplay.Text = "" + displayedNum;
@@ -44,10 +46,11 @@ public partial class Display : Node
 
     public void UpdateSprites(int index)
     {
+        texture = index;
         Array<Node> children = GetChildren();
         foreach (Node child in children)
         {
-            (child as TextureRect).Texture = offSprites[index];
+            (child as TextureRect).Texture = offSprites[texture];
         }
     }
 
@@ -64,7 +67,7 @@ public partial class Display : Node
         for (int i = 0; i < pixels; i++)
         {
             TextureRect child = children[i] as TextureRect;
-            child.Texture = displayBuffer[i % resolution.X, i / resolution.X] ? onSprites[DisplayTexture.Selected] : offSprites[DisplayTexture.Selected];
+            child.Texture = displayBuffer[i % resolution.X, i / resolution.X] ? onSprites[texture] : offSprites[texture];
         }
     }
 

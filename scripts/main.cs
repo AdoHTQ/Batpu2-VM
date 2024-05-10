@@ -19,11 +19,9 @@ public partial class main : Node
     [Export] private Button StartStopButton;
     [Export] private Button StepButton;
     [Export] private Button ResetButton;
-    [Export] private Label StatusLabel;
     [Export] private Label FlagsDisplay;
     [Export] private Label RegisterDisplay;
     [Export] private Label MemoryDisplay;
-    [Export] private Label PortDisplay;
     [Export] private Slider SpeedSlider;
     [Export] private SpinBox SpeedInput;
 
@@ -47,6 +45,8 @@ public partial class main : Node
         Reset();
 
         GetWindow().FilesDropped += LoadProgram;
+
+        display.DisplayInit();
 
         StartStopButton.ButtonUp += StartStop;
         StepButton.ButtonUp += Step;
@@ -91,7 +91,7 @@ public partial class main : Node
 
     private void RunNextInstruction()
     {
-        StatusLabel.Text = "Program Counter: " + programCounter;
+        //StatusLabel.Text = "Program Counter: " + programCounter;
         int index = programCounter * 2;
         ushort instruction = (ushort)(bytecode[index] << 8 | bytecode[index + 1]);
         ProcessOpcode(instruction);
@@ -232,7 +232,7 @@ public partial class main : Node
     {
         paused = !paused;
         StartStopButton.Text = paused ? "-Start-" : "-Stop-";
-        StatusLabel.Text = "";
+        //StatusLabel.Text = "";
     }
 
     private void Step()
@@ -248,7 +248,7 @@ public partial class main : Node
         registers = new byte[registerCount];
         //ports = new byte[portCount];
         addressStack = new Stack<int>();
-        StatusLabel.Text = "";
+        //StatusLabel.Text = "";
         UpdateVisualisers();
         if (!display.displayInitialized) return;
         display.ClearBuffer();
@@ -264,12 +264,12 @@ public partial class main : Node
             code = Regex.Replace(code, @"\t|\n|\r", "");
             bytecode = ConvertBinaryStringToByteArray(code);
 
-            StatusLabel.Text = "Program Loaded";
+            //StatusLabel.Text = "Program Loaded";
 
-            display.DisplayInit();
+            
         } catch
         {
-            StatusLabel.Text = "Failed to Load Program";
+            //StatusLabel.Text = "Failed to Load Program";
         }
     }
 
