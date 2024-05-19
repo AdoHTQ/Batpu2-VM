@@ -1,45 +1,84 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 public partial class AssemblyView : CodeEdit
 {
+    [ExportGroup("References")]
+    [Export] private Label lineNums;
+
     [ExportGroup("Syntax colors")]
-    [Export] private Color comments;
-    [Export] private Color labels;
-    [Export] private Color registers;
+    [Export] private Color commentColor;
+    [Export] private Color labelColor;
+    [Export] private Color registerColor;
+    [Export] private Color instructionColor;
 
     private List<int> codeLines;
 
-    public int programCounter
-    {
-        get {return programCounter;}
-        private set {
-            programCounter = value;
-            MoveCursor(programCounter);
-        }
-    }
+    private List<string> instructions = new List<string> {"NOP", "HLT", "ADD", "SUB", "NOR", "AND", "XOR", "RSH", "LDI", "ADI", "JMP", "BRH", "CAL", "RET", "LOD", "STR", "CMP", "MOV", "LSH", "INC", "DEC", "NOT"};
 
+    public bool initialized {get; private set;}
+
+    public int programCounter;
+    
     public override void _Ready()
     {
         CodeHighlighter highlighter = SyntaxHighlighter as CodeHighlighter;
-        highlighter.AddColorRegion("//", "", comments);
-        highlighter.AddColorRegion(".", " ", labels);
+        highlighter.AddColorRegion("//", "", commentColor);
+        highlighter.AddColorRegion(".", " ", labelColor);
         for(int i = 0; i < 16; i++)
         {
-            highlighter.AddKeywordColor("r" + i, registers);
+            highlighter.AddKeywordColor("r" + i, registerColor);
+        }
+        foreach (string instruction in instructions)
+        {
+            highlighter.AddKeywordColor(instruction.ToLower(), instructionColor);
+            highlighter.AddKeywordColor(instruction.ToUpper(), instructionColor);
         }
 
-        SetLineAsExecuting(6, true);
+        codeLines = new List<int>();
     }
 
     public void LoadAssembly(string assembly)
     {
-        Text = assembly;
+        string text = "";
+        codeLines = new List<int>();
+        int lineNum = 0;
+        int pc = 0;
+        using (StringReader sr = new StringReader(assembly)) {
+            string line;
+            while ((line = sr.ReadLine()) != null) {
+                if (instructions.Any(line.ToUpper().Contains))
+                {
+                    codeLines.Add(lineNum);
+                    text += padString("" + pc, 4, "0") + " | ";
+                    pc++;
+                } else text += "     | ";
+                text += line + "\n";
+                lineNum++;
+            }
+        }
+
+        Text = text;
+        initialized = true;
     }
 
-    public void MoveCursor(int line)
+    public void MoveCursor()
     {
+        ClearExecutingLines();
+        SetLineAsExecuting(codeLines[programCounter], true);
+    }
 
+    private string padString(string input, int length, string fill)
+    {
+        string output = "";
+        for (int i = 0; i < length - input.Length; i++)
+        {
+            output += fill;
+        }
+        output += input;
+        return output;
     }
 }

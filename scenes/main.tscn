@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d0pmv6pxy3ax2"]
+[gd_scene load_steps=21 format=3 uid="uid://d0pmv6pxy3ax2"]
 
 [ext_resource type="Script" path="res://scripts/main.cs" id="1_uokyd"]
 [ext_resource type="Texture2D" uid="uid://c74uen28j3yh7" path="res://textures/redstone_lamp_2x2_on.png" id="2_i7kbd"]
@@ -26,15 +26,27 @@ corner_radius_bottom_left = 5
 [sub_resource type="Theme" id="Theme_vfx06"]
 LineEdit/font_sizes/font_size = 31
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7r0k"]
+bg_color = Color(0.105882, 0.113725, 0.121569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkgbl"]
+bg_color = Color(0.105882, 0.113725, 0.121569, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6xlx"]
+
 [sub_resource type="CodeHighlighter" id="CodeHighlighter_2mnaf"]
-number_color = Color(0.505882, 1, 0.878431, 1)
+number_color = Color(1, 1, 1, 1)
 symbol_color = Color(1, 1, 1, 1)
 function_color = Color(1, 1, 1, 1)
 member_variable_color = Color(1, 1, 1, 1)
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("display", "StartStopButton", "StepButton", "ResetButton", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "SpeedSlider", "SpeedInput")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bq6u3"]
+bg_color = Color(0.6, 0.6, 0.6, 0.423529)
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("display", "assemblyView", "StartStopButton", "StepButton", "ResetButton", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "SpeedSlider", "SpeedInput")]
 script = ExtResource("1_uokyd")
 display = NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/Display")
+assemblyView = NodePath("NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/HBoxContainer/CodeEdit")
 StartStopButton = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/StartButton")
 StepButton = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer/StepButton")
 ResetButton = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer/ResetButton")
@@ -705,6 +717,8 @@ vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -712,27 +726,41 @@ theme_override_constants/margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.05
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_i7r0k")
 
-[node name="CodeEdit" type="CodeEdit" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="CodeEdit" type="CodeEdit" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/HBoxContainer" node_paths=PackedStringArray("lineNums")]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
 theme_override_colors/executing_line_color = Color(1, 1, 1, 1)
 theme_override_colors/line_number_color = Color(0.529412, 0.529412, 0.529412, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_vkgbl")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_l6xlx")
 editable = false
 syntax_highlighter = SubResource("CodeHighlighter_2mnaf")
 highlight_all_occurrences = true
+gutters_draw_executing_lines = true
 script = ExtResource("12_exw6m")
-comments = Color(0.478431, 0.478431, 0.478431, 1)
-labels = Color(1, 0.439216, 0.478431, 1)
-registers = Color(0.670588, 0.784314, 1, 1)
+lineNums = NodePath("../Label")
+commentColor = Color(0.462291, 0.462291, 0.46229, 1)
+labelColor = Color(1, 0.360784, 0.32549, 1)
+registerColor = Color(0.670588, 0.784314, 1, 1)
+instructionColor = Color(0.498039, 0.992157, 0.819608, 1)
+
+[node name="Panel" type="Panel" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bq6u3")
 
 [connection signal="item_selected" from="Control/DisplayPanelMargins/HBoxContainer/DisplayPanelContainer/DisplayTextureDropdown" to="Control/Display" method="UpdateSprites"]
 [connection signal="pressed" from="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Button" to="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/Display" method="UpdateSprites" binds= [0]]

@@ -262,7 +262,6 @@ public partial class main : Node
     {
         if (files[0].LastIndexOf(".mc") != -1)
         {
-            GD.Print("machine code");
             Reset();
             try
             {
@@ -280,14 +279,16 @@ public partial class main : Node
         }
         else if (files[0].LastIndexOf(".as") != -1)
         {
-            GD.Print("assembly");
-            try
-            {
-                assemblyView.LoadAssembly(FileAccess.GetFileAsString(files[0]));
+            string assembly = "";
+            try {
+                assembly = FileAccess.GetFileAsString(files[0]);
             } catch
             {
-                //fail
+                GD.Print("assembly failed to load");
+                return;
             }
+
+            assemblyView.LoadAssembly(assembly);
         }
     }
 
@@ -315,6 +316,11 @@ public partial class main : Node
         MemoryDisplay.Text = text;
         //text = BitConverter.ToString(ports).Replace("-", " ");
         //PortDisplay.Text = text;
+        if (assemblyView.initialized) 
+        {
+            assemblyView.programCounter = programCounter;
+            assemblyView.MoveCursor();
+        }
     }
 
     private string padString(string input, int length, string fill)

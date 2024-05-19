@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/adam/Documents/GitHub/Batpu2-VM/Batpu2 VM.csproj": {}
+    "D:\\Programming\\Python\\Batpu2-VM\\Batpu2 VM.csproj": {}
   },
   "projects": {
-    "/home/adam/Documents/GitHub/Batpu2-VM/Batpu2 VM.csproj": {
+    "D:\\Programming\\Python\\Batpu2-VM\\Batpu2 VM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/adam/Documents/GitHub/Batpu2-VM/Batpu2 VM.csproj",
+        "projectUniqueName": "D:\\Programming\\Python\\Batpu2-VM\\Batpu2 VM.csproj",
         "projectName": "Batpu2 VM",
-        "projectPath": "/home/adam/Documents/GitHub/Batpu2-VM/Batpu2 VM.csproj",
-        "packagesPath": "/home/adam/.nuget/packages/",
-        "outputPath": "/home/adam/Documents/GitHub/Batpu2-VM/.godot/mono/temp/obj/",
+        "projectPath": "D:\\Programming\\Python\\Batpu2-VM\\Batpu2 VM.csproj",
+        "packagesPath": "C:\\Users\\adama\\.nuget\\packages\\",
+        "outputPath": "D:\\Programming\\Python\\Batpu2-VM\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/adam/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\adama\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -65,11 +67,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
+              "version": "[6.0.12, 6.0.12]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
+              "version": "[6.0.12, 6.0.12]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
             }
           ],
           "frameworkReferences": {
@@ -77,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.104/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
