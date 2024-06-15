@@ -25,6 +25,9 @@ public partial class main : Node
     [Export] private Label MemoryDisplay;
     [Export] private Slider SpeedSlider;
     [Export] private SpinBox SpeedInput;
+    [Export] private Array<Panel> InputDisplays;
+    [Export] private Color ReleasedInput;
+    [Export] private Color PressedInput;
 
     bool paused = true;
     int programCounter = 0;
@@ -40,6 +43,7 @@ public partial class main : Node
 
     private bool zeroFlag = false;
     private bool carryFlag = false;
+    private String[] inputs = {"Y", "T", "J", "K", "W", "D", "S", "A"};
 
     public override void _Ready()
     {
@@ -59,6 +63,19 @@ public partial class main : Node
         StartStopButton.ButtonUp -= StartStop;
         StepButton.ButtonUp -= Step;
         ResetButton.ButtonUp -= Reset;
+    }
+
+    public override void _UnhandledInput(InputEvent @event)
+    {
+        if (@event is InputEventKey)
+        {
+            InputEventKey input = @event as InputEventKey;
+            int index = System.Array.IndexOf(inputs, input.AsText());
+            if (index == -1) return;
+            StyleBoxFlat style = InputDisplays[index].GetThemeStylebox("panel") as StyleBoxFlat;
+            style.BgColor = input.Pressed ? PressedInput : ReleasedInput;
+            InputDisplays[index].AddThemeStyleboxOverride("panel", style);
+        }
     }
 
     public override void _PhysicsProcess(double delta)

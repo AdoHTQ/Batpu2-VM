@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0pmv6pxy3ax2"]
+[gd_scene load_steps=29 format=3 uid="uid://d0pmv6pxy3ax2"]
 
 [ext_resource type="Script" path="res://scripts/main.cs" id="1_uokyd"]
 [ext_resource type="Texture2D" uid="uid://c74uen28j3yh7" path="res://textures/redstone_lamp_2x2_on.png" id="2_i7kbd"]
@@ -23,6 +23,62 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqll6"]
+bg_color = Color(0.117647, 0.12549, 0.141176, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ok5b4"]
+bg_color = Color(0.117647, 0.12549, 0.141176, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhtfp"]
+bg_color = Color(0.117647, 0.12549, 0.141176, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6u5y"]
+bg_color = Color(0.117647, 0.12549, 0.141176, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0eq0j"]
+bg_color = Color(0.117647, 0.12549, 0.141176, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7yqm"]
+bg_color = Color(0.117647, 0.12549, 0.141176, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_re8wq"]
+bg_color = Color(0.117647, 0.12549, 0.141176, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vscf"]
+bg_color = Color(0.117647, 0.12549, 0.141176, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [sub_resource type="Theme" id="Theme_vfx06"]
 LineEdit/font_sizes/font_size = 31
 
@@ -43,7 +99,7 @@ member_variable_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bq6u3"]
 bg_color = Color(0.6, 0.6, 0.6, 0.423529)
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("display", "assemblyView", "StartStopButton", "StepButton", "ResetButton", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "SpeedSlider", "SpeedInput")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("display", "assemblyView", "StartStopButton", "StepButton", "ResetButton", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "SpeedSlider", "SpeedInput", "InputDisplays")]
 script = ExtResource("1_uokyd")
 display = NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/Display")
 assemblyView = NodePath("NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/HBoxContainer/CodeEdit")
@@ -55,6 +111,9 @@ RegisterDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/Pane
 MemoryDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer/RamLabel")
 SpeedSlider = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer2/InstructionsPerTickSlider")
 SpeedInput = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer2/SpinBox")
+InputDisplays = [NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/StartIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/SelectIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/AIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/BIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/UpIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/RightIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/DownIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/LeftIndicator")]
+ReleasedInput = Color(0.117647, 0.12549, 0.141176, 1)
+PressedInput = Color(0.528498, 0.576089, 0.62135, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(960, 540)
@@ -484,18 +543,67 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Godot"
 
-[node name="PanelContainer" type="PanelContainer" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer"]
+[node name="PanelContainer" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("11_f2qcf")
 
-[node name="Label" type="Label" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+[node name="DownIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 81
-text = "Controller
-Placeholder"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 93.0
+offset_top = 210.0
+offset_right = 143.0
+offset_bottom = 260.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lqll6")
+
+[node name="LeftIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+offset_left = 43.0
+offset_top = 160.0
+offset_right = 93.0
+offset_bottom = 210.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ok5b4")
+
+[node name="UpIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+offset_left = 93.0
+offset_top = 110.0
+offset_right = 143.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yhtfp")
+
+[node name="RightIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+offset_left = 143.0
+offset_top = 160.0
+offset_right = 193.0
+offset_bottom = 210.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x6u5y")
+
+[node name="AIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+offset_left = 349.0
+offset_top = 160.0
+offset_right = 399.0
+offset_bottom = 210.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0eq0j")
+
+[node name="BIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+offset_left = 450.0
+offset_top = 160.0
+offset_right = 500.0
+offset_bottom = 210.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_f7yqm")
+
+[node name="SelectIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+offset_left = 193.0
+offset_top = 53.0
+offset_right = 243.0
+offset_bottom = 103.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_re8wq")
+
+[node name="StartIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+offset_left = 294.0
+offset_top = 53.0
+offset_right = 344.0
+offset_bottom = 103.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vscf")
 
 [node name="ControlColumn" type="MarginContainer" parent="NewUI/HBoxContainer"]
 layout_mode = 2
