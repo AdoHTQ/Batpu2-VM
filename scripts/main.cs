@@ -28,6 +28,8 @@ public partial class main : Node
     [Export] private Array<Panel> InputDisplays;
     [Export] private Color ReleasedInput;
     [Export] private Color PressedInput;
+    [Export] private CheckBox HexMode;
+    [Export] private CheckBox AssemblyFollow;
 
     bool paused = true;
     int programCounter = 0;
@@ -101,6 +103,7 @@ public partial class main : Node
             waitCounter = (int)Math.Ceiling(100 / (double)instructionsPerSecond);
         }
         
+        assemblyView.follow = AssemblyFollow.ButtonPressed;
     }
 
     public void SetSpeed(float value)

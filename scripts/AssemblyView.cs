@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 public partial class AssemblyView : CodeEdit
 {
@@ -22,7 +23,20 @@ public partial class AssemblyView : CodeEdit
     public bool initialized {get; private set;}
 
     public int programCounter;
-    
+
+    public bool follow;
+
+    public override void _Process(double delta)
+    {
+        if (GetExecutingLines().Length > 0 && follow)
+        {
+            double goal = Math.Clamp(GetExecutingLines()[0], 15.0, Text.Split('\n').Length - 15) - 15;
+            ScrollVertical = ScrollVertical + (goal - ScrollVertical) * 0.1;
+        }
+
+        (lineNums.GetParent() as ScrollContainer).ScrollVertical = (int)(ScrollVertical * 33);
+    }
+
     public override void _Ready()
     {
         CodeHighlighter highlighter = SyntaxHighlighter as CodeHighlighter;
@@ -50,19 +64,21 @@ public partial class AssemblyView : CodeEdit
         using (StringReader sr = new StringReader(assembly)) {
             string line;
             while ((line = sr.ReadLine()) != null) {
-                if (instructions.Any(line.ToUpper().Contains))
+                if (instructions.Any(line.ToUpper().Contains) && !line.StartsWith("//"))
                 {
                     codeLines.Add(lineNum);
-                    text += padString("" + pc, 4, "0") + " | ";
+                    text += " " + padString("" + pc, 4, "0");
                     pc++;
-                } else text += "     | ";
-                text += line + "\n";
+                }
+                text += "\n";
                 lineNum++;
             }
         }
 
-        Text = text;
+        Text = assembly;
+        lineNums.Text = text;
         initialized = true;
+        Editable = true;
     }
 
     public void MoveCursor()
