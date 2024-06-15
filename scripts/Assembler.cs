@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 
 
-class Program
+class Assembler
 {
-    static void assemble(string assembly_filename, string output_filename)
+    public static void assemble(string assembly_filename, string output_filename)
     {
         string[] assembly_lines = File.ReadAllLines(assembly_filename);
         StreamWriter machine_code_file = new StreamWriter(output_filename);
-
+        
         List<string> lines = new List<string>();
         foreach (string line in assembly_lines)
         {
@@ -258,16 +258,5 @@ class Program
         }
 
         machine_code_file.Close();
-    }
-
-    static void Main(string[] args)
-    {
-        if (args.Length != 2)
-        {
-            Console.WriteLine("Usage: assembler <assembly_file> <output_file>");
-            return;
-        }
-
-        assemble(args[0], args[1]);
     }
 }

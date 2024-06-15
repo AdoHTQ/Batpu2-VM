@@ -299,16 +299,7 @@ public partial class main : Node
         }
         else if (files[0].LastIndexOf(".as") != -1)
         {
-            string assembly = "";
-            try {
-                assembly = FileAccess.GetFileAsString(files[0]);
-            } catch
-            {
-                GD.Print("assembly failed to load");
-                return;
-            }
-
-            assemblyView.LoadAssembly(assembly);
+            assemblyView.LoadAssembly(files[0]);
         }
     }
 

@@ -38,7 +38,7 @@ public partial class Display : Node
             }
         }
         displayBuffer = new bool[resolution.X, resolution.Y];
-        TextDisplay.Text = "Output";
+        TextDisplay.Text = "__________\n__________";
         NumDisplay.Text = "" + displayedNum;
 
         displayInitialized = true;

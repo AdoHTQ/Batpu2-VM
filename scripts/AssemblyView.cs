@@ -26,6 +26,8 @@ public partial class AssemblyView : CodeEdit
 
     public bool follow;
 
+    private string assemblyPath = "";
+
     public override void _Process(double delta)
     {
         if (GetExecutingLines().Length > 0 && follow)
@@ -35,6 +37,14 @@ public partial class AssemblyView : CodeEdit
         }
 
         (lineNums.GetParent() as ScrollContainer).ScrollVertical = (int)(ScrollVertical * 33);
+    }
+
+    public override void _UnhandledInput(InputEvent @event)
+    {
+        if (@event.IsActionPressed("save") && assemblyPath.Length != 0)
+        {
+            Assembler.assemble(assemblyPath, assemblyPath[..^3] + ".mc");
+        }
     }
 
     public override void _Ready()
@@ -55,8 +65,20 @@ public partial class AssemblyView : CodeEdit
         codeLines = new List<int>();
     }
 
-    public void LoadAssembly(string assembly)
+    public void LoadAssembly(string assembly_filename)
     {
+        assemblyPath = assembly_filename;
+        GD.Print(assemblyPath);
+        string assembly;
+        try 
+        {
+            assembly = Godot.FileAccess.GetFileAsString(assembly_filename);
+        } catch
+        {
+            GD.Print("assembly failed to load");
+            return;
+        }
+
         string text = "";
         codeLines = new List<int>();
         int lineNum = 0;
