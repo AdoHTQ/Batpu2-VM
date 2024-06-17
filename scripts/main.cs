@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-public partial class main : Node
+public partial class Main : Node
 {
     [ExportCategory("Parameters")]
     [Export] private int programMemorySize = 2048;
@@ -58,6 +58,8 @@ public partial class main : Node
         StartStopButton.ButtonUp += StartStop;
         StepButton.ButtonUp += Step;
         ResetButton.ButtonUp += Reset;
+
+        assemblyView.main = this;
     }
 
     public override void _ExitTree()
@@ -125,9 +127,9 @@ public partial class main : Node
     private void ProcessOpcode(ushort instruction)
     {
         byte opcode = (byte)(instruction >> (16 - opcodeLength));
-        byte dest = (byte)((instruction & 0b111100000000) >> 8);
-        byte regA = (byte)((instruction & 0b11110000) >> 4);
-        byte regB = (byte)(instruction & 0b1111);
+        byte regA = (byte)((instruction & 0b111100000000) >> 8);
+        byte regB = (byte)((instruction & 0b11110000) >> 4);
+        byte regC = (byte)(instruction & 0b1111);
 
         byte immediate = (byte)(instruction & 0b11111111);
 
@@ -149,46 +151,46 @@ public partial class main : Node
             //ADD
             case 2:
                 carryFlag = (int)registers[regA] + (int)registers[regB] > 255;
-                registers[dest] = (byte)(registers[regA] + registers[regB]);
-                zeroFlag = registers[dest] == 0;
+                registers[regC] = (byte)(registers[regA] + registers[regB]);
+                zeroFlag = registers[regC] == 0;
                 //negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
                 programCounter++;
                 break;
             //SUB
             case 3:
                 carryFlag = (int)registers[regA] - (int)registers[regB] < 0;
-                registers[dest] = (byte)(registers[regA] - registers[regB]);
-                zeroFlag = registers[dest] == 0;
+                registers[regC] = (byte)(registers[regA] - registers[regB]);
+                zeroFlag = registers[regC] == 0;
                 //negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
                 programCounter++;
                 break;
             //NOR
             case 4:
-                Bitwise(4, dest, regA, regB);
+                Bitwise(4, regC, regA, regB);
                 break;
             //AND
             case 5:
-                Bitwise(1, dest, regA, regB);
+                Bitwise(1, regC, regA, regB);
                 break;
             //XOR
             case 6:
-                Bitwise(2, dest, regA, regB);
+                Bitwise(2, regC, regA, regB);
                 break;
             //RSH
             case 7:
-                registers[dest] = (byte)(registers[regA] >> 1);
+                registers[regC] = (byte)(registers[regA] >> 1);
                 programCounter++;
                 break;
             //LDI
             case 8:
-                registers[dest] = immediate;
+                registers[regA] = immediate;
                 programCounter++;
                 break;
             //ADI
             case 9:
-                carryFlag = (int)registers[dest] + (int)immediate > 255;
-                registers[dest] += immediate;
-                zeroFlag = registers[dest] == 0;
+                carryFlag = (int)registers[regA] + (int)immediate > 255;
+                registers[regA] += immediate;
+                zeroFlag = registers[regA] == 0;
                 //negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
                 programCounter++;
                 break;
@@ -212,18 +214,18 @@ public partial class main : Node
                 break;
             //LOD
             case 14:
-                offset = regB & 0b111 + (((regB & 0b1000) >> 3) == 1 ? -8 : 0);
+                offset = regC & 0b111 + (((regC & 0b1000) >> 3) == 1 ? -8 : 0);
                 memAddress = (byte)(registers[regA] + offset);
-                if (memAddress < ramSize - portCount) registers[dest] = ram[memAddress];
-                else registers[dest] = display.LoadPort(memAddress);
+                if (memAddress < ramSize - portCount) registers[regB] = ram[memAddress];
+                else registers[regB] = display.LoadPort(memAddress);
                 programCounter++;
                 break;
             //STR
             case 15:
-                offset = regB & 0b111 + (((regB & 0b1000) >> 3) == 1 ? -8 : 0);
+                offset = regC & 0b111 + (((regC & 0b1000) >> 3) == 1 ? -8 : 0);
                 memAddress = (byte)(registers[regA] + offset);
-                if (memAddress < ramSize - portCount) ram[memAddress] = registers[dest];
-                else display.StorePort(memAddress, registers[dest]);
+                if (memAddress < ramSize - portCount) ram[memAddress] = registers[regB];
+                else display.StorePort(memAddress, registers[regB]);
                 programCounter++;
                 break;
             default: GD.Print("Invalid opcode in file. This should be impossible."); break;
@@ -278,7 +280,7 @@ public partial class main : Node
         display.PushBuffer();
     }
 
-    private void LoadProgram(string[] files)
+    public void LoadProgram(string[] files)
     {
         if (files[0].LastIndexOf(".mc") != -1)
         {

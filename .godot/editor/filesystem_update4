@@ -1,7 +1,2 @@
 res://scenes/main.tscn
 res://ui/Dock.tres
-res://scripts/Display.cs
-res://scripts/main.cs
-res://scripts/AssemblyView.cs
-res://ui/ReleasedInput.tres
-res://ui/PressedInput.tres

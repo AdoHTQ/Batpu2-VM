@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://d0pmv6pxy3ax2"]
 
-[ext_resource type="Script" path="res://scripts/main.cs" id="1_uokyd"]
+[ext_resource type="Script" path="res://scripts/Main.cs" id="1_uokyd"]
 [ext_resource type="Texture2D" uid="uid://c74uen28j3yh7" path="res://textures/redstone_lamp_2x2_on.png" id="2_i7kbd"]
 [ext_resource type="Script" path="res://scripts/Display.cs" id="2_n1fhu"]
 [ext_resource type="Texture2D" uid="uid://c4jtepf6uhdrh" path="res://textures/redstone_lamp.png" id="3_urrwc"]
@@ -112,7 +112,7 @@ RegisterDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/Pane
 MemoryDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer/RamLabel")
 SpeedSlider = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer/VBoxContainer/HBoxContainer2/InstructionsPerTickSlider")
 SpeedInput = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer/VBoxContainer/HBoxContainer2/SpinBox")
-InputDisplays = [NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/StartIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/SelectIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/AIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/BIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/UpIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/RightIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/DownIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/LeftIndicator")]
+InputDisplays = []
 ReleasedInput = Color(0.117647, 0.12549, 0.141176, 1)
 PressedInput = Color(0.528498, 0.576089, 0.62135, 1)
 HexMode = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer6/MarginContainer/VBoxContainer/HBoxContainer/HexSetting")
@@ -560,6 +560,7 @@ offset_bottom = 216.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lqll6")
 
 [node name="LeftIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 116.0
 offset_right = 66.0
@@ -567,6 +568,7 @@ offset_bottom = 166.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ok5b4")
 
 [node name="UpIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+layout_mode = 0
 offset_left = 66.0
 offset_top = 66.0
 offset_right = 116.0
@@ -574,6 +576,7 @@ offset_bottom = 116.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yhtfp")
 
 [node name="RightIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+layout_mode = 0
 offset_left = 116.0
 offset_top = 116.0
 offset_right = 166.0
@@ -581,6 +584,7 @@ offset_bottom = 166.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_x6u5y")
 
 [node name="AIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+layout_mode = 0
 offset_left = 366.0
 offset_top = 116.0
 offset_right = 416.0
@@ -588,6 +592,7 @@ offset_bottom = 166.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0eq0j")
 
 [node name="BIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+layout_mode = 0
 offset_left = 467.0
 offset_top = 116.0
 offset_right = 517.0
@@ -595,6 +600,7 @@ offset_bottom = 166.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_f7yqm")
 
 [node name="SelectIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+layout_mode = 0
 offset_left = 187.0
 offset_top = 28.0
 offset_right = 242.0
@@ -602,6 +608,7 @@ offset_bottom = 50.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_re8wq")
 
 [node name="StartIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
+layout_mode = 0
 offset_left = 288.0
 offset_top = 28.0
 offset_right = 343.0

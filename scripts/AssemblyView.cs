@@ -1,4 +1,5 @@
 using Godot;
+using GodotPlugins.Game;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,6 +29,8 @@ public partial class AssemblyView : CodeEdit
 
     private string assemblyPath = "";
 
+    public Main main;
+
     public override void _Process(double delta)
     {
         if (GetExecutingLines().Length > 0 && follow)
@@ -43,7 +46,14 @@ public partial class AssemblyView : CodeEdit
     {
         if (@event.IsActionPressed("save") && assemblyPath.Length != 0)
         {
-            Assembler.assemble(assemblyPath, assemblyPath[..^3] + ".mc");
+            using (Godot.FileAccess file = Godot.FileAccess.Open(assemblyPath, Godot.FileAccess.ModeFlags.Write))
+            {
+                file.StoreString(Text);
+                file.Close();
+            }
+            LoadAssembly(assemblyPath);
+            Assembler.Assemble(assemblyPath, assemblyPath[..^3] + ".mc");
+            main.LoadProgram(new string[]{assemblyPath[..^3] + ".mc"});
         }
     }
 
@@ -51,7 +61,7 @@ public partial class AssemblyView : CodeEdit
     {
         CodeHighlighter highlighter = SyntaxHighlighter as CodeHighlighter;
         highlighter.AddColorRegion("//", "", commentColor);
-        highlighter.AddColorRegion(".", " ", labelColor);
+        highlighter.AddColorRegion(".", "\t", labelColor);
         for(int i = 0; i < 16; i++)
         {
             highlighter.AddKeywordColor("r" + i, registerColor);
@@ -68,7 +78,7 @@ public partial class AssemblyView : CodeEdit
     public void LoadAssembly(string assembly_filename)
     {
         assemblyPath = assembly_filename;
-        GD.Print(assemblyPath);
+        
         string assembly;
         try 
         {
@@ -101,6 +111,9 @@ public partial class AssemblyView : CodeEdit
         lineNums.Text = text;
         initialized = true;
         Editable = true;
+
+        Assembler.Assemble(assemblyPath, assemblyPath[..^3] + ".mc");
+        main.LoadProgram(new string[]{assemblyPath[..^3] + ".mc"});
     }
 
     public void MoveCursor()
