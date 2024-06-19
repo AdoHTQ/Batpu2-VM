@@ -7,7 +7,7 @@ using Godot;
 
 class Assembler
 {
-    public static void Assemble(string assemblyFilename, string outputFilename)
+    public static string Assemble(string assemblyFilename, string outputFilename)
     {
         string pythonPath = "python";
         string scriptPath = @"assembler/main.py";
@@ -27,7 +27,7 @@ class Assembler
             using (System.IO.StreamReader reader = process.StandardError)
             {
                 string result = reader.ReadToEnd();
-                GD.Print(result);
+                return result;
             }
         }
     }

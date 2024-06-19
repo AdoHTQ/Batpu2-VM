@@ -82,6 +82,11 @@ public partial class Main : Node
         }
     }
 
+    public override void _Process(double delta)
+    {
+        assemblyView.follow = AssemblyFollow.ButtonPressed && !paused;
+    }
+
     public override void _PhysicsProcess(double delta)
     {
         if (Input.IsActionJustPressed("fullscreen")) 
@@ -104,8 +109,6 @@ public partial class Main : Node
             for (int i = 0; i < instructionsPerTick; i++) RunNextInstruction();
             waitCounter = (int)Math.Ceiling(100 / (double)instructionsPerSecond);
         }
-        
-        assemblyView.follow = AssemblyFollow.ButtonPressed;
     }
 
     public void SetSpeed(float value)

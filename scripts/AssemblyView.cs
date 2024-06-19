@@ -10,6 +10,8 @@ public partial class AssemblyView : CodeEdit
 {
     [ExportGroup("References")]
     [Export] private Label lineNums;
+    [Export] private Label errorDisplay;
+    [Export] private Control errorToggle;
 
     [ExportGroup("Syntax colors")]
     [Export] private Color commentColor;
@@ -35,7 +37,7 @@ public partial class AssemblyView : CodeEdit
     {
         if (GetExecutingLines().Length > 0 && follow)
         {
-            double goal = Math.Clamp(GetExecutingLines()[0], 15.0, Text.Split('\n').Length - 15) - 15;
+            double goal = Math.Clamp(GetExecutingLines()[0], 15.0, Math.Max(15, Text.Split('\n').Length - 15)) - 15;
             ScrollVertical = ScrollVertical + (goal - ScrollVertical) * 0.1;
         }
 
@@ -60,8 +62,8 @@ public partial class AssemblyView : CodeEdit
     public override void _Ready()
     {
         CodeHighlighter highlighter = SyntaxHighlighter as CodeHighlighter;
-        highlighter.AddColorRegion("//", "", commentColor);
-        highlighter.AddColorRegion(".", "\t", labelColor);
+        highlighter.AddColorRegion("//", "", commentColor, true);
+        highlighter.AddColorRegion(".", "\t", labelColor, true);
         for(int i = 0; i < 16; i++)
         {
             highlighter.AddKeywordColor("r" + i, registerColor);
@@ -112,8 +114,21 @@ public partial class AssemblyView : CodeEdit
         initialized = true;
         Editable = true;
 
-        Assembler.Assemble(assemblyPath, assemblyPath[..^3] + ".mc");
+        Assemble(assemblyPath, assemblyPath[..^3] + ".mc");
         main.LoadProgram(new string[]{assemblyPath[..^3] + ".mc"});
+    }
+
+    private void Assemble(string inputPath, string outputPath)
+    {
+        string result = Assembler.Assemble(inputPath, outputPath);
+        if (result == "") return;
+        errorToggle.Visible = true;
+        errorDisplay.Text = result;
+    }
+
+    public void HideError()
+    {
+        errorToggle.Visible = false;
     }
 
     public void MoveCursor()

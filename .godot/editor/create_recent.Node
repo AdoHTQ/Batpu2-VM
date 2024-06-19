@@ -1,14 +1,14 @@
+Button
 VBoxContainer
 MarginContainer
+Label
+PanelContainer
 ScrollContainer
 RichTextLabel
-Label
 Panel
 LineEdit
 HBoxContainer
 CodeEdit
 CheckBox
-Button
-PanelContainer
 VSeparator
 OptionButton
