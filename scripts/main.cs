@@ -89,14 +89,6 @@ public partial class Main : Node
 
     public override void _PhysicsProcess(double delta)
     {
-        if (Input.IsActionJustPressed("fullscreen")) 
-        {
-            Vector2I resolution = DisplayServer.ScreenGetSize();
-            DisplayServer.WindowSetSize(resolution);
-            DisplayServer.WindowSetPosition(new Vector2I(0, 0));
-            DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
-        }
-
         instructionsPerSecond = (int)SpeedSlider.Value;
         SpeedInput.Value = instructionsPerSecond;
         int instructionsPerTick = (int)Math.Ceiling((double)instructionsPerSecond / 100);
@@ -260,6 +252,7 @@ public partial class Main : Node
     {
         paused = !paused;
         StartStopButton.Text = paused ? "-Start-" : "-Stop-";
+        StartStopButton.ButtonPressed = !paused;
         //StatusLabel.Text = "";
     }
 

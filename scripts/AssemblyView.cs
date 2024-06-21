@@ -15,13 +15,15 @@ public partial class AssemblyView : CodeEdit
 
     [ExportGroup("Syntax colors")]
     [Export] private Color commentColor;
-    [Export] private Color labelColor;
+    [Export] private Color stringColor;
     [Export] private Color registerColor;
     [Export] private Color instructionColor;
+    [Export] private Color conditionColor;
 
     private List<int> codeLines;
 
     private List<string> instructions = new List<string> {"NOP", "HLT", "ADD", "SUB", "NOR", "AND", "XOR", "RSH", "LDI", "ADI", "JMP", "BRH", "CAL", "RET", "LOD", "STR", "CMP", "MOV", "LSH", "INC", "DEC", "NOT"};
+    private List<string> conditions = new List<string> {"eq", "ne", "ge", "lt", "=", "!=", ">=", "<", "z", "nz", "c", "nc", "zero", "notzero", "carry", "notcarry"};
 
     public bool initialized {get; private set;}
 
@@ -63,7 +65,7 @@ public partial class AssemblyView : CodeEdit
     {
         CodeHighlighter highlighter = SyntaxHighlighter as CodeHighlighter;
         highlighter.AddColorRegion("//", "", commentColor, true);
-        highlighter.AddColorRegion(".", "\t", labelColor, true);
+        highlighter.AddColorRegion("\"", "\"", stringColor, true);
         for(int i = 0; i < 16; i++)
         {
             highlighter.AddKeywordColor("r" + i, registerColor);
@@ -72,6 +74,11 @@ public partial class AssemblyView : CodeEdit
         {
             highlighter.AddKeywordColor(instruction.ToLower(), instructionColor);
             highlighter.AddKeywordColor(instruction.ToUpper(), instructionColor);
+        }
+        foreach (string condition in conditions)
+        {
+            highlighter.AddKeywordColor(condition.ToLower(), conditionColor);
+            highlighter.AddKeywordColor(condition.ToUpper(), conditionColor);
         }
 
         codeLines = new List<int>();
