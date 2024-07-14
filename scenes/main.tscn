@@ -104,7 +104,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0.423529)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y22k"]
 bg_color = Color(0.145098, 0.168627, 0.203922, 0.890196)
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("display", "assemblyView", "StartStopButton", "StepButton", "ResetButton", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "SpeedSlider", "SpeedInput", "InputDisplays", "HexMode", "AssemblyFollow")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("display", "assemblyView", "StartStopButton", "StepButton", "ResetButton", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "PCDisplay", "SpeedSlider", "SpeedInput", "InputDisplays", "HexMode", "AssemblyFollow")]
 script = ExtResource("1_uokyd")
 display = NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/Display")
 assemblyView = NodePath("NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/HBoxContainer/CodeEdit")
@@ -114,6 +114,7 @@ ResetButton = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxCont
 FlagsDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer3/MarginContainer/FlagsLabel")
 RegisterDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer4/MarginContainer/RegistersLabel")
 MemoryDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer/RamLabel")
+PCDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer/MarginContainer/PCLabel")
 SpeedSlider = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer/VBoxContainer/HBoxContainer2/InstructionsPerTickSlider")
 SpeedInput = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer/VBoxContainer/HBoxContainer2/SpinBox")
 InputDisplays = [NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/StartIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/SelectIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/AIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/BIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/UpIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/RightIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/DownIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/LeftIndicator")]
@@ -672,8 +673,7 @@ theme_override_constants/margin_bottom = 5
 [node name="PCLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-text = "Program Counter: 0"
-horizontal_alignment = 1
+text = "   Program Counter: 0"
 
 [node name="StartButton" type="Button" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
 layout_mode = 2
@@ -915,7 +915,7 @@ text = "
 
 
 
-       Waiting for assembly file (as)"
+          Drag in assembly file (as)"
 editable = false
 caret_type = 1
 syntax_highlighter = SubResource("CodeHighlighter_2mnaf")

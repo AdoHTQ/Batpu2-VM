@@ -23,6 +23,7 @@ public partial class Main : Node
     [Export] private Label FlagsDisplay;
     [Export] private Label RegisterDisplay;
     [Export] private Label MemoryDisplay;
+    [Export] private Label PCDisplay;
     [Export] private Slider SpeedSlider;
     [Export] private SpinBox SpeedInput;
     [Export] private Array<Panel> InputDisplays;
@@ -195,7 +196,7 @@ public partial class Main : Node
                 break;
             //BRH
             case 11:
-                if ((cond == 0 && zeroFlag) || (cond == 1 && !zeroFlag) || (cond == 2 && !zeroFlag && carryFlag) || (cond == 3 && !carryFlag)) programCounter = address;
+                if ((cond == 0 && zeroFlag) || (cond == 1 && !zeroFlag) || (cond == 2 && carryFlag) || (cond == 3 && !carryFlag)) programCounter = address;
                 else programCounter++;
                 break;
             //CAL
@@ -330,6 +331,8 @@ public partial class Main : Node
             assemblyView.programCounter = programCounter;
             assemblyView.MoveCursor();
         }
+
+        PCDisplay.Text = "   Program Counter: " + programCounter;
     }
 
     private string padString(string input, int length, string fill)

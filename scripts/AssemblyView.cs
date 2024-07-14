@@ -84,6 +84,19 @@ public partial class AssemblyView : CodeEdit
         codeLines = new List<int>();
     }
 
+    public override void _Input(InputEvent @event)
+    {
+        if (@event is InputEventMouseButton && @event.IsPressed() && (@event as InputEventMouseButton).ButtonIndex == MouseButton.Left)
+        {
+            InputEvent evLocal = MakeInputLocal(@event);
+            if (!new Rect2(new Vector2(0, 0), Size).HasPoint((evLocal as InputEventMouseButton).Position)) ReleaseFocus();
+        }
+        if (@event is InputEventKey && @event.IsPressed())
+        {
+            if ((@event as InputEventKey).KeyLabel == Key.Escape) ReleaseFocus();
+        }
+    }
+
     public void LoadAssembly(string assembly_filename)
     {
         assemblyPath = assembly_filename;
