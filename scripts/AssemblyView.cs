@@ -12,6 +12,7 @@ public partial class AssemblyView : CodeEdit
     [Export] private Label lineNums;
     [Export] private Label errorDisplay;
     [Export] private Control errorToggle;
+    [Export] private Label filenameDisplay;
 
     [ExportGroup("Syntax colors")]
     [Export] private Color commentColor;
@@ -100,6 +101,8 @@ public partial class AssemblyView : CodeEdit
     public void LoadAssembly(string assembly_filename)
     {
         assemblyPath = assembly_filename;
+
+        filenameDisplay.Text = "Editing " + assembly_filename.Substring(assembly_filename.LastIndexOf("\\") + 1);
         
         string assembly;
         try 

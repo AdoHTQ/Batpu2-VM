@@ -1,10 +1,10 @@
-Button
-VBoxContainer
 MarginContainer
 Label
 PanelContainer
-ScrollContainer
+VBoxContainer
 RichTextLabel
+Button
+ScrollContainer
 Panel
 LineEdit
 HBoxContainer

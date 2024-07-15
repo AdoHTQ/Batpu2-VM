@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://d0pmv6pxy3ax2"]
+[gd_scene load_steps=32 format=3 uid="uid://d0pmv6pxy3ax2"]
 
 [ext_resource type="Script" path="res://scripts/Main.cs" id="1_uokyd"]
 [ext_resource type="Texture2D" uid="uid://c74uen28j3yh7" path="res://textures/redstone_lamp_2x2_on.png" id="2_i7kbd"]
@@ -83,12 +83,22 @@ corner_radius_bottom_left = 3
 [sub_resource type="Theme" id="Theme_vfx06"]
 LineEdit/font_sizes/font_size = 31
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bq6u3"]
+bg_color = Color(0.6, 0.6, 0.6, 0.423529)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ioq6h"]
+bg_color = Color(0.105882, 0.113725, 0.121569, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqthp"]
 content_margin_bottom = 24.0
 bg_color = Color(0.105882, 0.113725, 0.121569, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkgbl"]
 bg_color = Color(0.105882, 0.113725, 0.121569, 1)
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6xlx"]
 
@@ -98,16 +108,13 @@ symbol_color = Color(1, 1, 1, 1)
 function_color = Color(1, 1, 1, 1)
 member_variable_color = Color(1, 1, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bq6u3"]
-bg_color = Color(0.6, 0.6, 0.6, 0.423529)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y22k"]
 bg_color = Color(0.145098, 0.168627, 0.203922, 0.890196)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("display", "assemblyView", "StartStopButton", "StepButton", "ResetButton", "FlagsDisplay", "RegisterDisplay", "MemoryDisplay", "PCDisplay", "SpeedSlider", "SpeedInput", "InputDisplays", "HexMode", "AssemblyFollow")]
 script = ExtResource("1_uokyd")
 display = NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/Display")
-assemblyView = NodePath("NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/HBoxContainer/CodeEdit")
+assemblyView = NodePath("NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CodeEdit")
 StartStopButton = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/StartButton")
 StepButton = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer/StepButton")
 ResetButton = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer/ResetButton")
@@ -752,12 +759,13 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="FlagsLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer3/MarginContainer"]
+[node name="FlagsLabel" type="RichTextLabel" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer3/MarginContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "Flags
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center]Flags
 Carry: False | Zero: False"
-horizontal_alignment = 1
+fit_content = true
 
 [node name="PanelContainer4" type="PanelContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
 layout_mode = 2
@@ -770,11 +778,12 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="RegistersLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer4/MarginContainer"]
+[node name="RegistersLabel" type="RichTextLabel" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer4/MarginContainer"]
 custom_minimum_size = Vector2(0, 170)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
-horizontal_alignment = 1
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+fit_content = true
 
 [node name="PanelContainer5" type="PanelContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
 layout_mode = 2
@@ -786,17 +795,19 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
-[node name="RamLabel" type="Label" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer"]
+[node name="RamLabel" type="RichTextLabel" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 25
-horizontal_alignment = 1
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+fit_content = true
 
 [node name="PanelContainer6" type="PanelContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
 layout_mode = 2
@@ -872,16 +883,43 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer"]
+[node name="Panel" type="Panel" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer"]
+visible = false
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bq6u3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ioq6h")
+
+[node name="MarginContainer" type="MarginContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="EditingLabel" type="Label" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.412152, 0.412152, 0.412152, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
-[node name="Label" type="Label" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer"]
+[node name="Label" type="Label" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -890,7 +928,7 @@ theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_oqthp")
 
-[node name="CodeEdit" type="CodeEdit" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/HBoxContainer" node_paths=PackedStringArray("lineNums", "errorDisplay", "errorToggle")]
+[node name="CodeEdit" type="CodeEdit" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("lineNums", "errorDisplay", "errorToggle", "filenameDisplay")]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
@@ -923,18 +961,14 @@ highlight_all_occurrences = true
 gutters_draw_executing_lines = true
 script = ExtResource("12_exw6m")
 lineNums = NodePath("../ScrollContainer/Label")
-errorDisplay = NodePath("../../../ErrorDisplay/PanelContainer/MarginContainer/VBoxContainer/Label")
-errorToggle = NodePath("../../../ErrorDisplay")
+errorDisplay = NodePath("../../../../ErrorDisplay/PanelContainer/MarginContainer/VBoxContainer/Label")
+errorToggle = NodePath("../../../../ErrorDisplay")
+filenameDisplay = NodePath("../../PanelContainer/MarginContainer/EditingLabel")
 commentColor = Color(0.462291, 0.462291, 0.46229, 1)
 stringColor = Color(1, 0.360784, 0.32549, 1)
 registerColor = Color(0.670588, 0.784314, 1, 1)
 instructionColor = Color(0.498039, 0.992157, 0.819608, 1)
 conditionColor = Color(0.911635, 0.60823, 0.458849, 1)
-
-[node name="Panel" type="Panel" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer"]
-visible = false
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bq6u3")
 
 [node name="ErrorDisplay" type="MarginContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer"]
 visible = false
@@ -978,4 +1012,4 @@ text = "Hide"
 [connection signal="pressed" from="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Button4" to="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/Display" method="UpdateSprites" binds= [3]]
 [connection signal="value_changed" from="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer/VBoxContainer/HBoxContainer2/SpinBox" to="." method="SetSpeed"]
 [connection signal="toggled" from="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer6/MarginContainer/VBoxContainer/HBoxContainer/FullscreenSetting" to="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer6/MarginContainer/VBoxContainer/HBoxContainer/FullscreenSetting" method="Toggle"]
-[connection signal="pressed" from="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/ErrorDisplay/PanelContainer/MarginContainer/VBoxContainer/Button" to="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/HBoxContainer/CodeEdit" method="HideError"]
+[connection signal="pressed" from="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/ErrorDisplay/PanelContainer/MarginContainer/VBoxContainer/Button" to="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CodeEdit" method="HideError"]

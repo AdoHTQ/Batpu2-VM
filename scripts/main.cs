@@ -20,9 +20,9 @@ public partial class Main : Node
     [Export] private Button StartStopButton;
     [Export] private Button StepButton;
     [Export] private Button ResetButton;
-    [Export] private Label FlagsDisplay;
-    [Export] private Label RegisterDisplay;
-    [Export] private Label MemoryDisplay;
+    [Export] private RichTextLabel FlagsDisplay;
+    [Export] private RichTextLabel RegisterDisplay;
+    [Export] private RichTextLabel MemoryDisplay;
     [Export] private Label PCDisplay;
     [Export] private Slider SpeedSlider;
     [Export] private SpinBox SpeedInput;
@@ -304,23 +304,23 @@ public partial class Main : Node
 
     private void UpdateVisualisers()
     {
-        FlagsDisplay.Text = "Flags\n Carry: " + carryFlag + " | Zero: " + zeroFlag;
+        FlagsDisplay.Text = "[center]Flags\n Carry: [color=#969ca8]" + carryFlag + "[/color] | Zero: [color=#969ca8]" + zeroFlag;
         //string text = BitConverter.ToString(registers).Replace("-", " ");
-        string text = "Registers\n";
+        string text = "[center]Registers\n";
         for (int i = 0; i < registerCount; i++)
         {
-            text += "" + (i < 10 ? " " : "") + "r" + i + ":" + padString("" + registers[i], 3, "0");
-            if ((i - 3) % 4 != 0) text += " | ";
+            text += "" + (i < 10 ? " " : "") + "r" + i + ":[color=#969ca8]" + padString("" + registers[i], 3, "0") + "[/color]";
+            if ((i - 3) % 4 != 0) text += "  ";
             else text += "\n";
         }
         RegisterDisplay.Text = text;
 
         //text = BitConverter.ToString(ram).Replace("-", " ");
-        text = "RAM (Address:Value)\n";
+        text = "[center]RAM (Address:Value)\n";
         for (int i = 0; i < ramSize; i++)
         {
-            text += "" + padString("" + i, 3, "0") + ":" + padString("" + ram[i], 3, "0");
-            if ((i - 3) % 4 != 0) text += " | ";
+            text += "" + padString("" + i, 3, "0") + ":[color=#969ca8]" + padString("" + ram[i], 3, "0") + "[/color]";
+            if ((i - 3) % 4 != 0) text += "  ";
             else text += "\n";
         }
         MemoryDisplay.Text = text;
