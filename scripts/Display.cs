@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using Godot.Collections;
+using System.Linq;
 
 public partial class Display : Node
 {
@@ -118,7 +119,7 @@ public partial class Display : Node
                 break;
             //Buffer Chars
             case 248:
-                TextDisplay.Text = charBuffer;
+                TextDisplay.Text = BufferLines(charBuffer);
                 break;
             //Clear Chars Buffer
             case 249:
@@ -144,6 +145,14 @@ public partial class Display : Node
                 UpdateNumDisplay();
                 break;
         }
+    }
+
+    public static string BufferLines(string input)
+    {
+        string[] lines = input.Split(new[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+        lines = lines.Take(2).ToArray(); // Limit to first 2 lines
+
+        return string.Join(System.Environment.NewLine, lines.Select(l => l.Length > 10 ? l.Substring(0, 10).PadRight(10, '_') : l.PadRight(10, '_')));
     }
 
     public byte LoadPort(byte port)

@@ -164,6 +164,7 @@ public partial class AssemblyView : CodeEdit
     public void MoveCursor()
     {
         ClearExecutingLines();
+        if (codeLines.Count == 0) return;
         SetLineAsExecuting(codeLines[programCounter], true);
     }
 
