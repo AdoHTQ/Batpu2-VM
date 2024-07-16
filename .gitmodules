@@ -1,0 +1,3 @@
+[submodule "assembler"]
+	path = assembler
+	url = https://github.com/mattbatwings/newcpu
