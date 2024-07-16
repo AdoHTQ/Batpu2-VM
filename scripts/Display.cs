@@ -39,7 +39,7 @@ public partial class Display : Node
             }
         }
         displayBuffer = new bool[resolution.X, resolution.Y];
-        TextDisplay.Text = "__________\n__________";
+        TextDisplay.Text = "____________________";
         NumDisplay.Text = "" + displayedNum;
 
         displayInitialized = true;
@@ -119,7 +119,7 @@ public partial class Display : Node
                 break;
             //Buffer Chars
             case 248:
-                TextDisplay.Text = BufferLines(charBuffer);
+                TextDisplay.Text = BufferLines(charBuffer + "\n");
                 break;
             //Clear Chars Buffer
             case 249:
@@ -149,6 +149,7 @@ public partial class Display : Node
 
     public static string BufferLines(string input)
     {
+        GD.Print(input);
         string[] lines = input.Split(new[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
         lines = lines.Take(2).ToArray(); // Limit to first 2 lines
 
