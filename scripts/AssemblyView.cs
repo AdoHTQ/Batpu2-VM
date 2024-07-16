@@ -87,10 +87,17 @@ public partial class AssemblyView : CodeEdit
 
     public override void _Input(InputEvent @event)
     {
-        if (@event is InputEventMouseButton && @event.IsPressed() && (@event as InputEventMouseButton).ButtonIndex == MouseButton.Left)
+        if (@event is InputEventMouseButton && @event.IsPressed())
         {
             InputEvent evLocal = MakeInputLocal(@event);
-            if (!new Rect2(new Vector2(0, 0), Size).HasPoint((evLocal as InputEventMouseButton).Position)) ReleaseFocus();
+            if (!new Rect2(new Vector2(0, 0), Size).HasPoint((evLocal as InputEventMouseButton).Position))
+            {
+                if ((@event as InputEventMouseButton).ButtonIndex == MouseButton.Left) ReleaseFocus();
+            }
+            else if ((@event as InputEventMouseButton).ButtonIndex == MouseButton.WheelUp || (@event as InputEventMouseButton).ButtonIndex == MouseButton.WheelDown)
+            {
+                follow = false;
+            }
         }
         if (@event is InputEventKey && @event.IsPressed())
         {

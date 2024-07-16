@@ -85,6 +85,7 @@ public partial class Main : Node
 
     public override void _Process(double delta)
     {
+        if (paused) return;
         assemblyView.follow = AssemblyFollow.ButtonPressed && !paused;
     }
 
@@ -260,7 +261,11 @@ public partial class Main : Node
     private void Step()
     {
         if (!paused) StartStop();
-        if (paused && bytecode != null) RunNextInstruction();
+        if (paused && bytecode != null) 
+        {
+            RunNextInstruction();
+            assemblyView.follow = true;
+        }
     }
 
     private void Reset()
