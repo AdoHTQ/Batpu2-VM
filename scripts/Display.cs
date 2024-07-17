@@ -28,6 +28,10 @@ public partial class Display : Node
 
     public void DisplayInit()
     {
+        displayBuffer = new bool[resolution.X, resolution.Y];
+        TextDisplay.Text = "____________________";
+        NumDisplay.Text = "" + displayedNum;
+
         if (displayInitialized) return;
         for (int x = 0; x < resolution.X; x++)
         {
@@ -38,9 +42,6 @@ public partial class Display : Node
                 AddChild(sprite);
             }
         }
-        displayBuffer = new bool[resolution.X, resolution.Y];
-        TextDisplay.Text = "____________________";
-        NumDisplay.Text = "" + displayedNum;
 
         displayInitialized = true;
     }
@@ -119,7 +120,7 @@ public partial class Display : Node
                 break;
             //Buffer Chars
             case 248:
-                TextDisplay.Text = BufferLines(charBuffer + "\n");
+                TextDisplay.Text = PadWithUnderscores(charBuffer.ToUpper());
                 break;
             //Clear Chars Buffer
             case 249:
@@ -147,14 +148,17 @@ public partial class Display : Node
         }
     }
 
-    public static string BufferLines(string input)
-    {
-        GD.Print(input);
-        string[] lines = input.Split(new[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-        lines = lines.Take(2).ToArray(); // Limit to first 2 lines
+    public static string PadWithUnderscores(string inputString)
+{
+  if (inputString == null)
+  {
+    throw new ArgumentNullException(nameof(inputString));
+  }
 
-        return string.Join(System.Environment.NewLine, lines.Select(l => l.Length > 10 ? l.Substring(0, 10).PadRight(10, '_') : l.PadRight(10, '_')));
-    }
+  int targetLength = 20;
+  int padLength = targetLength - inputString.Length;
+  return padLength > 0 ? inputString.PadRight(targetLength, '_') : inputString;
+}
 
     public byte LoadPort(byte port)
     {

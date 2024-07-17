@@ -16,7 +16,7 @@ public partial class AssemblyView : CodeEdit
 
     [ExportGroup("Syntax colors")]
     [Export] private Color commentColor;
-    [Export] private Color stringColor;
+    //[Export] private Color stringColor;
     [Export] private Color registerColor;
     [Export] private Color instructionColor;
     [Export] private Color conditionColor;
@@ -49,24 +49,26 @@ public partial class AssemblyView : CodeEdit
 
     public override void _UnhandledInput(InputEvent @event)
     {
-        if (@event.IsActionPressed("save") && assemblyPath.Length != 0)
+        if (@event.IsActionPressed("save") && assemblyPath.Length != 0) Save();
+    }
+
+    public void Save()
+    {
+        using (Godot.FileAccess file = Godot.FileAccess.Open(assemblyPath, Godot.FileAccess.ModeFlags.Write))
         {
-            using (Godot.FileAccess file = Godot.FileAccess.Open(assemblyPath, Godot.FileAccess.ModeFlags.Write))
-            {
-                file.StoreString(Text);
-                file.Close();
-            }
-            LoadAssembly(assemblyPath);
-            Assembler.Assemble(assemblyPath, assemblyPath[..^3] + ".mc");
-            main.LoadProgram(new string[]{assemblyPath[..^3] + ".mc"});
+            file.StoreString(Text);
+            file.Close();
         }
+        LoadAssembly(assemblyPath);
+        Assembler.Assemble(assemblyPath, assemblyPath[..^3] + ".mc");
+        main.LoadProgram(new string[]{assemblyPath[..^3] + ".mc"});
     }
 
     public override void _Ready()
     {
         CodeHighlighter highlighter = SyntaxHighlighter as CodeHighlighter;
         highlighter.AddColorRegion("//", "", commentColor, true);
-        highlighter.AddColorRegion("\"", "\"", stringColor, true);
+        //highlighter.AddColorRegion("\"", "\"", stringColor, true);
         for(int i = 0; i < 16; i++)
         {
             highlighter.AddKeywordColor("r" + i, registerColor);
@@ -128,7 +130,9 @@ public partial class AssemblyView : CodeEdit
         using (StringReader sr = new StringReader(assembly)) {
             string line;
             while ((line = sr.ReadLine()) != null) {
-                if (instructions.Any(line.ToUpper().Contains) && !line.StartsWith("//"))
+                int comment = line.IndexOfAny(new char[]{'/', ';', '#'});
+                if (comment != -1) line = line[..comment];
+                if (instructions.Any(line.ToUpper().Contains))
                 {
                     codeLines.Add(lineNum);
                     text += " " + padString("" + pc, 4, "0");

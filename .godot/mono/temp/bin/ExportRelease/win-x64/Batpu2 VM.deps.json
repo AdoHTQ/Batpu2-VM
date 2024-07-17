@@ -9,8 +9,8 @@
     ".NETCoreApp,Version=v6.0/win-x64": {
       "Batpu2 VM/1.0.0": {
         "dependencies": {
-          "Godot.SourceGenerators": "4.2.1",
-          "GodotSharp": "4.2.1",
+          "Godot.SourceGenerators": "4.2.2",
+          "GodotSharp": "4.2.2",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "6.0.12"
         },
         "runtime": {
@@ -854,12 +854,12 @@
           }
         }
       },
-      "Godot.SourceGenerators/4.2.1": {},
-      "GodotSharp/4.2.1": {
+      "Godot.SourceGenerators/4.2.2": {},
+      "GodotSharp/4.2.2": {
         "runtime": {
           "lib/net6.0/GodotSharp.dll": {
-            "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.2.1.0"
+            "assemblyVersion": "4.2.2.0",
+            "fileVersion": "4.2.2.0"
           }
         }
       }
@@ -876,19 +876,19 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Godot.SourceGenerators/4.2.1": {
+    "Godot.SourceGenerators/4.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MdLFzDZEMUbXRLH4bLX8o9Blk76M7Op76RyobZ1zyKgcIkgPqG+p53jgLFLSHpBGFKKaW3kB0w6om+wYauwHbw==",
-      "path": "godot.sourcegenerators/4.2.1",
-      "hashPath": "godot.sourcegenerators.4.2.1.nupkg.sha512"
+      "sha512": "sha512-QGO7NjcG4W1doQTOXBp2TgAK+a6npFX2dYCw1CXttRh3/UI76sQnCUUe9/U95e6uMO9SzVK7wzEH3H4qGpOr4g==",
+      "path": "godot.sourcegenerators/4.2.2",
+      "hashPath": "godot.sourcegenerators.4.2.2.nupkg.sha512"
     },
-    "GodotSharp/4.2.1": {
+    "GodotSharp/4.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6a/GML0jXcwT6LxDBtRx+hpPBUFGAmK7GVb/ehKP53nx0AHA+Yc//B7anXY4U4WCMB+ckgsouWpd8rAeupNfbw==",
-      "path": "godotsharp/4.2.1",
-      "hashPath": "godotsharp.4.2.1.nupkg.sha512"
+      "sha512": "sha512-J2ZXDTuS4LlbPIOK2HCBD9lKNFvBzJLv6LIyFC3fAUKgUXZHvoKP/uwS+Iv/CrMZqsa+lQ+Wb4zfp5xoBrSCcw==",
+      "path": "godotsharp/4.2.2",
+      "hashPath": "godotsharp.4.2.2.nupkg.sha512"
     }
   },
   "runtimes": {
