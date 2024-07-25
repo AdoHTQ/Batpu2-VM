@@ -211,7 +211,7 @@ public partial class Main : Node
                 break;
             //LOD
             case 14:
-                offset = regC & 0b111 + (((regC & 0b1000) >> 3) == 1 ? -8 : 0);
+                offset = (regC & 0b111) + (((regC & 0b1000) >> 3) == 1 ? -8 : 0);
                 memAddress = (byte)(registers[regA] + offset);
                 if (memAddress < ramSize - portCount) registers[regB] = ram[memAddress];
                 else registers[regB] = display.LoadPort(memAddress);
@@ -219,7 +219,7 @@ public partial class Main : Node
                 break;
             //STR
             case 15:
-                offset = regC & 0b111 + (((regC & 0b1000) >> 3) == 1 ? -8 : 0);
+                offset = (regC & 0b111) + (((regC & 0b1000) >> 3) == 1 ? -8 : 0);
                 memAddress = (byte)(registers[regA] + offset);
                 if (memAddress < ramSize - portCount) ram[memAddress] = registers[regB];
                 else display.StorePort(memAddress, registers[regB]);
