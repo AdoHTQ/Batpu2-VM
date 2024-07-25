@@ -28,6 +28,7 @@ public partial class Display : Node
 
     public void DisplayInit()
     {
+        displayedNum = 0;
         displayBuffer = new bool[resolution.X, resolution.Y];
         TextDisplay.Text = "____________________";
         NumDisplay.Text = "" + displayedNum;
