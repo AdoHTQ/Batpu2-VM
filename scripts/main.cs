@@ -155,9 +155,9 @@ public partial class Main : Node
                 break;
             //SUB
             case 3:
-                carryFlag = (int)registers[regA] - (int)registers[regB] < 0;
+                carryFlag = registers[regA] >= registers[regB];
+                zeroFlag = registers[regA] == registers[regB];
                 registers[regC] = (byte)(registers[regA] - registers[regB]);
-                zeroFlag = registers[regC] == 0;
                 //negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
                 programCounter++;
                 break;
