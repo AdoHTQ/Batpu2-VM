@@ -1,11 +1,17 @@
 # Godot-specific ignores
-.import/
+.godot/imported/
 export.cfg
 export_presets.cfg
+
+.godot/shader_cache
+.godot/editor
+.godot/exported
+.godot/uid_cache.bin
+.godot/global_script_class_cache.cfg
 
 # Imported translations (automatically generated from CSV files)
 *.translation
 
 # Mono-specific ignores
-.mono/
+.godot/mono/
 data_*/
