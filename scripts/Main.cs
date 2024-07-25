@@ -48,6 +48,8 @@ public partial class Main : Node
     private bool carryFlag = false;
     private String[] inputs = {"Y", "T", "J", "K", "W", "D", "S", "A"};
 
+	private bool isVisualizerDirty = true;
+
     public override void _Ready()
     {
         Reset();
@@ -87,6 +89,8 @@ public partial class Main : Node
     {
         if (paused) return;
         assemblyView.follow = AssemblyFollow.ButtonPressed && !paused;
+
+		UpdateVisualisers();
     }
 
     public override void _PhysicsProcess(double delta)
@@ -118,7 +122,7 @@ public partial class Main : Node
         ushort instruction = (ushort)(bytecode[index] << 8 | bytecode[index + 1]);
         ProcessOpcode(instruction);
         programCounter %= programMemorySize / 2;
-        UpdateVisualisers();
+        isVisualizerDirty = true;
     }
 
     private void ProcessOpcode(ushort instruction)
@@ -276,7 +280,7 @@ public partial class Main : Node
         //ports = new byte[portCount];
         addressStack = new Stack<int>();
         //StatusLabel.Text = "";
-        UpdateVisualisers();
+		isVisualizerDirty = true;
         if (!display.displayInitialized) return;
         display.ClearBuffer();
         display.PushBuffer();
@@ -309,6 +313,10 @@ public partial class Main : Node
 
     private void UpdateVisualisers()
     {
+		if (!isVisualizerDirty) {
+			return;
+		}
+		isVisualizerDirty = false;
         FlagsDisplay.Text = "[center]Flags\n Carry: [color=#969ca8]" + carryFlag + "[/color] | Zero: [color=#969ca8]" + zeroFlag;
         //string text = BitConverter.ToString(registers).Replace("-", " ");
         string text = "[center]Registers\n";
