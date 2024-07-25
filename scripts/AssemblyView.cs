@@ -130,8 +130,19 @@ public partial class AssemblyView : CodeEdit
         using (StringReader sr = new StringReader(assembly)) {
             string line;
             while ((line = sr.ReadLine()) != null) {
+                line = line.Trim();
+
                 int comment = line.IndexOfAny(new char[]{'/', ';', '#'});
                 if (comment != -1) line = line[..comment];
+
+                int labelStart = line.IndexOf('.');
+                if (labelStart == 0) 
+                {
+                    int labelEnd = line.IndexOfAny(new char[]{' ', '\t'});
+                    if (labelEnd != -1) line = line[labelEnd..];
+                    else line = "";
+                }
+
                 if (instructions.Any(line.ToUpper().Contains))
                 {
                     codeLines.Add(lineNum);
