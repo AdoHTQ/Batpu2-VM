@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Godot;
 
 class Assembler
 {
     public static string Assemble(string assemblyFilename, string outputFilename)
     {
-        string pythonPath = "python";
+        string pythonPath = "python3";
+        
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
+            pythonPath = "python";
+        }
+
         string scriptPath = @"assembler/main.py";
         string[] scriptArgs = {assemblyFilename, outputFilename};
 
