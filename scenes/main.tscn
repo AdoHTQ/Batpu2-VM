@@ -965,7 +965,6 @@ errorDisplay = NodePath("../../../../ErrorDisplay/PanelContainer/MarginContainer
 errorToggle = NodePath("../../../../ErrorDisplay")
 filenameDisplay = NodePath("../../PanelContainer/MarginContainer/EditingLabel")
 commentColor = Color(0.462291, 0.462291, 0.46229, 1)
-stringColor = Color(1, 0.360784, 0.32549, 1)
 registerColor = Color(0.670588, 0.784314, 1, 1)
 instructionColor = Color(0.498039, 0.992157, 0.819608, 1)
 conditionColor = Color(0.911635, 0.60823, 0.458849, 1)

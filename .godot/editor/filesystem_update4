@@ -1,7 +1,0 @@
-res://scenes/main.tscn
-res://ui/Dock.tres
-res://scripts/Fullscreen.cs
-res://scripts/Main.cs
-res://scripts/Display.cs
-res://scripts/AssemblyView.cs
-res://scripts/UIFocus.cs
