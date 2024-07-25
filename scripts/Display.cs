@@ -59,7 +59,7 @@ public partial class Display : Node
     private void UpdateNumDisplay()
     {
         if (unsigned) NumDisplay.Text = "" + displayedNum;
-        else NumDisplay.Text = "" + (displayedNum & 0b01111111) + (((displayedNum & 0b10000000) != 0) ? -128 : 0);
+        else NumDisplay.Text = "" + ((displayedNum & 0b01111111) + (((displayedNum & 0b10000000) != 0) ? -128 : 0));
     }
 
     public void PushBuffer()
