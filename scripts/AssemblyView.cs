@@ -111,7 +111,7 @@ public partial class AssemblyView : CodeEdit
     {
         assemblyPath = assembly_filename;
 
-        filenameDisplay.Text = "Editing " + assembly_filename.Substring(assembly_filename.LastIndexOf("\\") + 1);
+        filenameDisplay.Text = "Editing " + Path.GetFileName(assembly_filename);
         
         string assembly;
         try 
