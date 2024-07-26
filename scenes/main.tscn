@@ -571,6 +571,14 @@ offset_right = 116.0
 offset_bottom = 216.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lqll6")
 
+[node name="Label" type="Label" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/DownIndicator"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="LeftIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
 layout_mode = 0
 offset_left = 16.0
@@ -578,6 +586,14 @@ offset_top = 116.0
 offset_right = 66.0
 offset_bottom = 166.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ok5b4")
+
+[node name="Label" type="Label" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/LeftIndicator"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="UpIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
 layout_mode = 0
@@ -587,6 +603,14 @@ offset_right = 116.0
 offset_bottom = 116.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yhtfp")
 
+[node name="Label" type="Label" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/UpIndicator"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="RightIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
 layout_mode = 0
 offset_left = 116.0
@@ -594,6 +618,14 @@ offset_top = 116.0
 offset_right = 166.0
 offset_bottom = 166.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_x6u5y")
+
+[node name="Label" type="Label" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/RightIndicator"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
 layout_mode = 0
@@ -603,6 +635,14 @@ offset_right = 416.0
 offset_bottom = 166.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0eq0j")
 
+[node name="Label" type="Label" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/AIndicator"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+text = "J"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="BIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
 layout_mode = 0
 offset_left = 467.0
@@ -611,21 +651,45 @@ offset_right = 517.0
 offset_bottom = 166.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_f7yqm")
 
+[node name="Label" type="Label" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/BIndicator"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+text = "K"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SelectIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
 layout_mode = 0
 offset_left = 187.0
 offset_top = 28.0
 offset_right = 242.0
-offset_bottom = 50.0
+offset_bottom = 54.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_re8wq")
+
+[node name="Label" type="Label" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/SelectIndicator"]
+layout_mode = 0
+offset_right = 55.0
+offset_bottom = 26.0
+text = "T"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="StartIndicator" type="Panel" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer"]
 layout_mode = 0
 offset_left = 288.0
 offset_top = 28.0
 offset_right = 343.0
-offset_bottom = 50.0
+offset_bottom = 54.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7vscf")
+
+[node name="Label" type="Label" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/StartIndicator"]
+layout_mode = 0
+offset_right = 55.0
+offset_bottom = 26.0
+text = "Y"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer"]
 layout_mode = 2
@@ -955,9 +1019,9 @@ text = "
 
           Drag in assembly file (as)"
 editable = false
-caret_type = 1
-syntax_highlighter = SubResource("CodeHighlighter_2mnaf")
 highlight_all_occurrences = true
+syntax_highlighter = SubResource("CodeHighlighter_2mnaf")
+caret_type = 1
 gutters_draw_executing_lines = true
 script = ExtResource("12_exw6m")
 lineNums = NodePath("../ScrollContainer/Label")
