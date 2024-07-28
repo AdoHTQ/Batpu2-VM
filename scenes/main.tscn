@@ -124,7 +124,7 @@ MemoryDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelC
 PCDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer/MarginContainer/PCLabel")
 SpeedSlider = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer/VBoxContainer/HBoxContainer2/InstructionsPerTickSlider")
 SpeedInput = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer/VBoxContainer/HBoxContainer2/SpinBox")
-InputDisplays = [NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/StartIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/SelectIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/AIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/BIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/UpIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/RightIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/DownIndicator"), NodePath("NewUI/HBoxContainer/DisplayColumn/VBoxContainer/PanelContainer/LeftIndicator")]
+InputDisplays = []
 ReleasedInput = Color(0.117647, 0.12549, 0.141176, 1)
 PressedInput = Color(0.528498, 0.576089, 0.62135, 1)
 HexMode = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer6/MarginContainer/VBoxContainer/HBoxContainer/HexSetting")
@@ -1019,9 +1019,10 @@ text = "
 
           Drag in assembly file (as)"
 editable = false
-highlight_all_occurrences = true
-syntax_highlighter = SubResource("CodeHighlighter_2mnaf")
 caret_type = 1
+syntax_highlighter = SubResource("CodeHighlighter_2mnaf")
+highlight_all_occurrences = true
+gutters_draw_breakpoints_gutter = true
 gutters_draw_executing_lines = true
 script = ExtResource("12_exw6m")
 lineNums = NodePath("../ScrollContainer/Label")
@@ -1069,10 +1070,6 @@ theme_override_font_sizes/font_size = 30
 text = "Hide"
 
 [connection signal="item_selected" from="Control/DisplayPanelMargins/HBoxContainer/DisplayPanelContainer/DisplayTextureDropdown" to="Control/Display" method="UpdateSprites"]
-[connection signal="pressed" from="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Button" to="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/Display" method="UpdateSprites" binds= [0]]
-[connection signal="pressed" from="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Button2" to="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/Display" method="UpdateSprites" binds= [1]]
-[connection signal="pressed" from="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Button3" to="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/Display" method="UpdateSprites" binds= [2]]
-[connection signal="pressed" from="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Button4" to="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/Display" method="UpdateSprites" binds= [3]]
 [connection signal="pressed" from="NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer/ResetButton" to="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/Display" method="DisplayInit"]
 [connection signal="value_changed" from="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer/VBoxContainer/HBoxContainer2/SpinBox" to="." method="SetSpeed"]
 [connection signal="toggled" from="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer6/MarginContainer/VBoxContainer/HBoxContainer/FullscreenSetting" to="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer6/MarginContainer/VBoxContainer/HBoxContainer/FullscreenSetting" method="Toggle"]
