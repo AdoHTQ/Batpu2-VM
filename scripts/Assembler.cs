@@ -11,16 +11,18 @@ class Assembler
     {
         string pythonPath = "python";
         string scriptPath = @"assembler/main.py";
-        string[] scriptArgs = {assemblyFilename, outputFilename};
 
         ProcessStartInfo start = new ProcessStartInfo
         {
             FileName = pythonPath,
-            Arguments = $"{scriptPath} {string.Join(" ", scriptArgs)}",
             RedirectStandardError = true,
             UseShellExecute = false,
             CreateNoWindow = true,
         };
+
+        start.ArgumentList.Add(scriptPath);
+        start.ArgumentList.Add(assemblyFilename);
+        start.ArgumentList.Add(outputFilename);
 
         using (Process process = Process.Start(start))
         {
