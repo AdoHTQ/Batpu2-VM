@@ -1022,7 +1022,6 @@ editable = false
 caret_type = 1
 syntax_highlighter = SubResource("CodeHighlighter_2mnaf")
 highlight_all_occurrences = true
-gutters_draw_breakpoints_gutter = true
 gutters_draw_executing_lines = true
 script = ExtResource("12_exw6m")
 lineNums = NodePath("../ScrollContainer/Label")

@@ -115,9 +115,11 @@ public partial class Main : Node
 					if (breakpoint == assemblyView.GetExecutingLines()[0])
 					{
 						StartStop();
+						assemblyView.SetLineAsBreakpoint(breakpoint, false);
 						break;
 					}
 				}
+				if (paused) break;
 			}
 			waitCounter = (int)Math.Ceiling(100 / (double)instructionsPerSecond);
 		}
