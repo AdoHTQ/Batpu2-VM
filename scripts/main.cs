@@ -46,6 +46,7 @@ public partial class Main : Node
 
 	private bool zeroFlag = false;
 	private bool carryFlag = false;
+	private bool pushScreen = false;
 	private String[] inputs = {"Y", "T", "J", "K", "W", "D", "S", "A"};
 
 	public override void _Ready()
@@ -87,6 +88,10 @@ public partial class Main : Node
 	{
 		if (paused) return;
 		assemblyView.follow = AssemblyFollow.ButtonPressed && !paused;
+		UpdateVisualisers();
+		if (!display.shouldRender) return;
+		display.PushBuffer();
+		display.shouldRender = false;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -103,7 +108,6 @@ public partial class Main : Node
 		{
 			for (int i = 0; i < instructionsPerTick; i++) 
 			{
-				if (paused) break;
 				RunNextInstruction();
 
 				foreach (int breakpoint in assemblyView.GetBreakpointedLines())
@@ -132,9 +136,8 @@ public partial class Main : Node
 		ushort instruction = (ushort)(bytecode[index] << 8 | bytecode[index + 1]);
 		ProcessOpcode(instruction);
 		programCounter %= programMemorySize / 2;
-		UpdateVisualisers();
 	}
-	
+
 	private enum Operand : byte
 	{
 		NOP,
@@ -173,14 +176,11 @@ public partial class Main : Node
 
 		switch (opcode)
 		{
-			//NOP
 			case Operand.NOP: programCounter++; break;
-			//HLT
 			case Operand.HLT:
 				if (!paused) StartStop();
 				programCounter = 0;
 				break;
-			//ADD
 			case Operand.ADD:
 				carryFlag = (int)registers[regA] + (int)registers[regB] > 255;
 				registers[regC] = (byte)(registers[regA] + registers[regB]);
@@ -188,7 +188,6 @@ public partial class Main : Node
 				//negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
 				programCounter++;
 				break;
-			//SUB
 			case Operand.SUB:
 				carryFlag = registers[regA] >= registers[regB];
 				zeroFlag = registers[regA] == registers[regB];
@@ -196,38 +195,32 @@ public partial class Main : Node
 				//negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
 				programCounter++;
 				break;
-			//NOR
 			case Operand.NOR:
 				registers[regC] = (byte)~(registers[regA] | registers[regB]);
 				zeroFlag = registers[regC] == 0;
 				carryFlag = false;
 				programCounter++;
 				break;
-			//AND
 			case Operand.AND:
 				registers[regC] = (byte)(registers[regA] & registers[regB]);
 				zeroFlag = registers[regC] == 0;
 				carryFlag = false;
 				programCounter++;
 				break;
-			//XOR
 			case Operand.XOR:
 				registers[regC] = (byte)(registers[regA] ^ registers[regB]);
 				zeroFlag = registers[regC] == 0;
 				carryFlag = false;
 				programCounter++;
 				break;
-			//RSH
 			case Operand.RSH:
 				registers[regC] = (byte)(registers[regA] >> 1);
 				programCounter++;
 				break;
-			//LDI
 			case Operand.LDI:
 				registers[regA] = immediate;
 				programCounter++;
 				break;
-			//ADI
 			case Operand.ADI:
 				carryFlag = (int)registers[regA] + (int)immediate > 255;
 				registers[regA] += immediate;
@@ -235,25 +228,20 @@ public partial class Main : Node
 				//negativeFlag = (registers[dest] & 0b_10000000) == 0b_10000000;
 				programCounter++;
 				break;
-			//JMP
 			case Operand.JMP:
 				programCounter = address;
 				break;
-			//BRH
 			case Operand.BRH:
 				if ((cond == 0 && zeroFlag) || (cond == 1 && !zeroFlag) || (cond == 2 && carryFlag) || (cond == 3 && !carryFlag)) programCounter = address;
 				else programCounter++;
 				break;
-			//CAL
 			case Operand.CAL:
 				addressStack.Push(programCounter + 1);
 				programCounter = address;
 				break;
-			//RET
 			case Operand.RET:
 				programCounter = addressStack.Pop();
 				break;
-			//LOD
 			case Operand.LOD:
 				offset = (regC & 0b111) + (((regC & 0b1000) >> 3) == 1 ? -8 : 0);
 				memAddress = (byte)(registers[regA] + offset);
@@ -261,7 +249,6 @@ public partial class Main : Node
 				else registers[regB] = display.LoadPort(memAddress);
 				programCounter++;
 				break;
-			//STR
 			case Operand.STR:
 				offset = (regC & 0b111) + (((regC & 0b1000) >> 3) == 1 ? -8 : 0);
 				memAddress = (byte)(registers[regA] + offset);
