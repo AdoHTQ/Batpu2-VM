@@ -145,6 +145,8 @@ public partial class Display : Node
 				unsigned = true;
 				UpdateNumDisplay();
 				break;
+            default:
+                break;
 		}
 	}
 
@@ -171,8 +173,9 @@ public partial class Display : Node
 				return (byte)rand.Next();
 			case 255:
 				return GetInputs();
+            default:
+                return 0;
 		}
-		return 0;
 	}
 
 	public byte GetInputs()
