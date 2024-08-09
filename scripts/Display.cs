@@ -32,6 +32,7 @@ public partial class Display : Node
     {
         displayedNum = 0;
         displayBuffer = new bool[resolution.X, resolution.Y];
+        displayBufferBuffer = new bool[resolution.X, resolution.Y];
         TextDisplay.Text = "__________";
         NumDisplay.Text = "" + displayedNum;
 
