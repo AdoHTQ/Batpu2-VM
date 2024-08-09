@@ -164,7 +164,7 @@ public partial class Display : Node
 		switch (port)
 		{
 			case 244:
-				return (byte)(displayBuffer[pixelPos.X, resolution.Y - 1 - pixelPos.Y] ? 1 : 0);
+				return (byte)(displayBufferBuffer[pixelPos.X, resolution.Y - 1 - pixelPos.Y] ? 1 : 0);
 			case 254:
 				Random rand = new Random();
 				return (byte)rand.Next();
