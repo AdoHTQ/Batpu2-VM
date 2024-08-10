@@ -694,8 +694,7 @@ vertical_alignment = 1
 [node name="Label" type="Label" parent="NewUI/HBoxContainer/DisplayColumn/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "BatPU2 Virtual Machine
-By AdoHTQ"
+text = "BatPU2 Virtual Machine by AdoHTQ"
 horizontal_alignment = 1
 
 [node name="ControlColumn" type="MarginContainer" parent="NewUI/HBoxContainer"]
@@ -799,15 +798,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 min_value = 1.0
-max_value = 10000.0
+max_value = 50000.0
 value = 100.0
+exp_edit = true
 
 [node name="SpinBox" type="SpinBox" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.4
 theme = SubResource("Theme_vfx06")
-max_value = 10000.0
+max_value = 50000.0
 value = 100.0
 rounded = true
 custom_arrow_step = 1.0
