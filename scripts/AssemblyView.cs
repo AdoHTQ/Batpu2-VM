@@ -146,7 +146,7 @@ public partial class AssemblyView : CodeEdit
 					else line = "";
 				}
 
-				if (instructions.Any(line.ToUpper().Contains) && !line.ToUpper().StartsWith("DEFINE"))
+				if (instructions.Any(line.ToUpper().Contains) && !line.StripEdges().ToUpper().StartsWith("DEFINE"))
 				{
 					codeLines.Add(lineNum);
 					text += " " + padString("" + pc, 4, "0");
