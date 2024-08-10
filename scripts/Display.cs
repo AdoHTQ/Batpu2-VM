@@ -2,6 +2,7 @@ using Godot;
 using System;
 using Godot.Collections;
 using System.Linq;
+using System.Collections.Generic;
 
 public partial class Display : Node
 {
@@ -27,6 +28,8 @@ public partial class Display : Node
 	private int texture;
 
 	private Vector2I pixelPos;
+
+	private List<char> charValues = new List<char> {' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '.', '!', '?'};
 
     public void DisplayInit()
     {
@@ -116,7 +119,7 @@ public partial class Display : Node
 				break;
 			//Write Char
 			case 247:
-				charBuffer += System.Text.Encoding.ASCII.GetString(new byte[] { data });
+				charBuffer += charValues[data];
 				break;
 			//Buffer Chars
 			case 248:
