@@ -89,11 +89,11 @@ public partial class Display : Node
 		{
 			//Pixel X
 			case 240:
-				pixelPos.X = data;
+				pixelPos.X = data & 0b00011111;
 				break;
 			//Pixel Y
 			case 241:
-				pixelPos.Y = data;
+				pixelPos.Y = data & 0b00011111;
 				break;
 			//Draw Pixel
 			case 242:

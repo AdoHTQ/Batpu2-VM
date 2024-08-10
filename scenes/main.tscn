@@ -120,7 +120,7 @@ StepButton = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxConta
 ResetButton = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer/ResetButton")
 FlagsDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer3/MarginContainer/FlagsLabel")
 RegisterDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer4/MarginContainer/RegistersLabel")
-MemoryDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer/RamLabel")
+MemoryDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer/VBoxContainer/RamLabel")
 PCDisplay = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer/MarginContainer/PCLabel")
 SpeedSlider = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer/VBoxContainer/HBoxContainer2/InstructionsPerTickSlider")
 SpeedInput = NodePath("NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer/VBoxContainer/HBoxContainer2/SpinBox")
@@ -865,12 +865,25 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
-[node name="RamLabel" type="RichTextLabel" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="RamLabel" type="RichTextLabel" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
+fit_content = true
+
+[node name="RamLabel2" type="RichTextLabel" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer5/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.597176, 0.597176, 0.597176, 1)
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center]240-255 Reserved for I/O Ports"
 fit_content = true
 
 [node name="PanelContainer6" type="PanelContainer" parent="NewUI/HBoxContainer/ControlColumn/VBoxContainer"]
@@ -967,10 +980,20 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="EditingLabel" type="Label" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="EditingLabel" type="Label" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.412152, 0.412152, 0.412152, 1)
 theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="EditingLabel2" type="Label" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.412152, 0.412152, 0.412152, 1)
+theme_override_font_sizes/font_size = 20
+text = "Save the file to reassemble (Ctrl+S on Windows)"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer"]
@@ -1027,7 +1050,7 @@ script = ExtResource("12_exw6m")
 lineNums = NodePath("../ScrollContainer/Label")
 errorDisplay = NodePath("../../../../ErrorDisplay/PanelContainer/MarginContainer/VBoxContainer/Label")
 errorToggle = NodePath("../../../../ErrorDisplay")
-filenameDisplay = NodePath("../../PanelContainer/MarginContainer/EditingLabel")
+filenameDisplay = NodePath("../../PanelContainer/MarginContainer/VBoxContainer/EditingLabel")
 commentColor = Color(0.462291, 0.462291, 0.46229, 1)
 registerColor = Color(0.670588, 0.784314, 1, 1)
 instructionColor = Color(0.498039, 0.992157, 0.819608, 1)

@@ -337,7 +337,7 @@ public partial class Main : Node
 
 		//text = BitConverter.ToString(ram).Replace("-", " ");
 		text = "[center]RAM (Address:Value)\n";
-		for (int i = 0; i < ramSize; i++)
+		for (int i = 0; i < ramSize - portCount; i++)
 		{
 			text += "" + padString("" + i, 3, "0") + ":[color=#969ca8]" + padString("" + ram[i], 3, "0") + "[/color]";
 			if ((i - 3) % 4 != 0) text += "  ";
