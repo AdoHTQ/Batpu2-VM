@@ -10,6 +10,8 @@ class Assembler
     public static string Assemble(string assemblyFilename, string outputFilename)
     {
         string pythonPath = "python";
+        if (OperatingSystem.IsLinux()) pythonPath = "python3";
+        
         string scriptPath = @"assembler/assembler.py";
 
         ProcessStartInfo start = new ProcessStartInfo
