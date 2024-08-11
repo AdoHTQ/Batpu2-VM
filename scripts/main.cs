@@ -89,9 +89,6 @@ public partial class Main : Node
 		if (paused) return;
 		assemblyView.follow = AssemblyFollow.ButtonPressed && !paused;
 		UpdateVisualisers();
-		if (!display.shouldRender) return;
-		display.PushBuffer();
-		display.shouldRender = false;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -123,6 +120,10 @@ public partial class Main : Node
 			}
 			waitCounter = (int)Math.Ceiling(100 / (double)instructionsPerSecond);
 		}
+
+		if (!display.shouldRender) return;
+		display.PushBuffer();
+		display.shouldRender = false;
 	}
 
 	public void SetSpeed(float value)
