@@ -9,7 +9,7 @@ class Assembler
 {
     public static string Assemble(string assemblyFilename, string outputFilename)
     {
-        string pythonPath = "py";
+        string pythonPath = "python";
         string scriptPath = @"assembler/assembler.py";
 
         ProcessStartInfo start = new ProcessStartInfo
