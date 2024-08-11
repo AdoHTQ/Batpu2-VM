@@ -43,7 +43,7 @@ public partial class AssemblyView : CodeEdit
 			double goal = Math.Clamp(GetExecutingLines()[0], 15.0, Math.Max(15, Text.Split('\n').Length - 15)) - 15;
 			ScrollVertical = ScrollVertical + (goal - ScrollVertical) * 0.1;
 		}
-
+		
 		(lineNums.GetParent() as ScrollContainer).ScrollVertical = (int)(ScrollVertical * 33);
 	}
 
@@ -99,6 +99,10 @@ public partial class AssemblyView : CodeEdit
 				if ((@event as InputEventMouseButton).ButtonIndex == MouseButton.Left) ReleaseFocus();
 			}
 			else if ((@event as InputEventMouseButton).ButtonIndex == MouseButton.WheelUp || (@event as InputEventMouseButton).ButtonIndex == MouseButton.WheelDown)
+			{
+				follow = false;
+			}
+			else if ((@event as InputEventMouseButton).ButtonIndex == MouseButton.Left)
 			{
 				follow = false;
 			}

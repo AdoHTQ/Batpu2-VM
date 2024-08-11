@@ -87,7 +87,6 @@ public partial class Main : Node
 	public override void _Process(double delta)
 	{
 		if (paused) return;
-		assemblyView.follow = AssemblyFollow.ButtonPressed && !paused;
 		UpdateVisualisers();
 	}
 
@@ -268,6 +267,7 @@ public partial class Main : Node
 	private void StartStop()
 	{
 		paused = !paused;
+		assemblyView.follow = AssemblyFollow.ButtonPressed && !paused;
 		StartStopButton.Text = paused ? "-Start-" : "-Stop-";
 		StartStopButton.ButtonPressed = !paused;
 		if (programCounter == 0)
@@ -279,12 +279,13 @@ public partial class Main : Node
 		if (bytecode == null) return;
 		if (!paused) StartStop();
 		RunNextInstruction();
-		assemblyView.follow = true;
+		assemblyView.follow = AssemblyFollow.ButtonPressed;
 		UpdateVisualisers();
 	}
 
 	private void Reset()
 	{
+		assemblyView.follow = AssemblyFollow.ButtonPressed;
 		programCounter = 0;
 		ram = new byte[ramSize];
 		registers = new byte[registerCount];
