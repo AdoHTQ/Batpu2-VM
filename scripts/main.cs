@@ -275,12 +275,11 @@ public partial class Main : Node
 
 	private void Step()
 	{
+		if (bytecode == null) return;
 		if (!paused) StartStop();
-		if (paused && bytecode != null) 
-		{
-			RunNextInstruction();
-			assemblyView.follow = true;
-		}
+		RunNextInstruction();
+		assemblyView.follow = true;
+		UpdateVisualisers();
 	}
 
 	private void Reset()
