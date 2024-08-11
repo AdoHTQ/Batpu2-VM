@@ -798,7 +798,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 min_value = 1.0
-max_value = 50000.0
+max_value = 100000.0
 value = 100.0
 exp_edit = true
 
@@ -807,7 +807,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.4
 theme = SubResource("Theme_vfx06")
-max_value = 50000.0
+max_value = 100000.0
 value = 100.0
 rounded = true
 custom_arrow_step = 1.0
