@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 public partial class AssemblyView : CodeEdit
 {
 	[ExportGroup("References")]
-	[Export] private Label lineNums;
+	[Export] private TextEdit lineNums;
 	[Export] private Label errorDisplay;
 	[Export] private Control errorToggle;
 	[Export] private Label filenameDisplay;
@@ -66,6 +66,9 @@ public partial class AssemblyView : CodeEdit
 
 	public override void _Ready()
 	{
+		//Remove line num scroll bar
+		foreach (Node child in lineNums.GetChildren(true)) if (child is ScrollBar) lineNums.RemoveChild(child);
+
 		CodeHighlighter highlighter = SyntaxHighlighter as CodeHighlighter;
 		highlighter.AddColorRegion("/", "", commentColor, true);
 		highlighter.AddColorRegion("#", "", commentColor, true);

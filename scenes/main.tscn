@@ -91,14 +91,12 @@ bg_color = Color(0.105882, 0.113725, 0.121569, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqthp"]
-content_margin_bottom = 24.0
-bg_color = Color(0.105882, 0.113725, 0.121569, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkgbl"]
 bg_color = Color(0.105882, 0.113725, 0.121569, 1)
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c108o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6xlx"]
 
@@ -1006,14 +1004,18 @@ layout_mode = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
-[node name="Label" type="Label" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer"]
+[node name="Label" type="TextEdit" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_oqthp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vkgbl")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_c108o")
+editable = false
+scroll_fit_content_height = true
 
 [node name="CodeEdit" type="CodeEdit" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("lineNums", "errorDisplay", "errorToggle", "filenameDisplay")]
 layout_mode = 2
