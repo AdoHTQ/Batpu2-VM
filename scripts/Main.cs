@@ -317,7 +317,7 @@ public partial class Main : Node
 				//StatusLabel.Text = "Failed to Load Program";
 			}
 		}
-		else if (files[0].LastIndexOf(".as") != -1)
+		else if (files[0].LastIndexOf(".as") != -1 || files[0].LastIndexOf(".ap") != -1)
 		{
 			assemblyView.LoadAssembly(files[0]);
 		}
