@@ -293,6 +293,7 @@ public partial class Main : Node
 		addressStack = new Stack<int>();
 		//StatusLabel.Text = "";
 		UpdateVisualisers();
+		display.DisplayInit();
 		if (!display.displayInitialized) return;
 		display.ClearBuffer();
 		display.PushBuffer();
