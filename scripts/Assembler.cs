@@ -11,6 +11,7 @@ class Assembler
     {
         string pythonPath = "python";
         if (OperatingSystem.IsLinux()) pythonPath = "python3";
+        if (OperatingSystem.IsMacOS()) pythonPath = "python3";
         
         string scriptPath = @"assembler/assembler.py";
 
