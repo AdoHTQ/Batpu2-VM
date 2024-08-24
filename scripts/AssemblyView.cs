@@ -46,12 +46,7 @@ public partial class AssemblyView : CodeEdit
 		
 		(lineNums.GetParent() as ScrollContainer).ScrollVertical = (int)(ScrollVertical * 33);
 	}
-
-	public override void _UnhandledInput(InputEvent @event)
-	{
-		if (@event.IsActionPressed("save") && assemblyPath.Length != 0) Save();
-	}
-
+	
 	public void Save()
 	{
 		using (Godot.FileAccess file = Godot.FileAccess.Open(assemblyPath, Godot.FileAccess.ModeFlags.Write))
@@ -114,6 +109,7 @@ public partial class AssemblyView : CodeEdit
 		{
 			if ((@event as InputEventKey).KeyLabel == Key.Escape) ReleaseFocus();
 		}
+		if (@event.IsActionPressed("save") && assemblyPath.Length != 0) Save();
 	}
 
 	public void LoadAssembly(string assembly_filename)
@@ -202,5 +198,10 @@ public partial class AssemblyView : CodeEdit
 		}
 		output += input;
 		return output;
+	}
+	private void _on_gui_input(InputEvent @event)
+	{
+		if (!@event.IsActionPressed("save")) return;
+		AcceptEvent();
 	}
 }
