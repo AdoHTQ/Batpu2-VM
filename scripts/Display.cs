@@ -29,15 +29,15 @@ public partial class Display : Node
 
 	private Vector2I pixelPos;
 
-	private List<char> charValues = new List<char> {' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '.', '!', '?'};
+	private List<char> charValues = new List<char> { ' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '.', '!', '?' };
 
-    public void DisplayInit()
-    {
-        displayedNum = 0;
-        displayBuffer = new bool[resolution.X, resolution.Y];
-        displayBufferBuffer = new bool[resolution.X, resolution.Y];
-        TextDisplay.Text = "__________";
-        NumDisplay.Text = "" + displayedNum;
+	public void DisplayInit()
+	{
+		displayedNum = 0;
+		displayBuffer = new bool[resolution.X, resolution.Y];
+		displayBufferBuffer = new bool[resolution.X, resolution.Y];
+		TextDisplay.Text = "__________";
+		NumDisplay.Text = "" + displayedNum;
 
 		if (displayInitialized) return;
 		for (int x = 0; x < resolution.X; x++)
@@ -83,7 +83,7 @@ public partial class Display : Node
 	public void ClearBuffer()
 	{
 		for (int x = 0; x < resolution.X * resolution.Y; x++)
-			displayBufferBuffer[x%resolution.X, x/resolution.Y] = false;
+			displayBufferBuffer[x % resolution.X, x / resolution.Y] = false;
 	}
 
 	public void StorePort(byte port, byte data)
@@ -148,22 +148,22 @@ public partial class Display : Node
 				unsigned = true;
 				UpdateNumDisplay();
 				break;
-            default:
-                break;
+			default:
+				break;
 		}
 	}
 
-    public static string PadWithUnderscores(string inputString)
-    {
-        if (inputString == null)
-        {
-            throw new ArgumentNullException(nameof(inputString));
-        }
+	public static string PadWithUnderscores(string inputString)
+	{
+		if (inputString == null)
+		{
+			throw new ArgumentNullException(nameof(inputString));
+		}
 
-        int targetLength = 10;
-        int padLength = targetLength - inputString.Length;
-        return padLength > 0 ? inputString.PadRight(targetLength, '_') : inputString;
-    }
+		int targetLength = 10;
+		int padLength = targetLength - inputString.Length;
+		return padLength > 0 ? inputString.PadRight(targetLength, '_') : inputString;
+	}
 
 	public byte LoadPort(byte port)
 	{
@@ -176,8 +176,8 @@ public partial class Display : Node
 				return (byte)rand.Next();
 			case 255:
 				return GetInputs();
-            default:
-                return 0;
+			default:
+				return 0;
 		}
 	}
 
@@ -191,7 +191,7 @@ public partial class Display : Node
 		bool select = Input.IsActionPressed("select");
 		bool a = Input.IsActionPressed("a");
 		bool b = Input.IsActionPressed("b");
-		bool[] inputs = new bool[] {start, select, a, b, up, right, down, left};
+		bool[] inputs = new bool[] { start, select, a, b, up, right, down, left };
 		return ToByte(inputs);
 	}
 

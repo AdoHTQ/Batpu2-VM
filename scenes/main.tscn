@@ -329,10 +329,9 @@ text = "Display Texture: "
 
 [node name="DisplayTextureDropdown" type="OptionButton" parent="Control/DisplayPanelMargins/HBoxContainer/DisplayPanelContainer"]
 layout_mode = 2
-item_count = 4
 selected = 0
+item_count = 4
 popup/item_0/text = "1x1 Lamp"
-popup/item_0/id = 0
 popup/item_1/text = "2x2 Lamp"
 popup/item_1/id = 1
 popup/item_1/disabled = true
@@ -1021,12 +1020,12 @@ scroll_fit_content_height = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
-theme_override_colors/executing_line_color = Color(1, 1, 1, 1)
-theme_override_colors/line_number_color = Color(0.529412, 0.529412, 0.529412, 1)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_vkgbl")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_l6xlx")
+theme_override_colors/line_number_color = Color(0.529412, 0.529412, 0.529412, 1)
+theme_override_colors/executing_line_color = Color(1, 1, 1, 1)
 text = "
 
 
@@ -1054,9 +1053,11 @@ errorDisplay = NodePath("../../../../ErrorDisplay/PanelContainer/MarginContainer
 errorToggle = NodePath("../../../../ErrorDisplay")
 filenameDisplay = NodePath("../../PanelContainer/MarginContainer/VBoxContainer/EditingLabel")
 commentColor = Color(0.462291, 0.462291, 0.46229, 1)
+stringColor = Color(0.909804, 0.607843, 0.458824, 1)
 registerColor = Color(0.670588, 0.784314, 1, 1)
 instructionColor = Color(0.498039, 0.992157, 0.819608, 1)
 conditionColor = Color(0.911635, 0.60823, 0.458849, 1)
+macroColor = Color(1, 0.3978, 0.670057, 1)
 
 [node name="ErrorDisplay" type="MarginContainer" parent="NewUI/HBoxContainer/AssemblyColumn/PanelContainer"]
 visible = false
@@ -1101,5 +1102,5 @@ text = "Hide"
 [connection signal="pressed" from="NewUI/HBoxContainer/ControlColumn/VBoxContainer/HBoxContainer/ResetButton" to="NewUI/HBoxContainer/DisplayColumn/VBoxContainer/DisplayPlaceholder/MarginContainer/VBoxContainer/Display" method="DisplayInit"]
 [connection signal="value_changed" from="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer7/MarginContainer/VBoxContainer/HBoxContainer2/SpinBox" to="." method="SetSpeed"]
 [connection signal="toggled" from="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer6/MarginContainer/VBoxContainer/HBoxContainer/FullscreenSetting" to="NewUI/HBoxContainer/ControlColumn/VBoxContainer/PanelContainer6/MarginContainer/VBoxContainer/HBoxContainer/FullscreenSetting" method="Toggle"]
-[connection signal="pressed" from="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/ErrorDisplay/PanelContainer/MarginContainer/VBoxContainer/Button" to="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CodeEdit" method="HideError"]
 [connection signal="gui_input" from="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CodeEdit" to="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CodeEdit" method="_on_gui_input"]
+[connection signal="pressed" from="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/ErrorDisplay/PanelContainer/MarginContainer/VBoxContainer/Button" to="NewUI/HBoxContainer/AssemblyColumn/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CodeEdit" method="HideError"]

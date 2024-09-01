@@ -1,0 +1,109 @@
+%export pixel_x
+%export pixel_y
+%export draw_pixel
+%export clear_pixel
+%export load_pixel
+%export buffer_screen
+%export clear_screen_buffer
+%export write_char
+%export buffer_chars
+%export clear_chars_buffer
+%export show_number
+%export clear_number
+%export signed_mode
+%export unsigned_mode
+%export rng
+%export controller_input
+%export EQ
+%export =
+%export Z
+%export ZERO
+%export NE
+%export !=
+%export NZ
+%export NOTZERO
+%export GE
+%export >=
+%export C
+%export CARRY
+%export LT
+%export <
+%export NC
+%export NOTCARRY
+%export CMP
+%export MOV
+%export LSH
+%export INC
+%export DEC
+%export NOT
+%export NEG
+%export TEST
+
+// Ports
+DEFINE pixel_x 240
+DEFINE pixel_y 241
+DEFINE draw_pixel 242
+DEFINE clear_pixel 243
+DEFINE load_pixel 244
+DEFINE buffer_screen 245
+DEFINE clear_screen_buffer 246
+DEFINE write_char 247
+DEFINE buffer_chars 248
+DEFINE clear_chars_buffer 249
+DEFINE show_number 250
+DEFINE clear_number 251
+DEFINE signed_mode 252
+DEFINE unsigned_mode 253
+DEFINE rng 254
+DEFINE controller_input 255
+
+// Conditions
+DEFINE EQ 0
+DEFINE = 0
+DEFINE Z 0
+DEFINE ZERO 0
+DEFINE NE 1
+DEFINE != 1
+DEFINE NZ 1
+DEFINE NOTZERO 1
+DEFINE GE 2
+DEFINE >= 2
+DEFINE C 2
+DEFINE CARRY 2
+DEFINE LT 3
+DEFINE < 3
+DEFINE NC 3
+DEFINE NOTCARRY 3
+
+// Macros
+%macro CMP A B
+    SUB $A $B r0
+%endmacro
+
+%macro MOV A C
+    ADD $A r0 $C
+%endmacro
+
+%macro LSH A C
+    ADD $A $A $C
+%endmacro
+
+%macro INC A
+    ADI $A 1
+%endmacro
+
+%macro DEC A
+    ADI $A -1
+%endmacro
+
+%macro NOT A C
+    NOR $A r0 $C
+%endmacro
+
+%macro NEG A C
+    SUB r0 $A C
+%endmacro
+
+%macro TEST A B
+    AND $A $B r0
+%endmacro
