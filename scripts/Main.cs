@@ -383,4 +383,9 @@ public partial class Main : Node
 
 		return byteArray;
 	}
+	private void on_load_file_pressed(){
+		GD.Print("load file pressed");
+		FileDialog fileDialog = GetNode<FileDialog>("FileDialog");
+		fileDialog.Popup();
+	}
 }

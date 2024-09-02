@@ -204,4 +204,15 @@ public partial class AssemblyView : CodeEdit
 		if (!@event.IsActionPressed("save")) return;
 		AcceptEvent();
 	}
+	private void on_file_dialog_file_selected(string path){
+		string extention = path.Substring(path.Length-2);
+		GD.Print(extention);
+		if(extention.Equals("as")){
+		path = path.Replace("/", "\\");
+		LoadAssembly(path);
+		}
+		else{
+			GD.Print("not the right extention");
+		}
+	}
 }
