@@ -20,7 +20,7 @@ public partial class Display : Node
 
 	private bool[,] displayBuffer;
 	private bool[,] displayBufferBuffer;
-	private string charBuffer;
+	private string charBuffer = "";
 	private int displayedNum = 0;
 	private bool unsigned = true;
 	public bool shouldRender = false;
